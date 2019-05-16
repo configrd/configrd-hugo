@@ -1,0 +1,36 @@
+baseURL = "http://192.168.0.156/"
+languageCode = "en-us"
+title = "About - configrd"
+theme = "configrdTheme"
+relativeURLs = true
+Paginate = 1
+
+[params]
+  logo = "/images/configrd-logo.png"
+
+
+[[menu.main]]
+	identifier = "github"
+	name = "GitHub"
+	url = "https://github.com/configrd/configrd-service"
+	weight = -110
+
+[[menu.main]]
+	identifier = "docker-hub"
+	name = "Docker Hub"
+	url = "https://hub.docker.com/u/configrd"
+	weight = -100
+
+[[menu.side]]
+	identifier = "about"
+	name = "About"
+	url = "index.html"
+	weight = -100
+
+[[menu.side]]
+	identifier = "quick-start"
+	name = "Quick Start"
+	url = "getting-started/quick-start.html"
+	weight = -90
+
+ 

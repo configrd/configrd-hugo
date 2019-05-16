@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{- partial "head.html" . -}}
+  <body data-spy="scroll" data-target=".anchorsNavigationList" data-offset="10">
+  	<section class="page">
+	    {{- partial "header.html" . -}}
+	    <div class="pageFlexWrapper">
+	    	{{- block "main" . }}{{- end }}
+	    </div>
+	    {{- partial "footer.html" . -}}
+	  </section>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<section class="header">
+  <div class="header-wrapper">
+    <header>
+      <div class="headerBox">
+
+        <div class="headerLeft">
+          <div role="button" tabindex="-1" class="mobileMenu">
+            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" class="icon-7f6730be--text-3f89f380--icon-1f8349b3"><g><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></g></svg>
+          </div>
+          <div class="logo">
+            <a href="{{ .Site.BaseURL }}" title="configrd">
+              <div class="logoWrapper">
+                <img class="logoImage" src="{{ .Site.Params.logo }}" alt="configrd">
+              </div>
+              <div class="logoTitle">
+                <span class="logoText">configrd</span>
+              </div>
+            </a>
+          </div>
+          <div role="button" tabindex="-1" class="mobileSearch">
+            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" class="icon-7f6730be--text-3f89f380--icon-1f8349b3"><g><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></g></svg>
+          </div>
+        </div>
+
+        <div class="headerCenter">
+          <div class="headerLinks">
+            {{ range .Site.Menus.main }}
+              <div class="linkItem">
+                <a class="linkWrapper" href="{{ .URL }}" title="GitHub" target="_blank" rel="noopener noreferrer">
+                  <span class="linkTitle">{{ .Name }}</span>
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="headerRight">
+          <div class="searchBox">
+            <div class="searchWrapper">
+              <div class="searchInputWrapper">
+                <input class="searchInput" type="text" placeholder="Search...">
+              </div>
+              <div class="searchButtonWrapper">
+                <svg class="searchIconSVG" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><circle cx="10.5" cy="10.5" r="7.5"></circle><line x1="21" y1="21" x2="15.8" y2="15.8"></line></g></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+  </div> 
+</section>

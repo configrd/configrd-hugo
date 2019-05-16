@@ -1,0 +1,189 @@
+<section class="navigation">
+  <div class="navigationWrapper">
+    <div class="sidebarWrapper">
+      <div class="sidebarBox">
+        <div style="padding-bottom:0"></div>
+        <div class="sidebar" id="sidebarScrollArea" data-simplebar>
+          <div class="sidebarScrollbar">
+            <div class="mobileHeader">
+              <div role="button" tabindex="-1" class="mobilePrevButton"><svg class="prevIcon" preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></g></svg></div>
+            </div>
+            <div class="releaseWrapper">
+              <div class="releaseDropdown" data-toggle="collapse" href="#releaseList" role="button" aria-expanded="false" aria-controls="releaseList">
+                <span class="versionTitle">
+                  <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" class="icon-7f6730be--text-3f89f380--releasePickerToggleIcon-0c3ed569"><g><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></g></svg>
+                  v 2.0 RC
+                </span>
+                <span class="arrow">
+                  <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor" class="icon-7f6730be--text-3f89f380"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                </span>
+              </div>
+
+              <div class="collapse releaseListContainer" id="releaseList">
+                <a href="" class="releaseItem activeItem" title="v 2.0 RC">
+                  <span class="releaseItemTitle">v 2.0 RC</span>
+                  <span class="releaseLablel">
+                    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="currentColor" viewBox="0 0 13 16" xmlns="http://www.w3.org/2000/svg" stroke="none" style="opacity: 0;"><g><path d="M1.5 9a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" fill-rule="evenodd"></path></g></svg>
+                    <span class="releaseLablelTitle" style="opacity: 1;">Main</span>
+                  </span>
+                </a>
+                <a href="" class="releaseItem" title="v 2.1 Alpha">
+                  <span class="releaseItemTitle">v 2.1 Alpha</span>
+                </a>
+              </div>
+
+            </div>
+            <div class="pageNavigationWrapper">
+              <div class="pageNavigationList">
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    {{ range .Site.Menus.side }}
+                    <a class="navigationLink withBottomMargin" href="{{ .URL }}" title="About">
+                      <span class="navigationLinkTitle">{{ .Name }}</span>
+                    </a>
+                    {{ end }}
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <div class="navigationGroup">
+                      <span class="navigationGroupWrapper">
+                        <span class="navigationGroupTitle">Getting Started</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="getting-started/quick-start.html" title="Quick Start">
+                      <span class="navigationLinkTitle">Quick Start</span>
+                    </a>
+                  </div>
+                </div> -->
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="getting-started/overview.html" title="Setup">
+                      <span class="navigationLinkTitle">Setup</span>
+                      <span class="navigationLinkIcon" data-toggle="collapse" href="#setupSubitems" role="button" aria-expanded="false" aria-controls="setupSubitems">
+                        <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>
+                      </span>
+                    </a>
+                    <div class="collapse" id="setupSubitems">
+                      <div class="navigationItem subitem">
+                        <div class="itemWrapp">
+                          <a class="navigationLink" href="getting-started/overview/install-configrd.html" title="Install">
+                            <span class="navigationLinkTitle">Install</span>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="navigationItem subitem">
+                        <div class="itemWrapp">
+                          <a class="navigationLink" href="getting-started/overview/configure.html" title="Configure">
+                            <span class="navigationLinkTitle">Configure</span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="getting-started/query.html" title="Query">
+                      <span class="navigationLinkTitle">Query</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="bottomOffset"></div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <div class="navigationGroup">
+                      <span class="navigationGroupWrapper">
+                        <span class="navigationGroupTitle">API Reference</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="api-reference/variables.html" title="Variables">
+                      <span class="navigationLinkTitle">Variables</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="bottomOffset"></div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <div class="navigationGroup">
+                      <span class="navigationGroupWrapper">
+                        <span class="navigationGroupTitle">Concepts</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="concepts/repositories.html" title="Repositories">
+                      <span class="navigationLinkTitle">Repositories</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="concepts/inheritance.html" title="Inheritance">
+                      <span class="navigationLinkTitle">Inheritance</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="concepts/secrets.html" title="Secrets">
+                      <span class="navigationLinkTitle">Secrets</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="concepts/profiles.html" title="Profiles">
+                      <span class="navigationLinkTitle">Profiles</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="concepts/filters.html" title="Filters">
+                      <span class="navigationLinkTitle">Filters</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="navigationItem">
+                  <div class="itemWrapp">
+                    <a class="navigationLink" href="concepts/templates.html" title="Templates">
+                      <span class="navigationLinkTitle">Templates</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
