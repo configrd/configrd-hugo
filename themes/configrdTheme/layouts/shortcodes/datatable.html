@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col"><span class="regularText">Title</span></th>
+        <th scope="col"><span class="regularText">Author</span></th>
+        <th scope="col"><span class="regularText">Date</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $ind, $art := $.Site.Data.articles.article }}
+      <tr>
+        <td><span class="regularText"><a href="{{$art.url}}" target="_blank">{{$art.title | markdownify }}</a></span></td>
+        <td><span class="regularText">{{ $art.author | markdownify }}</span></td>
+        <td><span class="regularText">{{ $art.date }}</span></td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>

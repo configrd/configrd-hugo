@@ -21,7 +21,8 @@ docker run -d -p 9191:9191 -v /srv/configrd:/srv/configrd configrd/configrd-serv
 
 A default `configrd.yaml` file will be created at `/srv/configrd` on your local file system. The service will listen to requests on port 9191.
 
-```
+
+{{< code file="configrd.yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -29,6 +30,6 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-```
+{{< /code >}}
 
 Now open your favorite browser and navigate to [http://localhost:9191/configrd/v1/](http://localhost:9191/configrd/v1/)

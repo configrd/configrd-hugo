@@ -20,9 +20,7 @@ Running configrd requires a bootstrap configuration on start in the form of a ya
 
 The default configuration loaded by configrd when no specific configrd.yaml file is provided on start looks as follows:
 
-{% code-tabs %}
-{% code-tabs-item title="configrd.yaml" %}
-```yaml
+{{< code file="configrd.yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -30,9 +28,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{{< /code >}}
 
 The above configrd.yaml states:
 
@@ -65,9 +61,9 @@ A repository is a location from where environment variables and application sett
 * Each repository must have a config source
 * More than one repository can point to the same uri storage location
 
-{% hint style="info" %}
+{{% note %}}
 Each config source below uses a different repository configuration example in order to illustrate additional features and capabilities of the service. Even if you don't intend to use configrd with the particular config source, it may still be helpful to read through the examples for additional understanding.
-{% endhint %}
+{{% /note %}}
 
 ## Config Sources
 
@@ -86,9 +82,9 @@ Some config source support both read and write operations via API.
 
 Pull configuration files from the local file system or mounted volumes using the **file** config source. 
 
-{% hint style="info" %}
+{{% note %}}
 The `uri` absolute path should start with `file:/srv/configrd/` when running from within a docker container
-{% endhint %}
+{{% /note %}}
 
 | Property | Type | Required | Default | Description |
 | :--- | :--- | :--- | :--- | :--- |
@@ -103,9 +99,7 @@ This example employs the one repository per application pattern. Environments ha
 
 The below configrd.yaml file assumes the following directory structure in order to achieve the desired inheritance behavior.
 
-{% code-tabs %}
-{% code-tabs-item title="sample directory structure" %}
-```text
+{{< code file="sample directory structure" >}}
 srv/
 └── configrd/
     └── apps/
@@ -124,13 +118,9 @@ srv/
                     ├── default.properties
                     └── stage/
                         └── default.properties
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{{< /code >}}
 
-{% code-tabs %}
-{% code-tabs-item title="configrd.yaml" %}
-```yaml
+{{< code file="configrd.yaml" >}}
 service:
  repos:
     myapp:
@@ -144,9 +134,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{{< /code >}}
 
 The above file based repository named **myapp** has the following configuration:
 
@@ -161,9 +149,9 @@ The above file based repository named **myapp** has the following configuration:
   * A **stage** profile which inherits from the prod settings
   * A **prod** config profile
 
-{% hint style="info" %}
+{{% note %}}
 A folder does not have to have a config file. It can just contain other folders or be empty.
-{% endhint %}
+{{% /note %}}
 
 ## Http/s Config Source
 
@@ -221,72 +209,4 @@ service:
         stage: env/prod/stage
         prod: env/prod
 ```
-
-## Secrets
-
-On the fly encryption and decryption of secrets for any repository is enabled by adding an `encrypt` configuration section to your repository's definition in configrd.yaml.
-
-### Encrypt Properties
-
-#### AWS-KMS
-
-Configrd is compatible with AWS KMS for on the fly encryption and decryption of secrets. It's possible to either specify static AWS credentials to the AWS KMS key or tap into the EC2 role if you have deployed configrd inside AWS EC2 or ECS. 
-
-| Property | Type | Required | Default | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| keyId | String | Yes |  | The ARN to the AWS KMS key to use for tokenization of secrets |
-| region | String | Yes | us-west-2 | The AWS region of the KMS key being used |
-| username | String | No |  | AWS secret key id if used |
-| password | String | No |  | AWS secret access key if used |
-| include | List | No |  | List of regex patterns of variable names who's values should be treated as secret |
-| exclude | List | No |  | List of regex patterns of variable names who's values should not be treated as secret |
-
-#### Example
-
-{% code-tabs %}
-{% code-tabs-item title="configrd.yaml" %}
-```yaml
-...
-myrepo:
-   uri: https://...
-   sourceName: ...
-   encrypt:
-      aws-kms:
-         keyId: arn:aws:kms:us-west-2:693832995906:key/c5bcaa29-a000-4162-8805-d98b6621a228
-         region: us-west-2
-         include:
-         - (?i)SECRET
-         - (?i)PASSWORD
-         - (?i)_PW
-         - (?i)_PK
-         - (?i)KEY
-         exclude:
-         - (?i)NOT_SECRET
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
-
-On the fly encryption works with any storage mechanism you may choose to store your configs.
-
-{% hint style="info" %}
-Only AWS KMS is currently supported as a KMS. Please let us know what KMS you'd like to see integrated.
-{% endhint %}
-
-### Include & Exclude
-
-What variable keys to treat as secrets is configured by specifying regex patterns of variable names which should automatically be tokenized on write and de-tokenized on read. 
-
-We suggest you always stick to case insensitive 'contains' patterns for maximum applicability. Always better to accidentally encrypt something benign than leave something sensitive as plain text.
-
-It's possible to define what name patterns to explicitly include or exclude from encryption. Exclude patterns will always take precedence over include patterns. Specify one patterns per list item in the `include` or `exclude` sections. 
-
-### Token Format
-
-The exact token format will depend on the KMS system and the specific key being used. Configrd will prefix and suffix all tokenized secrets with `ENC(` and `)`. A key which isn't included to be tokenized will not be decrypted even if it's value is surrounded by `ENC( )`.
-
-When storing secrets for the first time, either use a storage mechanism with an available write API to encrypt plain text values on the fly or manually encrypt your secrets first using your key and then manually add the secrets to your config files managed by configrd.
-
-### Key Rotation
-
-By utilizing an existing KMS, configrd ensures secrets participate in any already established and ongoing key rotation policy. Secrets in configrd will not be automatically re-encrypted when the key rotates but will be decrypted using the old key on a read and encrypted using the new key next time the variable is written to configrd. 
 

@@ -17,9 +17,9 @@ Environment variables can be sourced from a number of locations \(repositories\)
 
 Environment variables can be structured into hierarchies using folders. The folder hierarchy dictates the override order of variables where variable values specified in child folders override values in a parent folder. Each service or app could have one or more folder hierarchies for overrides. The request's URL will be mapped to the folder structure and the override hierarchy applied at request time.
 
-{% hint style="info" %}
+{{% note %}}
 Inheritance is only supported within a repository, not across repositories.
-{% endhint %}
+{{% /note %}}
 
 ## Example
 
@@ -27,24 +27,16 @@ Let's say we define a repository sourcing environment variables from plain-text 
 
 We defined two environment variables at path `/env/dev` in git
 
-{% code-tabs %}
-{% code-tabs-item title="default.properties" %}
-```text
+{{< code file="default.properties" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{{< /code >}}
 
 The child path `/env/dev/local` in git contains **only** the variable
 
-{% code-tabs %}
-{% code-tabs-item title="default.properties" %}
-```text
+{{< code file="default.properties" >}}
 app.url = http://localhost:8080/
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{{< /code >}}
 
 If we request the "dev" config profile at `https://mycorp.com/configrd/v1/env/dev/`, configrd returns:
 

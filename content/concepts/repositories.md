@@ -25,10 +25,7 @@ A repository defines:
 
 Here is the default repository definition which comes with configrd:
 
-{% code-tabs %}
-{% code-tabs-item title="configrd.yaml" %}
-
-```yaml
+{{< code file="configrd.yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -36,9 +33,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-```
-{% endcode-tabs-item %}
-{% endcode-tabs %}
+{{< /code >}}
 
 This configuration defines only one repository named 'default'. Configurations will be sourced and stored to a file system location at /srv/configrd using the 'file' source. The service will attempt to load a file called default.properties at each path in the hierarchy when queried. This setting is inherited from the 'defaults' section with global values shared by all repositories. 
 
@@ -48,9 +43,9 @@ At the early phases of a project, managing all configurations in one repository 
 
 Whether to divide your configurations across one or more repositories will greatly depend on what you want to accomplish. 
 
-{% hint style="info" %}
+{{% note %}}
 A repository can only refer to one storage location but many repositories can map to the same storage location and different paths within it.
-{% endhint %}
+{{% /note %}}
 
 #### The Global Repository
 

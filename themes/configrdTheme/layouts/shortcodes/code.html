@@ -1,0 +1,45 @@
+<!-- <div class="code relative bg-primary-color moon-gray" id="{{.Get "file" | urlize}}">
+	{{- with .Get "file" -}}
+		<div class="filename san-serif f6 dib lh-solid pl2 pv2">{{.}}</div>
+	{{- end -}}
+
+	{{ if ne (.Get "copy") "false" }}
+		<button class="needs-js copy bg-accent-color-dark f6 absolute top-0 right-0 lh-solid hover-bg-primary-color-dark bn white ph3 pv2" title="Copy this code to your clipboard." data-clipboard-action="copy" aria-label="copy button">
+		</button>
+		{{/* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */}}
+	{{end}}
+	<div class="code-copy-content nt3" {{with .Get "download"}}id="{{.}}"{{end}}>
+		{{- .Inner -}}
+	</div>
+</div> -->
+
+
+
+
+
+
+<div class="codeBlock">
+  <div class="codeHeader">
+    <div class="codeHeaderTabs">
+      {{- with .Get "file" -}}
+        <div role="button" tabindex="-1" class="codeHeaderButton">{{.}}</div>
+	    {{- end -}}
+    </div>
+    {{ if ne (.Get "copy") "false" }}
+      <div role="button" tabindex="-1" aria-label="Copy" class="copyButton" data-toggle="tooltip" data-placement="bottom" title="Copy">
+        <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
+          <g>
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+          </g>
+        </svg>
+      </div>
+      {{/* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */}}
+    {{end}}
+  </div>
+  <pre>
+    <code class="lang-yaml line-numbers" {{with .Get "download"}}id="{{.}}"{{end}}>
+    {{- .Inner -}}
+    </code>
+  </pre>
+</div>
