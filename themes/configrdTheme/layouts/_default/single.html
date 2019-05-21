@@ -1,5 +1,44 @@
-{{ define "main" }}
-<div class="container">
-  <p>This from the single page template</p>
+{{ define "main"}}
+<div class="pageFlex">
+  <div class="contentBox">
+    <div class="overlayLayout" role="presentation"></div>
+    {{ partial "navigation.html" . }}
+
+    <section class="page-content">
+      <div class="contentAndRightSidebar">
+        <div class="page-wrapper">
+          <div class="h1-wrapper">
+            <div class="oneRow">
+              <div class="wrapper">
+                <h1>
+                  <span class="heading-text">{{.Title}}</span>
+                </h1>
+              </div>
+              {{ partial "mobile-right-sidebar-button.html" . }}
+            </div>
+            <div class="additional-text">
+              <span class="regularText color-gray">
+                {{ .Description }}
+              </span>
+            </div>
+          </div>
+    
+          {{ partial "mobile-right-sidebar.html" . }}
+    
+          {{ .Content }}
+    
+          {{ partial "page-navigation.html" . }}
+          
+        </div>
+        {{ partial "right-sidebar.html" . }}
+      </div>
+    </section>
+    
+
+  </div>
+  <div class="searchBarOverlay" role="presentation">
+    {{ partial "search-bar.html" . }}
+  </div>
 </div>
 {{ end }}
+

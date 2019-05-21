@@ -8,29 +8,52 @@ Paginate = 1
 [params]
   logo = "/images/configrd-logo.png"
 
+[outputs]
+	home = [ "HTML", "RSS" ]
+	section = [ "HTML", "RSS"]
+
+# Top menu
 
 [[menu.main]]
-	identifier = "github"
 	name = "GitHub"
+	identifier = "github"
 	url = "https://github.com/configrd/configrd-service"
 	weight = -110
 
 [[menu.main]]
-	identifier = "docker-hub"
 	name = "Docker Hub"
+	identifier = "docker-hub"
 	url = "https://hub.docker.com/u/configrd"
 	weight = -100
 
-[[menu.side]]
-	identifier = "about"
-	name = "About"
-	url = "index.html"
-	weight = -100
+# Sidebar menu
 
-[[menu.side]]
-	identifier = "quick-start"
-	name = "Quick Start"
-	url = "getting-started/quick-start.html"
-	weight = -90
+[[menu.sidebar]]
+	name = "Getting Started"
+	identifier = "getting-started"
+	weight = 100
+	post = "break"
+	url = "/getting-started/"
 
- 
+[[menu.sidebar]]
+	name = "Setup"
+	identifier = "setup"
+	parent = "getting-started"
+	url = "/getting-started/setup/"
+	weight = 04
+	post = "expanded"
+	hasChildren = true
+
+[[menu.sidebar]]
+	name = "API Reference"
+	identifier = "api-reference"
+	weight = 200
+	post = "break"
+	hasChildren = true
+
+[[menu.sidebar]]
+	name = "Concepts"
+	identifier = "concepts"
+	weight = 300
+	hasChildren = true
+

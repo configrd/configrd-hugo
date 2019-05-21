@@ -1,4 +1,4 @@
-<section class="page-content">
+<!-- <section class="page-content">
   <div class="contentAndRightSidebar">
     <div class="page-wrapper">
       <div class="h1-wrapper">
@@ -8,16 +8,7 @@
               <span class="heading-text">About</span>
             </h1>
           </div>
-          <div id="mobileContentsBoxPlacement">
-            <div class="mobileContentsBox">
-              <button class="mobileContentsBoxButton">
-                <span class="mobileContentsBoxIconWrapper">
-                  <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></g></svg>
-                </span>
-                <span></span>
-              </button>
-            </div>
-          </div>
+          {{ partial "mobile-right-sidebar-button.html" . }}
         </div>
         <div class="additional-text">
           <span class="regularText color-gray">
@@ -26,68 +17,7 @@
         </div>
       </div>
 
-      <div id="mobileAnchorsNavigationPlacement">
-        <div class="mobileAnchorsNavigation">
-          <div class="popoverWrapper">
-            <div class="mobileAnchorsBodyWrapper">
-              <div class="arrowPointer"></div>
-              <div class="mobileNav">
-                <div class="mobileNavScrollable">
-                  <div class="mobileRightSidebarHeaderWrapper">
-                    <div class="mobileRightSidebarHeaderIcon">
-                      <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></g></svg>
-                    </div>
-                    <div class="mobileRightSidebarHeaderTitle">
-                      <span class="mobileRightSidebarHeaderTitleText">Contents</span>
-                    </div>
-                  </div>
-
-                  <a href="#why-configrd" class="mobileRightSidebarItem nav-link">
-                    <div class="rightSidebarItemWrapper">
-                      <span class="itemTitleWrapper">
-                        <span class="itemTitle">Why Configrd</span>
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href="#for-engineers" class="mobileRightSidebarItem nav-link">
-                    <div class="rightSidebarItemWrapper">
-                      <span class="itemTitleWrapper">
-                        <span class="itemTitle level-2">For Engineers</span>
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href="#for-ci-cd-pipelines" class="mobileRightSidebarItem nav-link">
-                    <div class="rightSidebarItemWrapper">
-                      <span class="itemTitleWrapper">
-                        <span class="itemTitle level-2">For CI/CD Pipelines</span>
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href="#for-containers" class="mobileRightSidebarItem nav-link">
-                    <div class="rightSidebarItemWrapper">
-                      <span class="itemTitleWrapper">
-                        <span class="itemTitle level-2">For Containers</span>
-                      </span>
-                    </div>
-                  </a>
-
-                  <a href="#for-devops-and-infosec" class="mobileRightSidebarItem nav-link">
-                    <div class="rightSidebarItemWrapper">
-                      <span class="itemTitleWrapper">
-                        <span class="itemTitle level-2">For DevOps and InfoSec</span>
-                      </span>
-                    </div>
-                  </a>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {{ partial "mobile-right-sidebar.html" . }}
 
       <h2 id="why-configrd">
         <span>Why Configrd</span>
@@ -231,103 +161,9 @@
         </li>
       </ul>
 
-      <section class="pageFooter">
-        <div class="navigationLinks">
-          <a class="linkNext" href="getting-started/quick-start.html">
-            <div class="linkBody">
-              <div class="linkTitle">
-                <span class="linkTitle-text">Next</span>
-              </div>
-              <div class="pageTitle">
-                <span class="pageTitle-text">Quick Start</span>
-              </div>
-            </div>
-            <div class="linkIcon">
-              <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
-            </div>
-          </a>
-        </div>
-
-        <div class="lastUpdated">
-          <div class="last-updated-wrapper">
-            <div class="last-updated">
-              <div class="editorsListWrapper">
-                <div class="editorsList">
-                  <div class="editor" title="Krzysztof Karski" data-placement="bottom" data-toggle="tooltip">
-                    <div class="avatarFrame">
-                      <img class="avatar" src="https://avatars2.githubusercontent.com/u/1750504?v=4" alt="Krzysztof Karski">
-                      <div class="avatarShadow"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="editedDate">
-                <span class="editedDate-text">
-                  <span>Last updated <span id="editedDate-value">13 days ago</span></span>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {{ partial "page-navigation.html" . }}
+      
     </div>
-    <div id="pageRightSidebarPlacement">
-      <div class="pageRightSidebar">
-        <div class="pageRightBox">
-          <div class="boxForPadding"></div>
-          <div class="anchorsNavigation" >
-            <div class="anchorsNavigationWrapper">
-              <div class="anchorsNavigationListWrapper">
-                <div class="anchorsNavigationList">
-                    <div class="rightSidebarHeaderWrapper">
-                      <div class="rightSidebarHeaderIcon">
-                        <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></g></svg>
-                      </div>
-                      <div class="rightSidebarHeaderTitle">
-                        <span class="rightSidebarHeaderTitleText">Contents</span>
-                      </div>
-                    </div>
-                    <a href="#why-configrd" class="rightSidebarItem nav-link">
-                      <div class="rightSidebarItemWrapper">
-                        <span class="itemTitleWrapper">
-                          <span class="itemTitle">Why Configrd</span>
-                        </span>
-                      </div>
-                    </a>
-                    <a href="#for-engineers" class="rightSidebarItem nav-link">
-                      <div class="rightSidebarItemWrapper">
-                        <span class="itemTitleWrapper">
-                          <span class="itemTitle level-2">For Engineers</span>
-                        </span>
-                      </div>
-                    </a>
-                    <a href="#for-ci-cd-pipelines" class="rightSidebarItem nav-link">
-                      <div class="rightSidebarItemWrapper">
-                        <span class="itemTitleWrapper">
-                          <span class="itemTitle level-2">For CI/CD Pipelines</span>
-                        </span>
-                      </div>
-                    </a>
-                    <a href="#for-containers" class="rightSidebarItem nav-link">
-                      <div class="rightSidebarItemWrapper">
-                        <span class="itemTitleWrapper">
-                          <span class="itemTitle level-2">For Containers</span>
-                        </span>
-                      </div>
-                    </a>
-                    <a href="#for-devops-and-infosec" class="rightSidebarItem nav-link">
-                      <div class="rightSidebarItemWrapper">
-                        <span class="itemTitleWrapper">
-                          <span class="itemTitle level-2">For DevOps and InfoSec</span>
-                        </span>
-                      </div>
-                    </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    {{ partial "right-sidebar.html" . }}
   </div>
-</section>
+</section> -->
