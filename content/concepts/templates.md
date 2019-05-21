@@ -10,15 +10,17 @@ slug:
 aliases: [/concepts/templates/]
 ---
 
-{{< figure src="/images/elements/code.jpg" title="Massive amounts of code" >}}
+{{% img-block %}}
+![Massive amounts of code](/images/elements/code.jpg)
+{{% /img-block %}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi. Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. In vitae turpis massa sed. Non diam phasellus vestibulum lorem sed risus. 
 
-{{< youtube OFBfdEE >}}
+{{< youtube ADh_OFBfdEE >}}
 
-<!-- {% embed url="https://youtu.be/ADh\_OFBfdEE" %} -->
-
-> Environment variables dictate everything about your application's environment.
+{{% blockquote %}}
+Environment variables dictate everything about your application's environment.
+{{% /blockquote %}}
 
 1. All things about variables
 2. Another thing about variables

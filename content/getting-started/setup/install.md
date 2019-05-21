@@ -45,12 +45,12 @@ docker run -d -p 9191:9191 -v /home/myuser/configrd:/srv/configrd configrd/confi
 Checking the `docker logs` for the container you should see output similar to the below
 
 ```bash
-1| 00:04:38.462 [main] INFO  io... - Configrd starting on port 9191
-2| 00:04:38.480 [main] INFO  io... - Starting configrd...
-3| 00:04:38.709 [main] INFO  io... - Attempting to load configrd config file from file:/srv/configrd/configrd.yaml using source file
-4| 00:04:38.738 [main] INFO  io... - Loaded configrd config file at file:/srv/configrd/configrd.yaml
-5| 00:04:38.977 [main] INFO  io... - Application deployed
-6| 00:04:38.977 [main] INFO  io... - Configrd started in 0s
+00:04:38.462 [main] INFO  io... - Configrd starting on port 9191
+00:04:38.480 [main] INFO  io... - Starting configrd...
+00:04:38.709 [main] INFO  io... - Attempting to load configrd config file from file:/srv/configrd/configrd.yaml using source file
+00:04:38.738 [main] INFO  io... - Loaded configrd config file at file:/srv/configrd/configrd.yaml
+00:04:38.977 [main] INFO  io... - Application deployed
+00:04:38.977 [main] INFO  io... - Configrd started in 0s
 ```
 
 ## Loading configrd.yaml
