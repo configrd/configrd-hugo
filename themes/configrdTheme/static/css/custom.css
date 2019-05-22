@@ -127,52 +127,6 @@ table tbody tr {
 	display: none;
 }
 
-/*#TableOfContents ul {
-	padding: 0;
-}
-
-#TableOfContents > ul > li > ul > li > a {
-	display: -webkit-box;
-	color: #74818D;
-	margin: 0;
-	cursor: pointer;
-	display: -ms-flexbox;
-	display: flex;
-	padding: 4px 16px;
-	padding-left: 16px;
-	-ms-flex-align: center;
-	align-items: center;
-	padding-left: 24px;
-	vertical-align: middle;
-	text-decoration: none;
-	-webkit-box-align: center;
-	font-size: 12px;
-	line-height: 1.5;
-	font-weight: 500;
-}
-
-#TableOfContents > ul > li > ul > li > ul {
-	padding: 0;
-}
-
-#TableOfContents > ul > li > ul > li > ul li {
-	display: block;
-	padding-left: 16px;
-}
-
-#TableOfContents > ul > li > ul > li > ul li a {
-	padding-left: 16px;
-	font-size: 12px;
-	line-height: 1.5;
-	font-weight: 500;
-	color: #74818D;
-	text-decoration: none;
-}
-
-#TableOfContents ul ul ul {
-	display: none;
-}*/
-
 blockquote.quote .quote-text p {
 	font-size: 16px;
 	line-height: 1.625;

@@ -11,7 +11,9 @@ slug:
 aliases: [/api-reference/variables/]
 ---
 
-## Get Variables
+{{< badge >}}
+Get Variables
+{{< /badge >}}
 
 {{< path >}}
 http://demo.configrd.io/configrd
