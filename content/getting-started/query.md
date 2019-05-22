@@ -39,7 +39,7 @@ Responses are available as plain text key value, json and yaml.
 
 The most simple query is to fetch variables form the root of the **default** repository.
 
-```bash
+```js
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/
 ```
 
@@ -49,7 +49,7 @@ Since our demo environment has a **default.properties** file at the root of the 
 
 Next, you can request a specific config profile by naming it in the **p** query parameter. You do not need to specify a path when using named profiles. 
 
-```bash
+```js
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?p=custom
 ```
 
@@ -61,13 +61,13 @@ You can switch the repository by naming the repository in the **r** query parame
 
 Query the root path of **apps** repository.
 
-```bash
+```js
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps
 ```
 
 Query the **myapp-dev** named config profile in the **apps** repository.
 
-```bash
+```js
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps&p=myapp-dev
 ```
 
@@ -87,7 +87,7 @@ File names must have a suffix. Files without a suffix such as just **env** will 
 
 Query the default repository for **default.json** files starting at the `/env/dev/json/` config profile even though the default file name setting in the **configrd.yaml** is **default.properties**.
 
-```bash
+```js
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
 ```
 

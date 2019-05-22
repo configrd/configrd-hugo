@@ -11,7 +11,7 @@ aliases: [/setup/configure/]
 toc: true
 ---
 
-Running configrd requires a bootstrap configuration on start in the form of a yaml file. The `configrd.yaml`file defines:
+Running configrd requires a bootstrap configuration on start in the form of a yaml file. The `configrd.yaml` file defines:
 
 * All available repositories from where to fetch environment variables and application properties
 * System wide defaults
@@ -173,7 +173,7 @@ This example is modeled using one environment per repository pattern. Accessing 
 
 The below configrd.yaml file assumes the following path structure in order to achieve the desired inheritance behavior.
 
-```text
+{{< code-plain >}}
 srv/
 └── configrd/
     └── apps/
@@ -192,9 +192,9 @@ srv/
                     ├── env.yaml
                     └── stage/
                         └── env.yaml
-```
+{{< /code-plain >}}
 
-```yaml
+{{< code-plain >}}
 service:
  repos:
     myapp:
@@ -208,5 +208,5 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-```
+{{< /code-plain >}}
 

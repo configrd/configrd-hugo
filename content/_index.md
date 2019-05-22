@@ -32,7 +32,6 @@ Configrd deploys on-prem as a micro service alongside your apps and infrastructu
 * Access plaintext values & secrets from the same place and in the same way
 * Quickly and easily switch between config profiles for development, testing or debugging purposes
 * Use all the same tools you already know and love. I.e. store configs to yaml file in git, make updates using VSCode, Vim etc
-* Keep variables for NodeJs, React, Python, Java and other stacks in the same place for end to end transparency and reuse
 
 ### For CI/CD Pipelines
 
@@ -52,6 +51,6 @@ Configrd deploys on-prem as a micro service alongside your apps and infrastructu
 * Fight configuration drift
 * Collaborate with application engineers to keep environment settings up to date
 * Reduce or even eliminate duplicate/redundant configs within and across environments
-* Globally enforce encryption of secrets, manage keys through services such as AWS KMS, store values anywhere \(i.e. git\)
+* Globally enforce encryption of secrets, manage keys through services such as AWS KMS, store values anywhere (i.e. git) and however (i.e. json) you like
 
 [![Site tested with BrowserStack](/images/browserstack-logo-200.png)](https://www.browserstack.com/)

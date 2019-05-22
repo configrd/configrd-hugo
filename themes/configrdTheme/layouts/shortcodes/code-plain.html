@@ -1,11 +1,6 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="codeBlock">
-  <div class="codeHeader">
-    <div class="codeHeaderTabs">
-      {{- with .Get "file" -}}
-        <div role="button" tabindex="-1" class="codeHeaderButton">{{.}}</div>
-	    {{- end -}}
-    </div>
+  <div class="codeHeaderInline">
     {{ if ne (.Get "copy") "false" }}
       <div role="button" tabindex="-1" aria-label="Copy" class="copyButton" data-toggle="tooltip" data-placement="bottom" title="Copy">
         <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">

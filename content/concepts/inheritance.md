@@ -40,17 +40,17 @@ app.url = http://localhost:8080/
 
 If we request the "dev" config profile at `https://mycorp.com/configrd/v1/env/dev/`, configrd returns:
 
-```text
+{{< code-plain >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-```
+{{< /code-plain >}}
 
 Now, if we request the "local" config profile which overrides and inherits from the "dev" profile at `https://mycorp.com/configrd/v1/env/dev/local/`, configrd returns:
 
-```text
+{{< code-plain >}}
 app.url = http://localhost:8080 (overriden)
 support.email = support@myservice.com (inherited)
-```
+{{< /code-plain >}}
 
 Any environment variable changes are immediately available on the next request.
 
