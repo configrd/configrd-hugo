@@ -11,16 +11,15 @@ slug:
 aliases: [/api-reference/variables/]
 ---
 
-{% api-method method="get" host="http://demo.configrd.io/configrd" path="/v1/\[{path}/\]" %}
-{% api-method-summary %}
-Get Variables
-{% endapi-method-summary %}
+## Get Variables
 
-{% api-method-description %}
+{{< path >}}
+http://demo.configrd.io/configrd
+{{< /path >}}
+
 General endpoint to get variables from configrd. Querying config profiles is done by either specifying the config profile's path as the URL or using the p query parameter to query a named config profile.  
   
 Different repositories are queried by specifying the r query parameter. The specified config profile URL or named config profile will then apply to the indicated repository. Omitting a repository name queries the **default** repository if one is defined.  
-{% endapi-method-description %}
 
 {% api-method-spec %}
 {% api-method-request %}
