@@ -28,7 +28,9 @@ Environment variables dictate everything about your application's environment.
 * [ ] Task 1
 * [ ] Task 2
 
-{% file src="../.gitbook/assets/browserstack-logo-200.png" caption="Download this file" %}
+{{% buttonbox %}}
+![browserstack-logo-200.png-7KB](/images/elements/browserstack-logo-200.png)
+{{% /buttonbox %}}
 
 Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Eu feugiat pretium nibh ipsum consequat nisl vel. Lobortis feugiat vivamus at augue eget arcu dictum. Sed faucibus turpis in eu mi. Suspendisse potenti nullam ac tortor. Eget nullam non nisi est sit amet.
 
