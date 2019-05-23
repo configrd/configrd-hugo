@@ -52,13 +52,7 @@ table {
 	margin-top: 24px;
 	margin-bottom: 32px;
 	width: 100%;
-}
-
-table tbody tr td,
-table tbody tr th {
-	padding: 0.5rem;
-	vertical-align: middle;
-	border: none;
+	color: #212529;
 }
 
 table thead tr th {
@@ -68,17 +62,24 @@ table thead tr th {
 	border-bottom: 2px solid #e6ecf1;
 	border-top: none;
 	padding: .75rem;
+	line-height: 1.625;
+	vertical-align: bottom;
 }
 
+table tbody tr {
+  border-color: #e6ecf1;
+  border-bottom-color: rgb(230, 236, 241);
+  border-bottom: 1px solid #e6ecf1;
+ }
+
 table tbody tr td {
+	padding: 0.5rem;
+	vertical-align: middle;
+	border: none;
 	font-size: 1rem;
 	color: #3B454E;
 	line-height: 1.625;
 	font-weight: 400;
-}
-
-table tbody tr {
-	border-bottom: 1px solid #e6ecf1;
 }
 
 #TableOfContents > ul {

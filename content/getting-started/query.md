@@ -32,7 +32,7 @@ Responses are available as plain text key value, json and yaml.
 
 | Parameter | Type | Required | Description |
 | :--- | :--- | :--- | :--- |
-| r | String | No | The name of the repository to query. When querying the **default** repository, this parameter is optional. |
+| r | String | No | The name of the repository to query. When querying the default repository, this parameter is optional. |
 | p | String | No | The name of a named profile for the repository you are querying. Optional since repositories are not required to have named profiles. When using a named profile, there is no need to specify a path. |
 
 ## Query the Default Repository
