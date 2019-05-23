@@ -18,7 +18,7 @@ toc: true
 * It keeps all our environments consistent thanks to configuration inheritance
 * You only have to maintain values that differ between environments
 * Is a common place to secure, manage, version and pull environment variables from across build pipelines, services, environments and even tech stacks
-* Encrypt/decrypt secrets on the fly and keep the rest plain text for easy access and management
+* Encrypt/decrypt secrets on the fly and keep the rest plaintext for easy access and management
 
 With **configrd** engineers, devops or infosec can access, manage and secure environmnt variables from anywhere in multiple formats such as key-value, json and yaml. 
 

@@ -1,39 +1,51 @@
 <section class="pageFooter">
-  <div class="navigationLinks">
-    {{if .PrevPage}}
-    <a class="linkNext" href="{{.PrevPage.URL}}">
-      <div class="linkIcon">
-        <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line class="st0" x1="19" y1="12" x2="5" y2="12"></line><polyline class="st0" points="12,19 5,12 12,5 "></polyline></g></svg>
-      </div>
-      <div class="linkBody text-right">
-        <div class="linkTitle">
-          <span class="linkTitle-text">Previous</span>
+  {{ if or .Prev .Next }}
+    <div class="navigationLinks">
+      {{if .Prev}}
+      <a class="linkPrevious" href="{{.Prev.URL}}">
+        <div class="linkIcon">
+          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line class="st0" x1="19" y1="12" x2="5" y2="12"></line><polyline class="st0" points="12,19 5,12 12,5 "></polyline></g></svg>
         </div>
-        <div class="pageTitle">
-          <span class="pageTitle-text">{{.PrevPage.Title}}</span>
+        <div class="linkBody text-right">
+          <div class="linkTitle">
+            <span class="linkTitle-text">Previous</span>
+          </div>
+          <div class="pageTitle">
+            <span class="pageTitle-text">{{.Prev.Title}}</span>
+          </div>
+        </div>      
+      </a>
+      {{end}}
+      {{if .Next}}
+      <a class="linkNext" href="{{.Next.URL}}">
+        <div class="linkBody">
+          <div class="linkTitle">
+            <span class="linkTitle-text">Next</span>
+          </div>
+          <div class="pageTitle">
+            <span class="pageTitle-text">{{.Next.Title}}</span>
+          </div>
         </div>
-      </div>      
-    </a>
-    {{end}}
-
-    {{if .NextPage}}
-    <a class="linkNext" href="{{.NextPage.URL}}">
-      <div class="linkBody">
-        <div class="linkTitle">
-          <span class="linkTitle-text">Next</span>
+        <div class="linkIcon">
+          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
         </div>
-        <div class="pageTitle">
-          <span class="pageTitle-text">{{.NextPage.Title}}</span>
-        </div>
-      </div>
-      <div class="linkIcon">
-        <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
-      </div>
-    </a>
-    {{end}}
-
-  </div>
-
-{{ partial "last-updated.html" . }}
-  
+      </a>
+      {{end}}
+    </div>
+  {{end}}  
+{{ partial "last-updated.html" . }}  
 </section>
+
+<script>
+  document.body.onkeyup = function(e){
+    if (!(e.ctrlKey || e.shiftKey || e.altKey || e.metaKey)) {
+    {{- if .Prev }}
+      if (e.keyCode == '37') { window.location = '{{ .Prev.URL }}'; }
+    {{- end }}
+    {{- if .Next }}
+      if (e.keyCode == '39') { window.location = '{{ .Next.URL }}'; }
+    {{- end }}
+    }
+  };
+</script>
+

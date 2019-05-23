@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "getting-started"
     weight: 02
-weight: 02
+weight: 100
 sections_weight: 02
 slug:
 aliases: [/getting-started/quick-start/]
@@ -15,9 +15,9 @@ aliases: [/getting-started/quick-start/]
 
 Pull the docker image and start the service and map a volume to `/srv/configrd` on both container and host
 
-```bash
+{{< inline-code-blocks >}}
 docker run -d -p 9191:9191 -v /srv/configrd:/srv/configrd configrd/configrd-service:latest
-```
+{{< /inline-code-blocks >}}
 
 A default `configrd.yaml` file will be created at `/srv/configrd` on your local file system. The service will listen to requests on port 9191.
 

@@ -39,9 +39,9 @@ Responses are available as plain text key value, json and yaml.
 
 The most simple query is to fetch variables form the root of the **default** repository.
 
-```js
+{{< inline-code-blocks-js >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/
-```
+{{< /inline-code-blocks-js >}}
 
 Since our demo environment has a **default.properties** file at the root of the default repository path, this query will return those base values.
 
@@ -49,9 +49,9 @@ Since our demo environment has a **default.properties** file at the root of the 
 
 Next, you can request a specific config profile by naming it in the **p** query parameter. You do not need to specify a path when using named profiles. 
 
-```js
+{{< inline-code-blocks-js >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?p=custom
-```
+{{< /inline-code-blocks-js >}}
 
 Here we are querying a profile named **custom** which points at the `/env/dev/simple/` config profile in our **default** repository
 
@@ -61,15 +61,15 @@ You can switch the repository by naming the repository in the **r** query parame
 
 Query the root path of **apps** repository.
 
-```js
+{{< inline-code-blocks-js >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps
-```
+{{< /inline-code-blocks-js >}}
 
 Query the **myapp-dev** named config profile in the **apps** repository.
 
-```js
+{{< inline-code-blocks-js >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps&p=myapp-dev
-```
+{{< /inline-code-blocks-js >}}
 
 ## Inline Filename Override
 
@@ -87,9 +87,9 @@ File names must have a suffix. Files without a suffix such as just **env** will 
 
 Query the default repository for **default.json** files starting at the `/env/dev/json/` config profile even though the default file name setting in the **configrd.yaml** is **default.properties**.
 
-```js
+{{< inline-code-blocks-jason >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-```
+{{< /inline-code-blocks-jason >}}
 
 ## Response Content Types
 
@@ -115,9 +115,9 @@ When requesting a json or yaml source file, the variable names/keys will be flat
 {% tab title="from json" %}
 Render a [default.json file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/json/default.json) as plain text
 
-```bash
+{{< inline-code-blocks-jason >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-```
+{{< /inline-code-blocks-jason >}}
 
 Plain text response
 
@@ -142,9 +142,9 @@ array.named2.value5.sub=5
 {% tab title="from yaml" %}
 Render a [default.yaml file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/yaml/default.yaml) as plain text
 
-```bash
+{{< inline-code-blocks-jason >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/yaml/default.yaml
-```
+{{< /inline-code-blocks-jason >}}
 
 Plain text response
 

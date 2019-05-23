@@ -81,16 +81,19 @@ $(document).ready(function() {
     var windowHeight = $(window).height();
     if($(window).width() + 17 < 1024) {
       $('.sidebar').css({"height":windowHeight});
+      $(".sidebar").removeClass("fixed");
+      $(".sidebar").removeClass("topHeaderOffset");
     }
     if($(window).width() + 17 > 1023) {
+      $(".sidebar").addClass("fixed");
       if($(window).scrollTop() < 80) {
-        $(".sidebar").css("position","relative");
+        $(".sidebar").addClass("topHeaderOffset");
         $('.sidebar').css({"height":windowHeight - 80});
         $(".anchorsNavigation").removeClass("fixed");
         $('.anchorsNavigation').css({"max-height":windowHeight - 80});
       }
       else {
-        $(".sidebar").css("position","fixed");
+        $(".sidebar").removeClass("topHeaderOffset");
         $('.sidebar').css({"height":windowHeight});
         $(".anchorsNavigation").addClass("fixed");
         $('.anchorsNavigation').css({"max-height":windowHeight});
@@ -114,4 +117,21 @@ $(document).ready(function() {
       $('.mobileAnchorsNavigation').removeClass("visible")
     }
   });
+
+  // Copy button tooltip text changing
+  $('.copyButton').on('click', function (event) {
+      var target = $(this);
+      target.tooltip('hide').attr('data-original-title', 'Copied!').tooltip('show');
+
+      var clearTooltip = function(){
+        target.tooltip('hide').attr('data-original-title', 'Copy');
+      };
+      setTimeout(clearTooltip, 700);
+  });
+  // Copy button initialization
+  var clipboard = new ClipboardJS('.copyButton');
+  clipboard.on('success', function(e) {
+    e.clearSelection();
+  });
+
 });
