@@ -61,9 +61,9 @@ A repository is a location from where environment variables and application sett
 * Each repository must have a config source
 * More than one repository can point to the same uri storage location
 
-{{% note %}}
+{{% infobox %}}
 Each config source below uses a different repository configuration example in order to illustrate additional features and capabilities of the service. Even if you don't intend to use configrd with the particular config source, it may still be helpful to read through the examples for additional understanding.
-{{% /note %}}
+{{% /infobox %}}
 
 ## Config Sources
 
@@ -82,9 +82,9 @@ Some config source support both read and write operations via API.
 
 Pull configuration files from the local file system or mounted volumes using the **file** config source. 
 
-{{% note %}}
+{{% infobox %}}
 The `uri` absolute path should start with `file:/srv/configrd/` when running from within a docker container
-{{% /note %}}
+{{% /infobox %}}
 
 | Property | Type | Required | Default | Description |
 | :--- | :--- | :--- | :--- | :--- |
@@ -149,9 +149,9 @@ The above file based repository named **myapp** has the following configuration:
   * A **stage** profile which inherits from the prod settings
   * A **prod** config profile
 
-{{% note %}}
+{{% infobox %}}
 A folder does not have to have a config file. It can just contain other folders or be empty.
-{{% /note %}}
+{{% /infobox %}}
 
 ## Http/s Config Source
 

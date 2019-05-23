@@ -12,7 +12,7 @@ aliases: [/getting-started/query/]
 toc: true
 ---
 
-{{% note %}}
+{{% infobox %}}
 These examples all utilize the live demo environment available to experiment with at
 
 [http://demo.configrd.io/configrd/v1/](http://demo.configrd.io/configrd/v1/)
@@ -24,7 +24,7 @@ Take a look at the configrd.yaml file we use
 and browse the folder and file structure of the repository
 
 [https://s3.amazonaws.com/config.appcrossings.net/](https://s3.amazonaws.com/config.appcrossings.net/)
-{{% /note %}}
+{{% /infobox %}}
 
 Querying configrd can be done from the command line or your programming language of choice over http/s. There are only a few optional query parameters. 
 
@@ -75,13 +75,13 @@ curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps&p=my
 
 The default filename configrd seeks at each config profile path is defined in the configrd.yaml file for each repository. In some cases, you may want to override the filename inline as part of the query. This is done by simply appending the desired file name to the URL.
 
-{{% note %}}
+{{% infobox %}}
 File names are only relevant for file based repositories such as http, file or git. Future supported config sources, such as database, may not support this directive.
-{{% /note %}}
+{{% /infobox %}}
 
-{{% note %}}
+{{% infobox %}}
 File names must have a suffix. Files without a suffix such as just **env** will be interpreted as folders/directories.
-{{% /note %}}
+{{% /infobox %}}
 
 #### Example
 
@@ -95,9 +95,9 @@ curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json
 
 Configrd is capable of returning values in the form of plain text key value pair from plain text, json and yaml source files. Requesting a response of a particular content type is possible by setting the correct `Accept` header on the request. 
 
-{{% note %}}
+{{% infobox %}}
 The `Accept` header is mandatory. Requesting a wildcard content type is not guaranteed to always resolve to the same response content type at each request.
-{{% /note %}}
+{{% /infobox %}}
 
 | Accept | Description |
 | :--- | :--- |

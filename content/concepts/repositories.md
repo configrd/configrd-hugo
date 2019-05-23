@@ -43,9 +43,9 @@ At the early phases of a project, managing all configurations in one repository 
 
 Whether to divide your configurations across one or more repositories will greatly depend on what you want to accomplish. 
 
-{{% note %}}
+{{% infobox %}}
 A repository can only refer to one storage location but many repositories can map to the same storage location and different paths within it.
-{{% /note %}}
+{{% /infobox %}}
 
 #### The Global Repository
 

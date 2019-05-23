@@ -46,6 +46,7 @@
 }
 
 table {
+	display: block;
 	margin: 0;
 	padding: 0;
 	position: relative;
@@ -53,6 +54,7 @@ table {
 	margin-bottom: 32px;
 	width: 100%;
 	color: #212529;
+	overflow-x: auto;
 }
 
 table thead tr th {
