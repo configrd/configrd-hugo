@@ -20,7 +20,7 @@ Running configrd requires a bootstrap configuration on start in the form of a ya
 
 The default configuration loaded by configrd when no specific configrd.yaml file is provided on start looks as follows:
 
-{{< code file="configrd.yaml" >}}
+{{< code-yaml file="configrd.yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -28,7 +28,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-{{< /code >}}
+{{< /code-yaml >}}
 
 The above configrd.yaml states:
 
@@ -99,7 +99,7 @@ This example employs the one repository per application pattern. Environments ha
 
 The below configrd.yaml file assumes the following directory structure in order to achieve the desired inheritance behavior.
 
-{{< code file="sample directory structure" >}}
+{{< code-yaml file="sample directory structure" >}}
 srv/
 └── configrd/
     └── apps/
@@ -118,9 +118,9 @@ srv/
                     ├── default.properties
                     └── stage/
                         └── default.properties
-{{< /code >}}
+{{< /code-yaml >}}
 
-{{< code file="configrd.yaml" >}}
+{{< code-yaml file="configrd.yaml" >}}
 service:
  repos:
     myapp:
@@ -134,7 +134,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code >}}
+{{< /code-yaml >}}
 
 The above file based repository named **myapp** has the following configuration:
 
@@ -173,7 +173,7 @@ This example is modeled using one environment per repository pattern. Accessing 
 
 The below configrd.yaml file assumes the following path structure in order to achieve the desired inheritance behavior.
 
-{{< code-plain >}}
+{{< code-plain-yaml >}}
 srv/
 └── configrd/
     └── apps/
@@ -192,9 +192,9 @@ srv/
                     ├── env.yaml
                     └── stage/
                         └── env.yaml
-{{< /code-plain >}}
+{{< /code-plain-yaml >}}
 
-{{< code-plain >}}
+{{< code-plain-yaml >}}
 service:
  repos:
     myapp:
@@ -208,5 +208,5 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code-plain >}}
+{{< /code-plain-yaml >}}
 

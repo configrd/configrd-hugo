@@ -121,7 +121,7 @@ curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json
 
 Plain text response
 
-```text
+{{< code-plain-markup >}}
 property.3=simple
 log.root.level=DEBUG
 array.named2.value4.sub=true
@@ -136,7 +136,7 @@ array.named[1]=value2
 property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
 array.named2.value6.sub=value
 array.named2.value5.sub=5
-```
+{{< /code-plain-markup >}}
 {% endtab %}
 
 {% tab title="from yaml" %}
@@ -148,7 +148,7 @@ curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/yaml
 
 Plain text response
 
-```text
+{{< code-plain-markup >}}
 property.3=simple
 log.root.level=DEBUG
 array.named2.value4.sub=true
@@ -163,7 +163,7 @@ array.named[1]=value2
 property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
 array.named2.value6.sub=value
 array.named2.value5.sub=5
-```
+{{< /code-plain-markup >}}
 {% endtab %}
 {% endtabs %}
 
