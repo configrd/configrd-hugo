@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "concepts"
     weight: 09
-weight: 1
+weight: 130
 sections_weight: 09
 slug:
 aliases: [/concepts/secrets/]

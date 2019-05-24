@@ -5,7 +5,7 @@ layout: single
 menu:
   sidebar:
     weight: 01
-weight: 01
+weight: 220
 sections_weight: 01
 slug:
 aliases: [/index.html/]

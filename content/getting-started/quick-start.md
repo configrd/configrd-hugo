@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "getting-started"
     weight: 02
-weight: 100
+weight: 210
 sections_weight: 02
 slug:
 aliases: [/getting-started/quick-start/]

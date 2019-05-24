@@ -4,7 +4,7 @@ menu:
   sidebar:
     parent: "setup"
     weight: 04
-weight: 04
+weight: 180
 sections_weight: 04
 slug:
 aliases: [/setup/configure/]

@@ -1,6 +1,7 @@
 ---
 title: Setup
 description: Configrd is distributed as a docker image and an executable java jar
+weight: 200
 ---
 
 To run configrd, you'll need the following

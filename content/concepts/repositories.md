@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "concepts"
     weight: 07
-weight: 07
+weight: 150
 sections_weight: 07
 slug:
 aliases: [/concepts/repositories/]

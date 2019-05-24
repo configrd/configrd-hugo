@@ -4,7 +4,7 @@ menu:
   sidebar:
     parent: "concepts"
     weight: 12
-weight: 1
+weight: 100
 sections_weight: 12
 slug:
 aliases: [/concepts/templates/]

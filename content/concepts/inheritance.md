@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "concepts"
     weight: 08
-weight: 08
+weight: 140
 sections_weight: 08
 slug:
 aliases: [/concepts/inheritance/]

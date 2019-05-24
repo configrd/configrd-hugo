@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "api-reference"
     weight: 06
-weight: 06
+weight: 160
 sections_weight: 06
 slug:
 aliases: [/api-reference/variables/]

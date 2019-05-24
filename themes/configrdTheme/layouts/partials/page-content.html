@@ -1,169 +1,29 @@
-<!-- <section class="page-content">
+<section class="page-content">
   <div class="contentAndRightSidebar">
     <div class="page-wrapper">
       <div class="h1-wrapper">
         <div class="oneRow">
           <div class="wrapper">
             <h1>
-              <span class="heading-text">About</span>
+              <span class="heading-text">{{ .Title }}</span>
             </h1>
           </div>
           {{ partial "mobile-right-sidebar-button.html" . }}
         </div>
         <div class="additional-text">
           <span class="regularText color-gray">
-            Sync configurations such as environment variables, application properties and secrets across build pipelines, services and environments.
+            {{.Description}}
           </span>
         </div>
       </div>
 
       {{ partial "mobile-right-sidebar.html" . }}
 
-      <h2 id="why-configrd">
-        <span>Why Configrd</span>
-        <a href="#why-configrd" class="anchor">
-          <span class="svg-wrapper">
-            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
-              <g>
-                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-              </g>
-            </svg>
-          </span>
-        </a>
-      </h2>
-
-      <ul class="list">
-        <li>
-          <p class="regularParagraph"><span class="regularText">It automatically keeps your local development environment up to date with environment variable changes</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">It keeps all our environments consistent thanks to configuration inheritance</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">You only have to maintain values that differ between environments</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Is a common place to secure, manage, version and pull environment variables from across build pipelines, services, environments and even tech stacks</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Encrypt/decrypt secrets on the fly and keep the rest plaintext for easy access and management</span></p>
-        </li>
-      </ul>
-
-      <p class="regularParagraph">
-        <span class="regularText">
-          With <strong>configrd</strong>  engineers, devops or infosec can access, manage and secure environmnt variables from anywhere in multiple formats such as key-value, json and yaml.
-        </span>
-      </p>
-
-      <p class="regularParagraph">
-        <span class="regularText">
-          Variables can be sourced, secured and stored to and from git, file systems, http/s  or AWS S3.
-        </span>
-      </p>
-
-      <p class="regularParagraph">
-        <span class="regularText">
-          Configrd deploys on-prem as a micro service alongside your apps and infrastructure to serve configurations on demand.
-        </span>
-      </p>
-
-      <h3 id="for-engineers">
-        <span>For Engineers</span>
-        <a href="#for-engineers" class="anchor">
-          <span class="svg-wrapper">
-            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg>
-          </span>
-        </a>
-      </h3>
-
-      <ul class="list">
-        <li>
-          <p class="regularParagraph"><span class="regularText">Always keep your local development environment up to date</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Access plaintext values & secrets from the same place and in the same way</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Quickly and easily switch between config profiles for development, testing or debugging purposes</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Use all the same tools you already know and love. I.e. store configs to yaml file in git, make updates using VSCode, Vim etc</span></p>
-        </li>
-      </ul>
-
-      <h3 id="for-ci-cd-pipelines">
-        <span>For CI/CD Pipelines</span>
-        <a href="#for-ci-cd-pipelines" class="anchor">
-          <span class="svg-wrapper">
-            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg>
-          </span>
-        </a>
-      </h3>
-
-      <ul class="list">
-        <li>
-          <p class="regularParagraph"><span class="regularText">Keep environment variables and secrets external to CI/CD tools and platforms</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Pass more builds thanks to fewer out of date or missing config values</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Manage, secure and access environment variables in a consistent fashion at development, build, test, deploy and run-time</span></p>
-        </li>
-      </ul>
-
-      <h3 id="for-containers"><span>For Containers</span>
-        <a href="#for-containers" class="anchor">
-          <span class="svg-wrapper">
-            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg>
-          </span>
-        </a>
-      </h3>
-
-      <ul class="list">
-        <li>
-          <p class="regularParagraph"><span class="regularText">Build and promote a single reusable image between environments thanks to externalized configurations</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Pass values via ENV at container start, pull config values via script or directly from application at boot</span></p>
-        </li>
-      </ul>
-
-      <h3 id="for-devops-and-infosec">
-        <span>For DevOps and InfoSec</span>
-        <a href="#for-devops-and-infosec" class="anchor">
-          <span class="svg-wrapper">
-            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg>
-          </span>
-        </a>
-      </h3>
-
-      <ul class="list">
-        <li>
-          <p class="regularParagraph"><span class="regularText">Single source of truth for all environment variables and application properties</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Manage config values in a common but flexible hierarchy across different tech stacks, platforms and tools</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Fight configuration drift</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Collaborate with application engineers to keep environment settings up to date</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Reduce or even eliminate duplicate/redundant configs within and across environments</span></p>
-        </li>
-        <li>
-          <p class="regularParagraph"><span class="regularText">Globally enforce encryption of secrets, manage keys through services such as AWS KMS, store values anywhere (i.e. git) and however (i.e. json) you like</span></p>
-        </li>
-      </ul>
+      {{ .Content }}
 
       {{ partial "page-navigation.html" . }}
       
     </div>
     {{ partial "right-sidebar.html" . }}
   </div>
-</section> -->
+</section>

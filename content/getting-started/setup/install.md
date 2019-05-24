@@ -5,7 +5,7 @@ menu:
   sidebar:
     parent: "setup"
     weight: 03
-weight: 03
+weight: 190
 sections_weight: 03
 slug:
 aliases: [/setup/install]
