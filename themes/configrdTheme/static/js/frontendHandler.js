@@ -1,4 +1,49 @@
 $(document).ready(function() {
+  
+  var current = location.pathname;
+  $('.level-2 > a').each(function(){
+    var $this = $(this);
+    // if the current path is like this link, make it active
+    if($this.attr('href').indexOf(current) !== -1 && $this.attr('href').indexOf(current) > 1){
+      //alert($this.attr('href').indexOf(current));
+      $this.addClass('active');
+      $('.level-2 #setupSubitems').addClass('show');
+    }
+  })
+  
+  var windowOrigin = window.location.href.split("#")[0];
+  var SvgIcon = '<svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path class="st0" d="M15,7h3c2.8,0,5,2.2,5,5s-2.2,5-5,5h-3 M9,17H6c-2.8,0-5-2.2-5-5s2.2-5,5-5h3"></path><line class="st0" x1="8" y1="12" x2="16" y2="12"></line></g></svg>';
+  $('.page-wrapper').find('h2[id]').each(function () {
+    $(this).append(' <a href="'+ windowOrigin + '/#' + $(this).attr('id') +'" class="anchor"><span class="svg-wrapper">' + SvgIcon + '</span></a>');
+  });
+
+  $('.page-wrapper').find('h3[id]').each(function () {
+    $(this).append(' <a href="'+ windowOrigin + '/#' + $(this).attr('id') +'" class="anchor"><span class="svg-wrapper">' + SvgIcon + '</span></a>');
+  });
+
+  $('.page-wrapper').find('h4[id]').each(function () {
+    $(this).append(' <a href="'+ windowOrigin + '/#' + $(this).attr('id') +'" class="anchor"><span class="svg-wrapper">' + SvgIcon + '</span></a>');
+  });
+
+  $('.page-wrapper').find('h5[id]').each(function () {
+    $(this).append(' <a href="'+ windowOrigin + '/#' + $(this).attr('id') +'" class="anchor"><span class="svg-wrapper">' + SvgIcon + '</span></a>');
+  });
+
+  $('.page-wrapper').find('h6[id]').each(function () {
+    $(this).append(' <a href="'+ windowOrigin + '/#' + $(this).attr('id') +'" class="anchor"><span class="svg-wrapper">' + SvgIcon + '</span></a>');
+  });
+
+  $(window).scroll(function() {
+    $(":header").each(function() {
+      if ($(window).scrollTop() >= $(this).offset().top) {
+        var id = $(this).attr('id');
+        $('.anchorsNavigationList a').removeClass('active');
+        $('.anchorsNavigationList a[href="#' + id + '"]').addClass('active');
+      }
+    });
+  });
+
+
   // Setting position for mobileAnchorsNavigation
   function mobileAnchorsNavigation(isShow) {
     if ($(".mobileContentsBox").length) {

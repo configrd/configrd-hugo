@@ -1,12 +1,12 @@
 {{ define "main"}}
 <div class="pageFlex">
 	<div class="contentBox">
-    <div class="overlayLayout" role="presentation"></div>
-  	{{ partial "navigation.html" . }}
-    {{ partial "page-content.html" . }}  
-  </div>
+		<div class="overlayLayout" role="presentation"></div>
+		{{ partial "navigation.html" . }}
+		{{ partial "page-content" . }}  
+	</div>
 	<div class="searchBarOverlay" role="presentation">
-    {{ partial "search-bar.html" . }}
+		{{ partial "search-bar.html" . }}
   </div>
 </div>
 {{ end }}

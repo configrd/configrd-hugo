@@ -5,6 +5,7 @@ menu:
   sidebar:
     parent: "setup"
     weight: 03
+    identifier: "install"
 weight: 190
 sections_weight: 03
 slug:

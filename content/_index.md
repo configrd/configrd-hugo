@@ -1,7 +1,6 @@
 ---
 title: About
 description: Sync configurations such as environment variables, application properties and secrets across build pipelines, services and environments.
-layout: single
 menu:
   sidebar:
     weight: 01

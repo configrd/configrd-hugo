@@ -174,3 +174,30 @@ ul.task-list li label {
 ul.task-list li label .task-list-item {
 	margin-right: 5px;
 }
+
+
+
+
+h2 a {
+	display: none;
+
+}
+
+h2:hover a {
+  display: block;
+}
+
+#TableOfContents a::before {
+    left: 0px;
+    height: 29px;
+    content: " ";
+    position: absolute;
+}
+
+#TableOfContents a.active::before  {
+    border-left: 2px solid;
+}
+
+#TableOfContents a.active {
+    color: #3884ff;
+}

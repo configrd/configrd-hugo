@@ -68,24 +68,26 @@
                                   {{- if .HasChildren }}
                                   <div class="{{ .Identifier }}">
                                     {{- range .Children }}
-                                      {{- if .HasChildren }}                               
-                                        <a href="{{ .URL }}" class="navigationLink {{if or ($currentPage.IsMenuCurrent "sidebar" .) }} active {{end}}" data-target=".{{ .Identifier }}">
-                                          <span class="navigationLinkTitle">{{ .Name }}</span>
-                                          <span class="navigationLinkIcon" data-toggle="collapse" href="#setupSubitems" role="button" aria-expanded="false" aria-controls="setupSubitems">
-                                            <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><polyline class="st0" points="10,18 15,12 10,6"></polyline></g></svg>
-                                          </span>
-                                        </a>
-                                        <div class="collapse {{if or ($currentPage.IsMenuCurrent "sidebar" .) ($currentPage.HasMenuCurrent "sidebar" .) }} show {{end}}" id="setupSubitems">
-                                          <div class="navigationItem subitem">
-                                            <div class="itemWrapp">
-                                              {{- range .Children }}                
-                                                <a href="{{.URL}}" class="navigationLink {{if or ($currentPage.IsMenuCurrent "sidebar" .) ($currentPage.HasMenuCurrent "sidebar" .) }} active {{end}}">
-                                                  <span class="navigationLinkTitle">{{ .Name }}</span>
-                                                </a>                                   
-                                              {{- end}}
+                                      {{- if .HasChildren }}
+                                        <div class="level-2">                            
+                                          <a href="{{ .URL }}" class="navigationLink {{if or ($currentPage.IsMenuCurrent "sidebar" .) }} active {{end}}" data-target=".{{ .Identifier }}">
+                                            <span class="navigationLinkTitle">{{ .Name }}</span>
+                                            <span class="navigationLinkIcon" data-toggle="collapse" href="#setupSubitems" role="button" aria-expanded="false" aria-controls="setupSubitems">
+                                              <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><polyline class="st0" points="10,18 15,12 10,6"></polyline></g></svg>
+                                            </span>
+                                          </a>
+                                          <div class="collapse {{if or ($currentPage.IsMenuCurrent "sidebar" .) ($currentPage.HasMenuCurrent "sidebar" .) }} show {{end}}" id="setupSubitems">
+                                            <div class="navigationItem subitem">
+                                              <div class="itemWrapp">
+                                                {{- range .Children }}                
+                                                  <a href="{{.URL}}" class="navigationLink {{if or ($currentPage.IsMenuCurrent "sidebar" .) ($currentPage.HasMenuCurrent "sidebar" .) }} active {{end}}">
+                                                    <span class="navigationLinkTitle">{{ .Name }}</span>
+                                                  </a>                                   
+                                                {{- end}}
+                                              </div>
                                             </div>
                                           </div>
-                                        </div>                                      
+                                        </div>                                    
                                       {{- else }}                                        
                                         <a href="{{.URL}}" class="navigationLink {{if or ($currentPage.IsMenuCurrent "sidebar" .) ($currentPage.HasMenuCurrent "sidebar" .) }} active {{end}}">
                                           <span class="navigationLinkTitle">{{ .Name }}</span>

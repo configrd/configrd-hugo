@@ -6,22 +6,17 @@
         <div class="anchorsNavigationWrapper">
           <div class="anchorsNavigationListWrapper">
             <div class="anchorsNavigationList">
-                <div class="rightSidebarHeaderWrapper">
-                  <div class="rightSidebarHeaderIcon">
-                    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></g></svg>
-                  </div>
-                  {{ if .Params.toc }}
-                  <div class="rightSidebarHeaderTitle">
-                    <span class="rightSidebarHeaderTitleText">Contents</span>
-                  </div>
+              <div class="rightSidebarHeaderWrapper">
+              {{ if .Params.toc }}
+                <div class="rightSidebarHeaderIcon">
+                  <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="21" y1="10" x2="7" y2="10"></line><line x1="21" y1="6" x2="3" y2="6"></line><line x1="21" y1="14" x2="3" y2="14"></line><line x1="21" y1="18" x2="7" y2="18"></line></g></svg>
+                </div>                
+                <div class="rightSidebarHeaderTitle">
+                  <span class="rightSidebarHeaderTitleText">Contents</span>
                 </div>
-                {{ .TableOfContents }}
-                {{ end }}
-                {{- if .Params.godocref -}}
-                <a target="_blank" class="tooltip right godoc-link" data-tooltip="See the related Godocs for {{.Title }}" href="{{.Params.godocref}}" >
-                </a>
-                {{- end -}}
-                
+              </div>
+              {{ .TableOfContents }}
+              {{ end }}                
             </div>
           </div>
         </div>
