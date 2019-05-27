@@ -111,58 +111,59 @@ When requesting a json or yaml source file, the variable names/keys will be flat
 
 **Samples**
 
-{{% tabs %}}
-{{% tab "from json" %}}
+{{< tabs >}}
+	{{% tab "from json" %}}
 
 Render a [default.json file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/json/default.json) as plain text
 
-{{% inline-code-blocks-json %}}
-curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-{{% /inline-code-blocks-json %}}
+	{{% inline-code-blocks-json %}}
+	curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
+	{{% /inline-code-blocks-json %}}
 
-{{% code-plain-markup %}}
-property.3=simple
-log.root.level=DEBUG
-array.named2.value4.sub=true
-array.named[0]=value1
-bonus.1.property=bonus2
-property.4.name=simple-${property.3.name}
-property.1.name=simple
-array.named[2]=value3
-property.5.name=classpath
-property.2.name=value2
-array.named[1]=value2
-property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
-array.named2.value6.sub=value
-array.named2.value5.sub=5
-{{% /code-plain-markup %}}
+	{{% code-plain-markup %}}
+	property.3=simple
+	log.root.level=DEBUG
+	array.named2.value4.sub=true
+	array.named[0]=value1
+	bonus.1.property=bonus2
+	property.4.name=simple-${property.3.name}
+	property.1.name=simple
+	array.named[2]=value3
+	property.5.name=classpath
+	property.2.name=value2
+	array.named[1]=value2
+	property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
+	array.named2.value6.sub=value
+	array.named2.value5.sub=5
+	{{% /code-plain-markup %}}
 
-{{% /tab %}}
+	{{% /tab %}}
 
-{{% tab "from yaml" %}}
+	{{% tab "from yaml" %}}
+	
 Render a [default.yaml file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/yaml/default.yaml) as plain text
 
-{{% inline-code-blocks %}}
-curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/yaml/default.yaml
-{{% /inline-code-blocks %}}
+	{{% inline-code-blocks %}}
+	curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/yaml/default.yaml
+	{{% /inline-code-blocks %}}
 
-{{% code-plain-markup %}}
-property.3=simple
-log.root.level=DEBUG
-array.named2.value4.sub=true
-array.named[0]=value1
-bonus.1.property=bonus2
-property.4.name=simple-${property.3.name}
-property.1.name=simple
-array.named[2]=value3
-property.5.name=classpath
-property.2.name=value2
-array.named[1]=value2
-property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
-array.named2.value6.sub=value
-array.named2.value5.sub=5
-{{% /code-plain-markup %}}
+	{{% code-plain-markup %}}
+	property.3=simple
+	log.root.level=DEBUG
+	array.named2.value4.sub=true
+	array.named[0]=value1
+	bonus.1.property=bonus2
+	property.4.name=simple-${property.3.name}
+	property.1.name=simple
+	array.named[2]=value3
+	property.5.name=classpath
+	property.2.name=value2
+	array.named[1]=value2
+	property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
+	array.named2.value6.sub=value
+	array.named2.value5.sub=5
+	{{% /code-plain-markup %}}
 
-{{% /tab %}}
-{{% /tabs %}}
+	{{% /tab %}}
+{{< /tabs >}}
 

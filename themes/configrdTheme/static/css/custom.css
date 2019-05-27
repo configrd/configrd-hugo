@@ -212,6 +212,7 @@ h2:hover a {
 	font-weight: 500;
 	padding: .5rem 1rem;
 	margin-bottom: -1px;	
+  z-index: 10;
 	-o-transition: color 250ms ease-out;
 	transition: color 250ms ease-out;
 	-moz-transition: color 250ms ease-out;
@@ -262,4 +263,27 @@ h2:hover a {
 	border-top: none;
 	padding: 24px 24px 0px;
 	border-radius: 0px 3px 3px;
+}
+
+.variablesApi .variablesApi-contentWrapper .variablesApi-ParametersList {
+  border-bottom: 1px solid #e6ecf1;
+}
+
+.variablesApi .variablesApi-contentWrapper .variablesApi-ParametersList.response {
+  border-bottom: none;
+  margin-bottom: 5px;
+}
+
+.tab-pane .variablesApi-ParametersList p {
+  margin-bottom: 0;
+}
+
+.variablesApi .variablesApi-contentWrapper p {
+  margin-bottom: 0;
+  color: #74818d;
+  line-height: 1.1;
+}
+
+span.required {
+  color: #FF4642;
 }

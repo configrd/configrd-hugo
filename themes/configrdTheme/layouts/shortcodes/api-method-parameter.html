@@ -1,0 +1,25 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="variablesApi-ParametersRow">
+  <div class="ParameterCell-name">
+    <div class="ParameterValue-name">
+      <span class="regularText">{{ .Get "name" }}</span>
+    </div>
+    <div class="ParameterValue-requirement">
+      {{ if .Get "required" }}
+      <span class="required">{{ .Get "required" }}</span>
+      {{ else }}
+      <span class="optional">{{ .Get "optional" }}</span>
+      {{ end }}
+    </div>
+  </div>
+  <div class="ParameterCell-type">
+    <div class="ParameterValue-type">{{ .Get "type" }}</div>
+  </div>
+  <div class="ParameterCell-description">
+    <div class="ParameterValue-description">
+      <span>
+        <span>{{ .Inner }}</span>
+      </span>
+    </div>
+  </div>
+</div>

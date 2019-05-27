@@ -1,0 +1,10 @@
+{{ $_hugo_config := `{ "version": 1 }` }}
+<div class="variablesApi-ParametersList response">
+	<div class="variablesApi-ResponseTitle">
+    <div class="responseCode">
+      <span class="responseCode-colorIndicator response-success"></span>
+      <span class="responseCode-shortDescription regularText">{{ .Get "heading" }}</span>
+    </div>
+  </div>
+  {{ .Inner }}
+</div>
