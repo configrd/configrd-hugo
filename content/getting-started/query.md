@@ -87,9 +87,9 @@ File names must have a suffix. Files without a suffix such as just **env** will 
 
 Query the default repository for **default.json** files starting at the `/env/dev/json/` config profile even though the default file name setting in the **configrd.yaml** is **default.properties**.
 
-{{< inline-code-blocks-jason >}}
+{{< inline-code-blocks-json >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-{{< /inline-code-blocks-jason >}}
+{{< /inline-code-blocks-json >}}
 
 ## Response Content Types
 
@@ -111,17 +111,16 @@ When requesting a json or yaml source file, the variable names/keys will be flat
 
 **Samples**
 
-{% tabs %}
-{% tab title="from json" %}
+{{% tabs %}}
+{{% tab "from json" %}}
+
 Render a [default.json file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/json/default.json) as plain text
 
-{{< inline-code-blocks-jason >}}
+{{% inline-code-blocks-json %}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-{{< /inline-code-blocks-jason >}}
+{{% /inline-code-blocks-json %}}
 
-Plain text response
-
-{{< code-plain-markup >}}
+{{% code-plain-markup %}}
 property.3=simple
 log.root.level=DEBUG
 array.named2.value4.sub=true
@@ -136,19 +135,18 @@ array.named[1]=value2
 property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
 array.named2.value6.sub=value
 array.named2.value5.sub=5
-{{< /code-plain-markup >}}
-{% endtab %}
+{{% /code-plain-markup %}}
 
-{% tab title="from yaml" %}
+{{% /tab %}}
+
+{{% tab "from yaml" %}}
 Render a [default.yaml file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/yaml/default.yaml) as plain text
 
-{{< inline-code-blocks-jason >}}
+{{% inline-code-blocks %}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/yaml/default.yaml
-{{< /inline-code-blocks-jason >}}
+{{% /inline-code-blocks %}}
 
-Plain text response
-
-{{< code-plain-markup >}}
+{{% code-plain-markup %}}
 property.3=simple
 log.root.level=DEBUG
 array.named2.value4.sub=true
@@ -163,12 +161,8 @@ array.named[1]=value2
 property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
 array.named2.value6.sub=value
 array.named2.value5.sub=5
-{{< /code-plain-markup >}}
-{% endtab %}
-{% endtabs %}
+{{% /code-plain-markup %}}
 
-
-
-
-
+{{% /tab %}}
+{{% /tabs %}}
 

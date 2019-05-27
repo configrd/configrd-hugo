@@ -175,12 +175,8 @@ ul.task-list li label .task-list-item {
 	margin-right: 5px;
 }
 
-
-
-
 h2 a {
 	display: none;
-
 }
 
 h2:hover a {
@@ -188,16 +184,82 @@ h2:hover a {
 }
 
 #TableOfContents a::before {
-    left: 0px;
-    height: 29px;
-    content: " ";
-    position: absolute;
+  left: 0px;
+  height: 29px;
+  content: " ";
+  position: absolute;
 }
 
 #TableOfContents a.active::before  {
-    border-left: 2px solid;
+  border-left: 2px solid;
 }
 
 #TableOfContents a.active {
-    color: #3884ff;
+  color: #3884ff;
+}
+
+.code-tabs .nav {
+	border-bottom: 1px solid #dee2e6;
+}
+
+.code-tabs .nav li {
+	border-radius: 0px;
+	color: #9DAAB6;
+	background-color: #F5F7F9;
+	border: 1px solid #e6ecf1;
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 500;
+	padding: .5rem 1rem;
+	margin-bottom: -1px;	
+	-o-transition: color 250ms ease-out;
+	transition: color 250ms ease-out;
+	-moz-transition: color 250ms ease-out;
+	-webkit-transition: color 250ms ease-out;
+}
+
+.code-tabs .nav li a {
+	color: #9DAAB6;
+	font-size: 14px;
+	line-height: 1.5;
+	font-weight: 500;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	text-decoration: none;
+}
+
+.code-tabs .nav li:first-child {
+	border-top-left-radius: 3px;
+}
+
+.code-tabs .nav li:last-child {
+	border-top-left-radius: 3px;
+}
+
+.code-tabs .nav li.active {
+	color: #242A31;
+	background-color: #fff;
+	border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.code-tabs .nav li.active a {
+	color: #242A31;
+}
+
+.code-tabs p {
+	margin-bottom: 0;
+}
+
+.code-tabs .tab-pane p {
+	margin-bottom: 24px;
+}
+
+.code-tabs .tab-content .tab-pane {
+	margin: 0px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #e6ecf1;
+	border-top: none;
+	padding: 24px 24px 0px;
+	border-radius: 0px 3px 3px;
 }
