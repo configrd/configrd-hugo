@@ -48,7 +48,7 @@ Different repositories are queried by specifying the r query parameter. The spec
 
   {{% tab "Responce" %}}
     {{% api-method %}}
-      {{% api-method-headers-response name="success" heading="200: OK" %}}
+      {{% api-method-headers-response name="success" title="200: OK" %}}
       {{% /api-method-headers-response %}}
 
 Variables successfully fetched
@@ -58,12 +58,13 @@ Variables successfully fetched
       `...`
       {{% /code-plain-yaml %}}
 
-      {{% api-method-headers-response name="fail" heading="404: Not Found" %}}
+      {{% api-method-headers-response name="fail" title="404: Not Found" %}}
       {{% /api-method-headers-response %}}
 
 Query returned no results. Could be result of no variable values being defined at the requested config profile or the repository may not exist.
 
       {{% code-plain-yaml %}}
+
       
 
       {{% /code-plain-yaml %}}

@@ -2,8 +2,8 @@
 <div class="variablesApi-ParametersList response">
 	<div class="variablesApi-ResponseTitle">
     <div class="responseCode">
-      <span class="responseCode-colorIndicator response-success"></span>
-      <span class="responseCode-shortDescription regularText">{{ .Get "heading" }}</span>
+      <span class="responseCode-colorIndicator response-{{ .Get "name" }}"></span>
+      <span class="responseCode-shortDescription regularText">{{ .Get "title" }}</span>
     </div>
   </div>
   {{ .Inner }}
