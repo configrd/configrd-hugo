@@ -7,6 +7,8 @@ menu:
     weight: 06
 weight: 160
 sections_weight: 06
+tags: ["Tag1", "Tag2", "Tag3"]
+tags_weight: 22
 slug:
 aliases: [/api-reference/variables/]
 ---

@@ -7,6 +7,8 @@ menu:
     weight: 02
 weight: 210
 sections_weight: 02
+tags: ["Tag1", "Tag2", "Tag3"]
+tags_weight: 22
 slug:
 aliases: [/getting-started/quick-start/]
 ---

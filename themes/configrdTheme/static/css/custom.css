@@ -269,7 +269,7 @@ h2:hover a {
   border-bottom: 1px solid #e6ecf1;
 }
 
-.variablesApi .variablesApi-contentWrapper .variablesApi-ParametersList.response {
+.variablesApi .variablesApi-contentWrapper .response .variablesApi-ParametersList {
   border-bottom: none;
   margin-bottom: 5px;
 }
@@ -282,8 +282,27 @@ h2:hover a {
   margin-bottom: 0;
   color: #74818d;
   line-height: 1.4;
+  font-size: 15px;
+}
+
+.variablesApi .variablesApi-contentWrapper .response p {
+  font-size: 16px;
 }
 
 span.required {
   color: #FF4642;
+}
+
+#tags {
+  margin-top: 5px;
+}
+
+#tags .title {
+  font-size: 15px;
+}
+
+#tags .tags-link {
+  text-decoration: underline;
+  padding: 0px 5px;
+  font-size: 15px;
 }

@@ -57,3 +57,6 @@ Paginate = 1
 	weight = 300
 	hasChildren = true
 
+[taxonomies]
+  tag = "tags"
+

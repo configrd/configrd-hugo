@@ -1,10 +1,12 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-<div class="variablesApi-ParametersList response">
-	<div class="variablesApi-ResponseTitle">
-    <div class="responseCode">
-      <span class="responseCode-colorIndicator response-{{ .Get "name" }}"></span>
-      <span class="responseCode-shortDescription regularText">{{ .Get "title" }}</span>
+<div class="response">
+  <div class="variablesApi-ParametersList">
+  	<div class="variablesApi-ResponseTitle">
+      <div class="responseCode">
+        <span class="responseCode-colorIndicator response-{{ .Get "name" }}"></span>
+        <span class="responseCode-shortDescription regularText">{{ .Get "title" }}</span>
+      </div>
     </div>
+    {{ .Inner }}
   </div>
-  {{ .Inner }}
 </div>

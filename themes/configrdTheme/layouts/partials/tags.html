@@ -1,0 +1,10 @@
+{{ $taxo := "tags" }} <!-- Use the plural form here -->
+<div id="{{ $taxo }}">
+  <span class="title">Tags:</span>
+  {{ range .Param $taxo }}
+    {{ $name := . }}        
+    {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) -}}
+      <a href="{{ .Permalink }}" class="tags-link">#{{ $name }}</a>
+    {{- end -}}
+  {{- end -}}
+</div>

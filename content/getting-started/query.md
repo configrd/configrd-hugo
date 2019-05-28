@@ -7,6 +7,8 @@ menu:
     weight: 05
 weight: 170
 sections_weight: 05
+tags: ["Tag1", "Tag2", "Tag3"]
+tags_weight: 22
 slug:
 aliases: [/getting-started/query/]
 toc: true

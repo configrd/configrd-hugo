@@ -2,6 +2,8 @@
 title: Setup
 description: Configrd is distributed as a docker image and an executable java jar
 weight: 200
+tags: ["Tag1", "Tag2", "Tag3"]
+tags_weight: 22
 ---
 
 To run configrd, you'll need the following

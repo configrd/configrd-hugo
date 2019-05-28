@@ -9,6 +9,8 @@ weight: 220
 sections_weight: 01
 url: "/"
 toc: true
+tags: ["Tag1", "Tag2", "Tag3"]
+tags_weight: 22
 ---
 
 ## Why Configrd
