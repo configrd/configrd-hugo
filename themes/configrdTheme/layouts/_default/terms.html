@@ -1,0 +1,36 @@
+{{ define "main"}}
+<div class="pageFlex">
+  <div class="contentBox">
+    <div class="overlayLayout" role="presentation"></div>
+    {{ partial "navigation.html" . }}
+    <div class="post-wrapper">
+      <h1 class="pl-4 py-4">Posts</h1>
+      <ul>
+      <!-- Ranges through content/posts/*.md -->
+      {{ range .Pages }}
+        <li class="d-block">
+          <div class="h1-wrapper">
+            <div class="oneRow">
+              <div class="wrapper">
+                <h2>
+                  <span class="heading-text">{{ .Title }}</span>
+                </h2>
+              </div>            
+            </div>
+            <div class="additional-text">
+              <span class="regularText color-gray">
+                {{.Summary}}
+              </span>
+            </div>
+            <a href="{{.Permalink}}" class="float-right">Read More</a>
+          </div>       
+        </li>
+      {{ end }}
+      </ul>
+    </div>
+  </div>
+  <div class="searchBarOverlay" role="presentation">
+    {{ partial "search-bar.html" . }}
+  </div>
+</div>
+{{ end }}
