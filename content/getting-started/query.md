@@ -1,6 +1,7 @@
 ---
 title: Query
 description: Getting environment variables from configrd
+lastmod: 2019-05-27
 menu:
   sidebar:
     parent: "getting-started"

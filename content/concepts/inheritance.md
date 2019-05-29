@@ -1,6 +1,7 @@
 ---
 title: Inheritance
 description: Inheritance allows an environments to reuse the configuration of another environment while still defining its own values.
+lastmod: 2019-05-24
 menu:
   sidebar:
     parent: "concepts"

@@ -1,6 +1,7 @@
 ---
 title: Quick Start
 description: Configrd comes with a default configuration to get up and running quickly
+lastmod: 2019-05-28
 menu:
   sidebar:
     parent: "getting-started"

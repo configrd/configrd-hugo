@@ -1,6 +1,7 @@
 ---
 title: Setup
 description: Configrd is distributed as a docker image and an executable java jar
+lastmod: 2019-05-26
 weight: 200
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22

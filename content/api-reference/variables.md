@@ -1,6 +1,7 @@
 ---
 title: Variables
 description: API for getting variables from configrd
+lastmod: 2019-05-28
 menu:
   sidebar:
     parent: "api-reference"

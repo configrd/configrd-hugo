@@ -1,6 +1,7 @@
 ---
 title: Repositories
 description: Repositories are where configuration values are sourced from
+lastmod: 2019-05-25
 menu:
   sidebar:
     parent: "concepts"

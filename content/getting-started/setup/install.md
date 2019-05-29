@@ -1,6 +1,7 @@
 ---
 title: Install
 description: The easiest way to run configrd
+lastmod: 2019-05-27
 menu:
   sidebar:
     parent: "setup"

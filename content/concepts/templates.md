@@ -1,5 +1,6 @@
 ---
 title: Templates
+lastmod: 2019-05-28
 menu:
   sidebar:
     parent: "concepts"

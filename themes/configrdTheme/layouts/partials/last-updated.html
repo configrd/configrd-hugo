@@ -13,7 +13,29 @@
       </div>
       <div class="editedDate">
         <span class="editedDate-text">
-          <span>Last updated <span id="editedDate-value">13 days ago</span></span>
+          {{ $ageDays := div (sub now.Unix .Lastmod.Unix) 86400 }}
+          {{ $ageMonths := div (sub now.Unix .Lastmod.Unix) 2592000 }}
+
+          <!-- Last updated today -->
+          {{ if eq $ageDays 0 }}
+
+            Last updated today.
+
+          <!-- Last updated in the last 31 days -->
+          {{ else if lt $ageDays 31 }}
+
+            Last updated {{ $ageDays }}
+            {{ cond (eq $ageDays 1) "day" "days"}}
+            ago.
+
+          <!-- Last updated month(s) ago -->
+          {{ else }}
+
+            Last updated {{ $ageMonths }}
+            {{ cond (eq $ageMonths 1) "month" "months" }}
+            ago.
+
+          {{ end }}
         </span>
       </div>
     </div>

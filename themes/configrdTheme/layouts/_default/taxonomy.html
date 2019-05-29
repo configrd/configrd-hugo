@@ -15,9 +15,14 @@
                 <div class="oneRow">
                   <div class="wrapper">
                     <a href="{{.Permalink}}" class="text-decoration-none">
-                      <h2 class="d-inline-block"><span class="heading-text">{{ .Title }}</span></h2>
+                      <h2 class="d-inline-block mb-2"><span class="heading-text">{{ .Title }}</span></h2>
                     </a>
                   </div>            
+                </div>
+                <div class="additional-text mb-2">
+                  <span class="regularText color-gray">
+                    {{.Summary}}
+                  </span>
                 </div>
                 <a href="{{.Permalink}}" class="float-right">Read More</a>
               </div>       

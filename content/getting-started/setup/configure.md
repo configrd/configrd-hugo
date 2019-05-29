@@ -1,5 +1,6 @@
 ---
 title: Configure
+lastmod: 2019-05-26
 menu:
   sidebar:
     parent: "setup"
