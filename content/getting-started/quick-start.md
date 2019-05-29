@@ -12,6 +12,7 @@ tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
 slug:
 aliases: [/getting-started/quick-start/]
+toc: false
 ---
 
 ## Pull & Run

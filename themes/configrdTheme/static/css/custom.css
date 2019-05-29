@@ -82,6 +82,7 @@ table tbody tr td {
 
 #TableOfContents > ul {
 	padding-left: 0;
+	margin-bottom: 0;
 }
 
 #TableOfContents > ul li > ul {

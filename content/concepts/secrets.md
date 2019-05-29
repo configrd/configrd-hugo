@@ -1,6 +1,5 @@
 ---
 title: Secrets
-description: Managing secrets alongside your configurations
 lastmod: 2019-05-21
 menu:
   sidebar:

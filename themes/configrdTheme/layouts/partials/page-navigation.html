@@ -1,10 +1,10 @@
 <section class="pageFooter">
   {{ if or .Prev .Next }}
-    <div class="navigationLinks">
+    <div class="navigationLinks flex-column flex-md-row">
       {{if .Prev}}
       <a class="linkPrevious" href="{{.Prev.URL}}">
         <div class="linkIcon">
-          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line class="st0" x1="19" y1="12" x2="5" y2="12"></line><polyline class="st0" points="12,19 5,12 12,5 "></polyline></g></svg>
+          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line class="st0" x1="19" y1="12" x2="5" y2="12"></line><polyline class="st0" points="12,19 5,12 12,5 "></polyline></g></svg>
         </div>
         <div class="linkBody text-right">
           <div class="linkTitle">
@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="linkIcon">
-          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
+          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
         </div>
       </a>
       {{end}}
