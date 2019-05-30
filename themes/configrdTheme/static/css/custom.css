@@ -32,13 +32,9 @@
 	background-color: #F5F7F9;
 	box-decoration-break: clone;
 	-webkit-box-decoration-break: clone;
-	-ms-word-break: break-all;
-	word-break: break-all;
+	-ms-word-break: break-word;
+	word-break: break-word;
 	color: #3B454E;
-}
-
-.page-wrapper p code {
-	line-height: 1em;
 }
 
 table {
@@ -127,12 +123,20 @@ table tbody tr td {
 	display: none;
 }
 
-blockquote.quote .quote-text p {
-	font-size: 16px;
-	line-height: 1.625;
-	font-weight: 400;
-	color: #74818d;
-	position: relative;
+.page-wrapper blockquote {
+  color: #74818d;
+  margin: 24px 0px;
+  padding: 0px 0px 0px 12px;
+  border-left: 4px solid #e6ecf1;
+}
+
+.page-wrapper blockquote p {
+  color: #74818d;
+  position: relative;
+  margin: 0px 0px 24px;
+  font-size: 16px;
+  line-height: 1.625;
+  font-weight: 400;
 }
 
 .imageContainer figure.imageFigure p {
@@ -144,10 +148,6 @@ blockquote.quote .quote-text p {
 	display: block;
 	max-width: 100%;
 	max-height: 60vh;
-}
-
-iframe {
-	padding-bottom: 24px;
 }
 
 .buttonBox .buttonDownload .buttonSubTitleText p {
@@ -295,7 +295,9 @@ span.required {
 }
 
 #tags {
-  margin-top: 5px;
+  margin-top: 64px;
+  border-bottom: 2px solid #e6ecf1;
+  padding-bottom: 24px;
 }
 
 #tags .title {

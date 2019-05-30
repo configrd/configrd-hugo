@@ -7,10 +7,8 @@ menu:
     parent: "concepts"
     weight: 08
 weight: 140
-sections_weight: 08
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
-slug:
 aliases: [/concepts/inheritance/]
 ---
 
@@ -61,7 +59,6 @@ The above is a simple example how config profiles both inherit and override a pa
 
 Global environment variables can be defined and shared across config profiles by simply placing them at the root of the folder hierarchy. Different tiers in the folder hierarchy can signify global, service, environment, data center specific etc. config profiles. Each tier will only need to contain variables and values it wishes to either add or override as all others will be inherited.
 
-{{% blockquote %}}
-This example does not cover additionally available features such as on the fly encryption/decryption of secrets, named config profiles for direct access, variable and value transformation, secured repositories or variable templating.
-{{% /blockquote %}}
+
+>This example does not cover additionally available features such as on the fly encryption/decryption of secrets, named config profiles for direct access, variable and value transformation, secured repositories or variable templating.
 

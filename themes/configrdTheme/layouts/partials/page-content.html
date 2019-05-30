@@ -10,8 +10,6 @@
           </div>
           {{ partial "mobile-right-sidebar-button.html" . }}
         </div>
-
-        {{ partial "tags.html" . }}
         
         <div class="additional-text">
           <span class="regularText color-gray">
@@ -23,6 +21,8 @@
       {{ partial "mobile-right-sidebar.html" . }}
 
       {{ .Content }}
+
+      {{ partial "tags.html" . }}
 
       {{ partial "page-navigation.html" . }}
       

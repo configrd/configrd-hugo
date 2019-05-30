@@ -7,10 +7,8 @@ menu:
     parent: "concepts"
     weight: 07
 weight: 150
-sections_weight: 07
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
-slug:
 aliases: [/concepts/repositories/]
 ---
 

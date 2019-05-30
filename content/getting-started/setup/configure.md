@@ -6,10 +6,8 @@ menu:
     parent: "setup"
     weight: 04
 weight: 180
-sections_weight: 04
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
-slug:
 aliases: [/setup/configure/]
 toc: true
 ---

@@ -8,10 +8,8 @@ menu:
     weight: 03
     identifier: "install"
 weight: 190
-sections_weight: 03
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
-slug:
 aliases: [/setup/install]
 toc: true
 ---

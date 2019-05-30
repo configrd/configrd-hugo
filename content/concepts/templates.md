@@ -6,10 +6,8 @@ menu:
     parent: "concepts"
     weight: 12
 weight: 100
-sections_weight: 12
 tags: ["Tag2", "Tag3"]
 tags_weight: 22
-slug:
 aliases: [/concepts/templates/]
 ---
 
@@ -21,9 +19,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {{< youtube ADh_OFBfdEE >}}
 
-{{% blockquote %}}
-Environment variables dictate everything about your application's environment.
-{{% /blockquote %}}
+>Environment variables dictate everything about your application's environment.
 
 1. All things about variables
 2. Another thing about variables
