@@ -315,3 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 700 !important;
 }
+.header .header-wrapper header .headerBox .headerLeft .logo a .logoTitle .logoText {
+  font-family: 'Open Sans';
+  font-weight: 700;
+}
