@@ -309,3 +309,9 @@ span.required {
   padding: 0px 5px;
   font-size: 15px;
 }
+
+/* Quick CSS for release */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700 !important;
+}
