@@ -1,9 +1,16 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
-<div class="infoBox">
-	<div class="infoBox-icon">
-	  <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
-      <g><circle class="st0" cx="12" cy="12" r="10"></circle><line class="st0" x1="12" y1="16" x2="12" y2="12"></line><line class="st0" x1="12" y1="8" x2="12" y2="8"></line></g>
-    </svg>
+
+<div class="infoBox {{.Get "name"}}" >
+	<div class="infoBox-icon">     
+  {{if .Get "type1" }}   
+    {{partial "svg/info.svg" (dict "size" "20px" ) }}   
+  {{end}}
+  {{if .Get "type2" }} 
+    {{partial "svg/note.svg" (dict "size" "20px" ) }}   
+  {{end}}
+  {{if .Get "type3" }}
+    {{partial "svg/warning.svg" (dict "size" "20px" ) }} 
+  {{end}}  
 	</div>
   <div class="regularParagraph">
     <div class="regularText">
@@ -11,3 +18,6 @@
     </div>
   </div>
 </div>
+
+
+

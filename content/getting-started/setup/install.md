@@ -115,7 +115,7 @@ The service supports the most populate authentication methods including static c
 
 The git repository will be cloned into `/srv/configrd/init` on the container at startup and the configrd.yaml loaded from the local file system. The git repository is only pulled at service start. If you do not bind the `/srv/configrd` container path to a volume mount the files will only live inside the container.
 
-{{% infobox %}}
+{{% infobox type1="info" %}}
 AWS roles are not yet supported as an authentication mechanism. AWS does not recommend using IAM credentials or the EC2 security context for CodeCommit authentication since credentials expire.
 {{% /infobox %}}
 
@@ -156,7 +156,7 @@ docker run -d -p 9191:9191 -e AUTH_METHOD=CodeCommitGitCreds -e SOURCENAME=git -
 
 Sample `docker run` with AWS CodeCommit ssh public key authentication and ssh protocol. 
 
-{{% infobox %}}
+{{% infobox type1="info" %}}
 Note the AWS git ssh key id must be provided as the username of the ssh URI to the repository.
 {{% /infobox %}}
 

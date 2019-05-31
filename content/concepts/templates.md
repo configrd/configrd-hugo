@@ -35,14 +35,14 @@ Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. Accumsan i
 
 Ac orci phasellus egestas tellus rutrum tellus pellentesque eu tincidunt. Nunc id cursus metus aliquam eleifend mi. Orci eu lobortis elementum nibh tellus. Ultrices tincidunt arcu non sodales neque sodales ut. Consectetur libero id faucibus nisl tincidunt. Ultricies mi quis hendrerit dolor. Sed velit dignissim sodales ut eu. Amet luctus venenatis lectus magna fringilla urna. Leo vel fringilla est ullamcorper eget nulla facilisi. Vitae auctor eu augue ut lectus arcu bibendum at varius. Nunc congue nisi vitae suscipit tellus. Elementum nibh tellus molestie nunc non blandit massa. Massa tincidunt nunc pulvinar sapien et ligula. Venenatis cras sed felis eget velit aliquet sagittis id. A scelerisque purus semper eget duis at tellus at urna.
 
-{{% infobox %}}
+{{% infobox type1="info" %}}
 Default infoBox
 {{% /infobox %}}
 
-{{% note %}}
+{{% infobox name="note" type2="note" %}}
 InfoBox plus class "note"
-{{% /note %}}
+{{% /infobox %}}
 
-{{% warning %}}
+{{% infobox name="warning" type3="warning" %}}
 InfoBox plus class "warning"
-{{% /warning %}}
+{{% /infobox %}}
