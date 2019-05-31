@@ -100,7 +100,7 @@ This example employs the one repository per application pattern. Environments ha
 
 The below configrd.yaml file assumes the following directory structure in order to achieve the desired inheritance behavior.
 
-{{< code-yaml file="sample directory structure" >}}
+{{< code file="sample directory structure" lang="yaml" >}}
 srv/
 └── configrd/
     └── apps/
@@ -119,9 +119,9 @@ srv/
                     ├── default.properties
                     └── stage/
                         └── default.properties
-{{< /code-yaml >}}
+{{< /code >}}
 
-{{< code-yaml file="configrd.yaml" >}}
+{{< code file="configrd.yaml" lang="yaml" >}}
 service:
  repos:
     myapp:
@@ -135,7 +135,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code-yaml >}}
+{{< /code >}}
 
 The above file based repository named **myapp** has the following configuration:
 
@@ -174,7 +174,7 @@ This example is modeled using one environment per repository pattern. Accessing 
 
 The below configrd.yaml file assumes the following path structure in order to achieve the desired inheritance behavior.
 
-{{< code-plain-yaml >}}
+{{< code-plain lang="yaml" >}}
 srv/
 └── configrd/
     └── apps/
@@ -193,9 +193,9 @@ srv/
                     ├── env.yaml
                     └── stage/
                         └── env.yaml
-{{< /code-plain-yaml >}}
+{{< /code-plain >}}
 
-{{< code-plain-yaml >}}
+{{< code-plain lang="yaml" >}}
 service:
  repos:
     myapp:
@@ -209,5 +209,5 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code-plain-yaml >}}
+{{< /code-plain >}}
 

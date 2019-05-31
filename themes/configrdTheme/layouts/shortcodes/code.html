@@ -1,8 +1,13 @@
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="codeBlock">
-  <div class="codeHeaderInline">
-    {{ if ne (.Get "copy") "false" }}      
-      <div data-clipboard-target="#codeExample1" role="button" tabindex="-1" aria-label="Copy" class="copyButton" data-toggle="tooltip" data-placement="bottom" title="Copy" data-original-title="Copy">
+  <div class="codeHeader">
+    <div class="codeHeaderTabs">
+      {{- with .Get "file" -}}
+        <div role="button" tabindex="-1" class="codeHeaderButton">{{.}}</div>
+	    {{- end -}}
+    </div>
+    {{ if ne (.Get "copy") "false" }}
+      <div role="button" tabindex="-1" aria-label="Copy" class="copyButton" data-toggle="tooltip" data-placement="bottom" title="Copy">
         <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
           <g>
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -13,8 +18,8 @@
       {{/* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */}}
     {{end}}
   </div>
-  <pre>
-    <code class="language-json" {{with .Get "download"}}id="{{.}}"{{end}}>
+  <pre class="language-{{ .Get "lang" }} line-numbers">
+    <code {{with .Get "download"}} id="{{.}}"{{end}}>
     {{- .Inner -}}
     </code>
   </pre>

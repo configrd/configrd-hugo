@@ -40,9 +40,9 @@ Responses are available as plain text key value, json and yaml.
 
 The most simple query is to fetch variables form the root of the **default** repository.
 
-{{< inline-code-blocks-js >}}
+{{< inline-code-blocks lang="js" >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/
-{{< /inline-code-blocks-js >}}
+{{< /inline-code-blocks >}}
 
 Since our demo environment has a **default.properties** file at the root of the default repository path, this query will return those base values.
 
@@ -50,9 +50,9 @@ Since our demo environment has a **default.properties** file at the root of the 
 
 Next, you can request a specific config profile by naming it in the **p** query parameter. You do not need to specify a path when using named profiles. 
 
-{{< inline-code-blocks-js >}}
+{{< inline-code-blocks lang="js" >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?p=custom
-{{< /inline-code-blocks-js >}}
+{{< /inline-code-blocks >}}
 
 Here we are querying a profile named **custom** which points at the `/env/dev/simple/` config profile in our **default** repository
 
@@ -62,15 +62,15 @@ You can switch the repository by naming the repository in the **r** query parame
 
 Query the root path of **apps** repository.
 
-{{< inline-code-blocks-js >}}
+{{< inline-code-blocks lang="js" >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps
-{{< /inline-code-blocks-js >}}
+{{< /inline-code-blocks >}}
 
 Query the **myapp-dev** named config profile in the **apps** repository.
 
-{{< inline-code-blocks-js >}}
+{{< inline-code-blocks lang="js" >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/?r=apps&p=myapp-dev
-{{< /inline-code-blocks-js >}}
+{{< /inline-code-blocks >}}
 
 ## Inline Filename Override
 
@@ -88,9 +88,9 @@ File names must have a suffix. Files without a suffix such as just **env** will 
 
 Query the default repository for **default.json** files starting at the `/env/dev/json/` config profile even though the default file name setting in the **configrd.yaml** is **default.properties**.
 
-{{< inline-code-blocks-json >}}
+{{< inline-code-blocks lang="json" >}}
 curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-{{< /inline-code-blocks-json >}}
+{{< /inline-code-blocks >}}
 
 ## Response Content Types
 
@@ -117,11 +117,11 @@ When requesting a json or yaml source file, the variable names/keys will be flat
 
 Render a [default.json file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/json/default.json) as plain text
 
-	{{% inline-code-blocks-json %}}
+	{{% inline-code-blocks lang="json" %}}
 	curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/json/default.json
-	{{% /inline-code-blocks-json %}}
+	{{% /inline-code-blocks %}}
 
-	{{% code-plain-markup %}}
+	{{% code-plain lang="markup" %}}
 	property.3=simple
 	log.root.level=DEBUG
 	array.named2.value4.sub=true
@@ -136,7 +136,7 @@ Render a [default.json file](https://github.com/configrd/configrd-service/blob/m
 	property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
 	array.named2.value6.sub=value
 	array.named2.value5.sub=5
-	{{% /code-plain-markup %}}
+	{{% /code-plain %}}
 
 	{{% /tab %}}
 
@@ -144,11 +144,11 @@ Render a [default.json file](https://github.com/configrd/configrd-service/blob/m
 	
 Render a [default.yaml file](https://github.com/configrd/configrd-service/blob/master/src/test/resources/env/dev/yaml/default.yaml) as plain text
 
-	{{% inline-code-blocks %}}
+	{{% inline-code-blocks lang="yaml" %}}
 	curl -s -H "Accept: text/plain" http://demo.configrd.io/configrd/v1/env/dev/yaml/default.yaml
 	{{% /inline-code-blocks %}}
 
-	{{% code-plain-markup %}}
+	{{% code-plain lang"markup" %}}
 	property.3=simple
 	log.root.level=DEBUG
 	array.named2.value4.sub=true
@@ -163,7 +163,7 @@ Render a [default.yaml file](https://github.com/configrd/configrd-service/blob/m
 	property.6.name=ENC(NvuRfrVnqL8yDunzmutaCa6imIzh6QFL)
 	array.named2.value6.sub=value
 	array.named2.value5.sub=5
-	{{% /code-plain-markup %}}
+	{{% /code-plain %}}
 
 	{{% /tab %}}
 {{< /tabs >}}

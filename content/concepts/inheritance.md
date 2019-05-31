@@ -28,10 +28,10 @@ Let's say we define a repository sourcing environment variables from plain-text 
 
 We defined two environment variables at path `/env/dev` in git
 
-{{< code-yaml file="default.properties" >}}
+{{< code file="default.properties" lang="yaml" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-{{< /code-yaml >}}
+{{< /code >}}
 
 The child path `/env/dev/local` in git contains **only** the variable
 
@@ -41,17 +41,17 @@ app.url = http://localhost:8080/
 
 If we request the "dev" config profile at `https://mycorp.com/configrd/v1/env/dev/`, configrd returns:
 
-{{< code-plain-yaml >}}
+{{< code-plain lang="yaml" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-{{< /code-plain-yaml >}}
+{{< /code-plain >}}
 
 Now, if we request the "local" config profile which overrides and inherits from the "dev" profile at `https://mycorp.com/configrd/v1/env/dev/local/`, configrd returns:
 
-{{< code-plain-yaml >}}
+{{< code-plain lang="yaml" >}}
 app.url = http://localhost:8080 (overriden)
 support.email = support@myservice.com (inherited)
-{{< /code-plain-yaml >}}
+{{< /code-plain >}}
 
 Any environment variable changes are immediately available on the next request.
 

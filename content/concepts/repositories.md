@@ -26,7 +26,7 @@ A repository defines:
 
 Here is the default repository definition which comes with configrd:
 
-{{< code-yaml file="configrd.yaml" >}}
+{{< code file="configrd.yaml" lang="yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -34,7 +34,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-{{< /code-yaml >}}
+{{< /code >}}
 
 This configuration defines only one repository named 'default'. Configurations will be sourced and stored to a file system location at /srv/configrd using the 'file' source. The service will attempt to load a file called default.properties at each path in the hierarchy when queried. This setting is inherited from the 'defaults' section with global values shared by all repositories. 
 

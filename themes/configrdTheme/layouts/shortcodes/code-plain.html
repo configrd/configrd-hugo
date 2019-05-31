@@ -13,8 +13,8 @@
       {{/* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */}}
     {{end}}
   </div>
-  <pre>
-    <code class="lang-js line-numbers" {{with .Get "download"}}id="{{.}}"{{end}}>
+  <pre class="language-{{ .Get "lang" }} line-numbers">
+    <code {{with .Get "download"}}id="{{.}}"{{end}}>
     {{- .Inner -}}
     </code>
   </pre>
