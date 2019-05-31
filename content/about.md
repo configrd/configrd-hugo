@@ -7,7 +7,7 @@ menu:
   sidebar:
     weight: 01
 weight: 220
-url: "/"
+url: "/index.html"
 toc: true
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
