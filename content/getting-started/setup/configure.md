@@ -21,7 +21,7 @@ Running configrd requires a bootstrap configuration on start in the form of a ya
 
 The default configuration loaded by configrd when no specific configrd.yaml file is provided on start looks as follows:
 
-{{< code-yaml file="configrd.yaml" >}}
+```yaml
 service:
   defaults:
     fileName: default.properties
@@ -29,7 +29,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-{{< /code-yaml >}}
+```
 
 The above configrd.yaml states:
 
