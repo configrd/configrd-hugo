@@ -8,7 +8,11 @@ jobs:
     working_directory: /go/src/github.com/
     steps:
       - checkout
-      - run: sudo apt-get -qq update && sudo apt-get -qq install wget
+      - run: sudo apt-get -qq update && sudo apt-get -qq install wget awscli
       - run: wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb -O /tmp/hugo.deb
       - run: sudo apt install /tmp/hugo.deb
       - run: hugo
+      - run: |
+            export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+            export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
+            aws s3 cp public/ s3://beta.configrd.io/ --recursive --metadata-directive REPLACE --cache-control max-age=0
