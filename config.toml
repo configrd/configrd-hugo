@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "About - configrd"
+title = "configrd"
 theme = "configrdTheme"
 relativeURLs = true
 Paginate = 1
