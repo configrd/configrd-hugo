@@ -211,3 +211,67 @@ service:
         prod: env/prod
 {{< /code-plain >}}
 
+## Secrets
+
+On the fly encryption and decryption of secrets for any repository is enabled by adding an `encrypt` configuration section to your repository's definition in configrd.yaml.
+
+### Encrypt Properties
+
+#### AWS-KMS
+
+Configrd is compatible with AWS KMS for on the fly encryption and decryption of secrets. It's possible to either specify static AWS credentials to the AWS KMS key or tap into the EC2 role if you have deployed configrd inside AWS EC2 or ECS. 
+
+| Property | Type | Required | Default | Description |
+| :--- | :--- | :--- | :--- | :--- |
+| keyId | String | Yes |  | The ARN to the AWS KMS key to use for tokenization of secrets |
+| region | String | Yes | us-west-2 | The AWS region of the KMS key being used |
+| username | String | No |  | AWS secret key id if used |
+| password | String | No |  | AWS secret access key if used |
+| include | List | No |  | List of regex patterns of variable names who's values should be treated as secret |
+| exclude | List | No |  | List of regex patterns of variable names who's values should not be treated as secret |
+
+#### Example
+
+{{< code file="configrd.yaml" lang="yaml" >}}
+...
+myrepo:
+   uri: https://...
+   sourceName: ...
+   encrypt:
+      aws-kms:
+         keyId: arn:aws:kms:us-west-2:693832995906:key/c5bcaa29-a000-4162-8805-d98b6621a228
+         region: us-west-2
+         include:
+         - (?i)SECRET
+         - (?i)PASSWORD
+         - (?i)_PW
+         - (?i)_PK
+         - (?i)KEY
+         exclude:
+         - (?i)NOT_SECRET
+```
+{{< /code >}}
+
+On the fly encryption works with any storage mechanism you may choose to store your configs.
+
+{{< infobox type1="info" >}}
+Only AWS KMS is currently supported as a KMS. Please let us know what KMS you'd like to see integrated.
+{{< /infobox >}}
+
+### Include & Exclude
+
+What variable keys to treat as secrets is configured by specifying regex patterns of variable names which should automatically be tokenized on write and de-tokenized on read. 
+
+We suggest you always stick to case insensitive 'contains' patterns for maximum applicability. Always better to accidentally encrypt something benign than leave something sensitive as plain text.
+
+It's possible to define what name patterns to explicitly include or exclude from encryption. Exclude patterns will always take precedence over include patterns. Specify one patterns per list item in the `include` or `exclude` sections. 
+
+### Token Format
+
+The exact token format will depend on the KMS system and the specific key being used. Configrd will prefix and suffix all tokenized secrets with `ENC(` and `)`. A key which isn't included to be tokenized will not be decrypted even if it's value is surrounded by `ENC( )`.
+
+When storing secrets for the first time, either use a storage mechanism with an available write API to encrypt plain text values on the fly or manually encrypt your secrets first using your key and then manually add the secrets to your config files managed by configrd.
+
+### Key Rotation
+
+By utilizing an existing KMS, configrd ensures secrets participate in any already established and ongoing key rotation policy. Secrets in configrd will not be automatically re-encrypted when the key rotates but will be decrypted using the old key on a read and encrypted using the new key next time the variable is written to configrd.
