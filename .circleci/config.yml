@@ -32,6 +32,7 @@ jobs:
       - run: |
             export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
             export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
+            aws s3 rm s3://beta.configrd.io/ --recursive
             aws s3 cp public/ s3://beta.configrd.io/ --recursive --metadata-directive REPLACE --cache-control max-age=0 --acl public-read
       
 workflows:
