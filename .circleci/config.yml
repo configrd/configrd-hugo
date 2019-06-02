@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get -qq update && sudo apt-get -qq install wget
-      - run: wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb -O /tmp/hugo.deb
+      - run: wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_extended_0.55.6_Linux-64bit.deb -O /tmp/hugo.deb
       - run: sudo apt install /tmp/hugo.deb
-      - run: hugo --verbose --debug --ignoreCache
+      - run: hugo --verbose --debug --ignoreCache -b http://beta.configrd.io -t configrdTheme
       - save_cache:
           key: configrd-hugo-{{ checksum "config.toml" }}
           paths:
@@ -23,8 +23,6 @@ jobs:
     steps:
       - checkout
       - run: sudo apt-get -qq update && sudo apt-get -qq install awscli
-      - run: wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_0.55.6_Linux-64bit.deb -O /tmp/hugo.deb
-      - run: sudo apt install /tmp/hugo.deb
       - restore_cache:
           keys:
             - configrd-hugo-{{ checksum "config.toml" }}
