@@ -8,6 +8,7 @@ menu:
     weight: 01
 weight: 220
 toc: true
+alias: /index.html
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
 ---
