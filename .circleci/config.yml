@@ -1,46 +1,60 @@
 version: 2
 jobs:
-  build:
+  deploy-beta:
     docker:
       - image: circleci/golang:1.9
-
     working_directory: /go/src/github.com/
     steps:
       - checkout
-      - run: sudo apt-get -qq update && sudo apt-get -qq install wget
+      - run: sudo apt-get -qq update && sudo apt-get -qq install wget awscli
       - run: wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_extended_0.55.6_Linux-64bit.deb -O /tmp/hugo.deb
       - run: sudo apt install /tmp/hugo.deb
       - run: hugo --verbose --debug --ignoreCache -b http://beta.configrd.io -t configrdTheme
+      - run: |
+          export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+          export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
+          aws s3 rm s3://beta.configrd.io/ --recursive
+          aws s3 cp public/ s3://beta.configrd.io/ --recursive --metadata-directive REPLACE --cache-control max-age=0 --acl public-read
       - save_cache:
           key: configrd-hugo-{{ .Branch }}-{{ checksum "config.toml" }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - ./
-  deploy:
+            - /tmp/hugo.deb
+  deploy-prod:
     docker:
       - image: circleci/golang:1.9
-
     working_directory: /go/src/github.com/
     steps:
       - checkout
-      - run: sudo apt-get -qq update && sudo apt-get -qq install awscli
       - restore_cache:
-          keys:
-            - configrd-hugo-{{ .Branch }}-{{ checksum "config.toml" }}-{{ .Environment.CIRCLE_SHA1 }}
-            - configrd-hugo-
+          keys: 
+          - configrd-hugo-{{ .Branch }}-{{ checksum "config.toml" }}-{{ .Environment.CIRCLE_SHA1 }}
+      - run: sudo apt-get -qq update && sudo apt-get -qq install awscli
+      - run: sudo apt install /tmp/hugo.deb
+      - run: hugo --verbose --debug --ignoreCache -b https://configrd.io -t configrdTheme
       - run: |
-            export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
-            export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
-            aws s3 rm s3://beta.configrd.io/ --recursive
-            aws s3 cp public/ s3://beta.configrd.io/ --recursive --metadata-directive REPLACE --cache-control max-age=0 --acl public-read
+          export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+          export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
+          aws s3 rm s3://configrd.io/ --recursive
+          aws s3 cp public/ s3://configrd.io/ --recursive --metadata-directive REPLACE --cache-control max-age=0 --acl public-read
       
 workflows:
   version: 2
   configrd-workflow:
     jobs:
-      - build
-      - deploy:
+      - deploy-beta:
+          filters:
+            branches:
+              only: master
+      - prod-hold:
+          type: approval
+            requires:
+            - deploy-beta
+            filters:
+              branches:
+                only: master
+      - deploy-prod:
           filters:
             branches:
               only: master
           requires:
-            - build
+            - prod-hold
