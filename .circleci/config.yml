@@ -47,11 +47,11 @@ workflows:
               only: master
       - prod-hold:
           type: approval
-            requires:
-            - deploy-beta
-            filters:
-              branches:
-                only: master
+          requires:
+          - deploy-beta
+          filters:
+            branches:
+              only: master
       - deploy-prod:
           filters:
             branches:
