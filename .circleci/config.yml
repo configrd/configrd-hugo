@@ -9,7 +9,7 @@ jobs:
       - run: sudo apt-get -qq update && sudo apt-get -qq install wget awscli
       - run: wget https://github.com/gohugoio/hugo/releases/download/v0.55.6/hugo_extended_0.55.6_Linux-64bit.deb -O /tmp/hugo.deb
       - run: sudo apt install /tmp/hugo.deb
-      - run: hugo --verbose --debug --ignoreCache -b http://beta.configrd.io -t configrdTheme
+      - run: hugo --verbose --debug --ignoreCache --baseURL https://beta.configrd.io/ -t configrdTheme --cleanDestinationDir
       - run: |
           export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
           export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
@@ -30,7 +30,7 @@ jobs:
           - configrd-hugo-{{ .Branch }}-{{ checksum "config.toml" }}-{{ .Environment.CIRCLE_SHA1 }}
       - run: sudo apt-get -qq update && sudo apt-get -qq install awscli
       - run: sudo apt install /tmp/hugo.deb
-      - run: hugo --verbose --debug --ignoreCache -b https://configrd.io -t configrdTheme
+      - run: hugo --verbose --debug --ignoreCache --baseURL https://configrd.io/ -t configrdTheme --minify --cleanDestinationDir
       - run: |
           export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
           export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_KEY}
