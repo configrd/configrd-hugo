@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/last-updated.html -->" | safeHTML }} {{- end -}}
 <div class="lastUpdated">
   <div class="last-updated-wrapper">
     <div class="last-updated">
@@ -41,3 +42,4 @@
     </div>
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/last-updated.html -->" | safeHTML }} {{- end -}}

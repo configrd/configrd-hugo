@@ -1,1 +1,3 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/menu-include.html -->" | safeHTML }} {{- end -}}
 {{ partial "menu_recursive.html" (dict "menu" .Site.Menus.sidebar "page" . "site" .Site) }}
+{{- if .Site.IsServer -}} {{ "<!-- END partials/menu-include.html -->" | safeHTML }} {{- end -}}

@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/api-method-headers-response.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="response">
   <div class="variablesApi-ParametersList">
@@ -10,3 +11,4 @@
     {{ .Inner }}
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/api-method-headers-response.html -->" | safeHTML }} {{- end -}}

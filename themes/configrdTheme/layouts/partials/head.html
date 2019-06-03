@@ -1,3 +1,5 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/head.html -->" | safeHTML }} {{- end -}}
+
 <head>
   <title>{{ .Page.Title }} - configrd</title>
 
@@ -90,3 +92,4 @@
     })();
 </script>  
 </head>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/head.html -->" | safeHTML }} {{- end -}}

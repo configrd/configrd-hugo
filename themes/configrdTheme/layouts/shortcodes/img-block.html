@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/image-block.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="imageContainer">
 	<figure class="imageFigure">
@@ -13,3 +14,4 @@
 	  </div>
 	</figure>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/image-block.html -->" | safeHTML }} {{- end -}}

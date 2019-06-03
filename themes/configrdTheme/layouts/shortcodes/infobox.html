@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/infobox.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 
 <div class="infoBox {{.Get "name"}}" >
@@ -19,5 +20,4 @@
   </div>
 </div>
 
-
-
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/infobox.html -->" | safeHTML }} {{- end -}}

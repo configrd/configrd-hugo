@@ -1,4 +1,5 @@
 {{ define "main"}}
+{{- if .Site.IsServer -}} {{ "<!-- _default/single.html -->" | safeHTML }} {{- end -}}
 <div class="pageFlex">
   <div class="contentBox">
     <div class="overlayLayout" role="presentation"></div>
@@ -9,4 +10,5 @@
     {{ partial "search-bar.html" . }}
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END _default/single.html -->" | safeHTML }} {{- end -}}
 {{ end }}

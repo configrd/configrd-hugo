@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/badge.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <h2>
 	<div class="variablesApi-badge">
@@ -7,3 +8,4 @@
 	</div>
 	<span>{{ .Inner }}</span>
 </h2>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/badge.html -->" | safeHTML }} {{- end -}}

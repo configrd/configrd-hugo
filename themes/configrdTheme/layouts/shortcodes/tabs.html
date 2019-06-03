@@ -1,4 +1,6 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/tabs.html -->" | safeHTML }} {{- end -}}
 <div class='code-tabs'>
   <ul class="nav nav-tabs"></ul>
   <div class="tab-content">{{ .Inner }}</div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/tabs.html -->" | safeHTML }} {{- end -}}

@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/page-content.html -->" | safeHTML }} {{- end -}}
 <section class="page-content">
   <div class="contentAndRightSidebar">
     <div class="page-wrapper">
@@ -30,3 +31,4 @@
     {{ partial "right-sidebar.html" . }}
   </div>
 </section>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/page-content.html -->" | safeHTML }} {{- end -}}

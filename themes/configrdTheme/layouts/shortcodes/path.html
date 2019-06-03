@@ -1,5 +1,7 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/path.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="variablesApi-pathWrapper">
 	<span class="variablesApi-pathStart">{{ .Inner }}</span>
 	<span class="variablesApi-pathEnd">/v1/[{path}/]</span>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/path.html -->" | safeHTML }} {{- end -}}

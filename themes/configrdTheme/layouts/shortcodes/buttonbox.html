@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/button-box.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="buttonBox">
   <div class="block">
@@ -18,3 +19,4 @@
     </a>
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/button-box.html -->" | safeHTML }} {{- end -}}

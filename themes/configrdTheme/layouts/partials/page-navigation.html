@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/page-navigation.html -->" | safeHTML }} {{- end -}}
 <section class="pageFooter">
   {{ if or .Prev .Next }}
     <div class="navigationLinks flex-column flex-md-row">
@@ -49,3 +50,4 @@
   };
 </script>
 
+{{- if .Site.IsServer -}} {{ "<!-- END partials/page-navigation.html -->" | safeHTML }} {{- end -}}

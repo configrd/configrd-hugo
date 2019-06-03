@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/code.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="codeBlock">
   <div class="codeHeader">
@@ -24,3 +25,4 @@
     </code>
   </pre>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/code.html -->" | safeHTML }} {{- end -}}

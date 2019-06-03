@@ -1,6 +1,8 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/api-method.html -->" | safeHTML }} {{- end -}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 <div class="variablesApi">
   <div class="variablesApi-contentWrapper">
     {{ .Inner }}
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/api-method.html -->" | safeHTML }} {{- end -}}
