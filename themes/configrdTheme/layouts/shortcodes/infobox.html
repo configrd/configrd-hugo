@@ -1,23 +1,24 @@
 {{- if .Site.IsServer -}} {{ "<!-- shortcodes/infobox.html -->" | safeHTML }} {{- end -}}
-{{ $_hugo_config := `{ "version": 1 }` }}
+{{- $_hugo_config := `{ "version": 1 }` -}}
+<div class="infoBox {{ .Get "type" }}" >
+  <div class="infoBox-icon">
+    {{- if eq (.Get "type") "info" -}}
+    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><circle class="st0" cx="12" cy="12" r="10"></circle><line class="st0" x1="12" y1="16" x2="12" y2="12"></line><line class="st0" x1="12" y1="8" x2="12" y2="8"></line></g></svg>
+    {{- else if eq (.Get "type") "note" -}}
+    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path class="st0" d="M10.3,3.9L1.8,18c-0.6,1-0.2,2.2,0.7,2.7c0.3,0.2,0.6,0.3,1,0.3h16.9c1.1,0,2-0.9,2-2c0-0.3-0.1-0.7-0.3-1 L13.7,3.9c-0.6-0.9-1.8-1.2-2.7-0.7C10.7,3.4,10.5,3.6,10.3,3.9z"></path><line class="st0" x1="12" y1="9" x2="12" y2="13"></line><line class="st0" x1="12" y1="17" x2="12" y2="17"></line></g></svg>
+    {{- else if eq (.Get "type") "warning" -}}
+    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><polygon class="st0" points="7.9,2 16.1,2 22,7.9 22,16.1 16.1,22 7.9,22 2,16.1 2,7.9 "></polygon><line class="st0" x1="12" y1="8" x2="12" y2="12"></line><line class="st0" x1="12" y1="16" x2="12" y2="16"></line></g></svg>
+    {{- else -}}
+    <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><circle class="st0" cx="12" cy="12" r="10"></circle><line class="st0" x1="12" y1="16" x2="12" y2="12"></line><line class="st0" x1="12" y1="8" x2="12" y2="8"></line></g></svg>
+    {{- end -}}
 
-<div class="infoBox {{.Get "name"}}" >
-	<div class="infoBox-icon">     
-  {{if .Get "type1" }}   
-    {{partial "svg/info.svg" (dict "size" "20px" ) }}   
-  {{end}}
-  {{if .Get "type2" }} 
-    {{partial "svg/note.svg" (dict "size" "20px" ) }}   
-  {{end}}
-  {{if .Get "type3" }}
-    {{partial "svg/warning.svg" (dict "size" "20px" ) }} 
-  {{end}}  
-	</div>
-  <div class="regularParagraph">
-    <div class="regularText">
-      {{- .Inner -}}
-    </div>
+    
   </div>
+  <p class="regularParagraph">
+    <span class="regularText">
+      {{- .Inner -}}
+    </span>
+  </p>
 </div>
 
 {{- if .Site.IsServer -}} {{ "<!-- END shortcodes/infobox.html -->" | safeHTML }} {{- end -}}

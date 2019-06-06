@@ -18,9 +18,9 @@ Environment variables can be sourced from a number of locations \(repositories\)
 
 Environment variables can be structured into hierarchies using folders. The folder hierarchy dictates the override order of variables where variable values specified in child folders override values in a parent folder. Each service or app could have one or more folder hierarchies for overrides. The request's URL will be mapped to the folder structure and the override hierarchy applied at request time.
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 Inheritance is only supported within a repository, not across repositories.
-{{% /infobox %}}
+{{< /infobox >}}
 
 ## Example
 
