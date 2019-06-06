@@ -1,0 +1,98 @@
+/* Buttons Styles
+----------------------------------------*/
+.buttonDownload {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  color: #242A31;
+  margin: 0;
+  border: 1px solid #E6ECF1;
+  display: flex;
+  padding: 0;
+  position: relative;
+  align-self: stretch;
+  transition: border 250ms ease;
+  box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  margin-top: 32px;
+  align-items: center;
+  justify-self: stretch;
+  border-radius: 3px;
+  margin-bottom: 32px;
+  flex-direction: row;
+  text-decoration: none;
+  -moz-transition: border 250ms ease;
+  background-color: #FFFFFF;
+  -webkit-box-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-transition: border 250ms ease;
+  -webkit-box-direction: normal;
+  &:hover {
+    text-decoration: none;
+    color: rgb(56, 132, 255);
+    border-color: rgb(56, 132, 255);
+    cursor: pointer;
+  }
+}
+.buttonIcon {
+  color: #3884FF;
+  flex: 0 0 auto;
+  margin: 0;
+  display: block;
+  padding: 16px;
+  padding-right: 0;
+  font-size: 24px;
+  transition: color 250ms ease;
+  -moz-transition: color 250ms ease;
+  -webkit-transition: color 250ms ease;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+  }
+}
+.buttonTitle {
+  flex: 1;
+  margin: 0;
+  display: block;
+  padding: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  .buttonTitleWrapper {
+    color: #3884FF;
+    margin: 0;
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    transition: color 250ms ease;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -moz-transition: color 250ms ease;
+    -webkit-transition: color 250ms ease;
+    .buttonTitleText {
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+  }
+}
+
+.buttonSubTitle {
+  flex: 0 0 auto;
+  margin: 0;
+  display: block;
+  padding: 16px;
+  .buttonSubTitleWrapper {
+    color: #9DAAB6;
+    margin: 0;
+    display: block;
+    padding: 0;
+    .buttonSubTitleText {
+      font-size: 12px;
+      line-height: 1.625;
+      font-weight: 400;
+    }
+  }
+}

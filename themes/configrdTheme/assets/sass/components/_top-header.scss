@@ -1,0 +1,308 @@
+/* Top Header (main navigation) Styles
+----------------------------------------*/
+
+.header {
+  margin: 0;
+  display: block;
+  padding: 0;
+  .header-wrapper {
+    display: -webkit-box;
+    display: flex;
+    margin: 0;
+    height: 80px;
+    padding: 0;
+    z-index: 20;
+    position: relative;
+    box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+    border-bottom: 1px solid #d4dadf;
+    background-color: #FFFFFF;
+    header {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+      max-width: 1448px;
+      .headerBox {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        width: 100%;
+        max-width: 1448px;
+        margin: 0 auto;
+        padding: 0;
+        .headerLeft {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          position: relative;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+          align-items: center;
+          justify-content: space-between;
+          -webkit-box-pack: justify;
+          -webkit-box-align: center;
+
+          .mobileMenu,
+          .mobileSearch {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex: 0 0 auto;
+            width: 30px;
+            margin: 0;
+            cursor: pointer;
+            height: 30px;
+            display: flex;
+            padding: 0;
+            outline: none;
+            font-size: 18px;
+            align-items: center;
+            justify-content: center;
+            -webkit-box-pack: center;
+            -webkit-box-align: center;
+            &:active {
+              background: #e7f0fc;
+              border-radius: 4px;
+            }
+          }
+          .logo {
+            margin: 0;
+            display: block;
+            padding: 0px 24px;
+            a {
+              display: -webkit-box;
+              display: -moz-box;
+              display: -ms-flexbox;
+              display: -webkit-flex;
+              display: flex;
+              color: #3884FF;
+              cursor: pointer;
+              align-items: center;
+              text-decoration: none;
+              -webkit-box-align: center;
+              .logoWrapper {
+                width: 30px;
+                height: 30px;
+                display: flex;
+                position: relative;
+                align-items: center;
+                justify-content: center;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+                -webkit-mask-image: radial-gradient(white, black);
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+                border-radius: 4px;
+                .logoImage {
+                  width: 100%;
+                  height: 100%;
+                  max-width: 100%;
+                  background-size: cover;
+                  background-color: #FFFFFF;
+                  background-repeat: no-repeat;
+                }
+              }
+              .logoTitle {
+                display: block;
+                flex: 1;
+                color: #242A31;
+                margin: 0;
+                padding: 0;
+                padding-left: 8px;
+                &:hover {
+                  color: #3884FF;
+                }
+                .logoText {
+                  font-size: 1.5rem;
+                  line-height: 1.5;
+                  font-weight: 500;
+                  overflow-wrap: break-word;
+                }
+              }
+            }
+          }
+        }
+        .headerCenter {
+          flex: 1 1 auto;
+          display: block;
+          margin: 0px 88px;
+          padding: 0;
+          overflow: hidden;
+          position: relative;
+          max-width: 750px;
+          .headerLinks {
+            display: -webkit-box;
+            display: flex;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            opacity: 1;
+            overflow-x: auto;
+            overflow-x: overlay;
+            overflow-y: hidden;
+            transition: flex 250ms ease,width 250ms ease,opacity 250ms ease;
+            -moz-transition: flex 250ms ease,width 250ms ease,opacity 250ms ease;
+            -webkit-transition: flex 250ms ease,width 250ms ease,opacity 250ms ease;
+            -webkit-overflow-scrolling: touch;
+            .linkItem {
+              display: -webkit-box;
+              display: -moz-box;
+              display: -ms-flexbox;
+              display: -webkit-flex;
+              display: flex;
+              margin: 0px 16px;
+              padding: 0;
+              height: 100%;
+              border-top: 3px solid transparent;
+              border-bottom: 3px solid transparent;
+              border-bottom-color: transparent;
+              align-items: center;
+              white-space: nowrap;
+              -webkit-box-align: center;
+              &:first-child {
+                margin-left: 0;
+              }
+              .linkWrapper {
+                display: -webkit-inline-box;
+                display: -moz-inline-box;
+                display: -ms-inline-flexbox;
+                display: -webkit-inline-flex;
+                display: inline-flex;
+                color: #3884FF !important;
+                border: 1px solid;
+                cursor: pointer;
+                height: 40px;
+                outline: none;
+                padding: 0;
+                transition: all 250ms ease-out;
+                line-height: 1em;
+                align-items: center;
+                white-space: nowrap;
+                border-color: transparent;
+                border-radius: 3px;
+                justify-content: center;
+                text-decoration: none;
+                -moz-transition: all 250ms ease-out;
+                -webkit-box-pack: center;
+                background-color: transparent;
+                -webkit-box-align: center;
+                -webkit-transition: all 250ms ease-out;
+                .linkTitle {
+                  font-size: 1rem;
+                  line-height: 1.5;
+                  font-weight: 500;
+                }
+              }
+            }
+          }
+        }
+        .headerRight {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          margin: 0;
+          padding: 0;
+          max-width: 224px;
+          height: 80px;
+          position: relative;
+          align-items: center;
+          -webkit-box-align: center;
+          &:before {
+            top: 50%;
+            left: 0;
+            height: 40px;
+            content: " ";
+            position: absolute;
+            transform: translateY(-50%);
+            border-left: 1px solid #E6ECF1;
+          }
+          .searchBox {
+            margin: 0;
+            display: block;
+            padding: 0;
+            padding-left: 14px;
+            padding-right: 16px;
+            .searchWrapper {
+              display: -webkit-box;
+              display: -moz-box;
+              display: -ms-flexbox;
+              display: -webkit-flex;
+              display: flex;
+              width: 100%;
+              margin: 0;
+              padding: 0;
+              border: none;
+              outline: none;
+              font-size: 1rem;
+              box-sizing: border-box;
+              background: #FFFFFF;
+              line-height: 1.625;
+              font-weight: 400;
+              border-radius: 3px;
+              background-color: #FFFFFF;
+              .searchInputWrapper {
+                flex: 1;
+                margin: 0;
+                display: block;
+                padding: 0;
+                .searchInput {
+                  width: 100%;
+                  height: 38px;
+                  color: #242A31;
+                  border: none;
+                  margin: 0;
+                  padding: 0px 8px;
+                  font: inherit;
+                  cursor: inherit;
+                  resize: none;
+                  outline: none;
+                  background: transparent;
+                  text-align: left;
+                  box-sizing: border-box;
+                  line-height: inherit;
+                  border-radius: 3px;
+                }
+              }
+              .searchButtonWrapper {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                flex: 0 0 auto;
+                color: #242A31;
+                order: -1;
+                margin: 0;
+                padding: 0;
+                align-items: center;
+                line-height: 1.2;
+                white-space: nowrap;
+                padding-left: 8px;
+                padding-right: 8px;
+                -webkit-box-align: center;
+                .searchIconSVG {
+                  width: 1em;
+                  height: 1em;
+                  vertical-align: middle;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

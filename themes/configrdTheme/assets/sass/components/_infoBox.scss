@@ -1,0 +1,39 @@
+/* Info Box Styles
+----------------------------------------*/
+.infoBox {
+  margin: 0;
+  display: block;
+  padding: 24px 24px calc(1px / 10) 50px;
+  position: relative;
+  margin-top: 32px;
+  border-left: 4px solid;
+  margin-bottom: 32px;
+  border-radius: 3px;
+  background-color: #F5F7F9;
+  border-color: #3884ff;
+  word-break: break-all;
+  &.warning {
+    border-color: #cf3d3d;
+    svg {
+      color: #cf3d3d;
+    }
+  }
+  &.note {
+    border-color: #2ac15c;
+    svg {
+      color: #2ac15c;
+    }
+  }
+  svg {
+    color: rgb(56, 132, 255);
+  }
+  .infoBox-icon {
+    top: 24px;
+    left: 16px;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    position: absolute;
+    font-size: 24px;
+  }
+}

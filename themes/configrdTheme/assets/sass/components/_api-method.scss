@@ -1,0 +1,216 @@
+/* Variables API Styles
+----------------------------------------*/
+.variablesApi-badge {
+  display: flex;
+  margin: 0px;
+  padding: 0px 8px 0px 0px;
+  .badge {
+    color: rgb(255, 255, 255);
+    height: 21px;
+    display: inline-flex;
+    align-items: center;
+    -webkit-box-align: center;
+    background: rgb(56, 132, 255);
+    background-color: rgb(56, 132, 255);
+    border-radius: 9999px;
+    padding: 0;
+    margin: 0;
+    .badge-text {
+      font-size: 12px;
+      line-height: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0px 8px;
+    }
+  }
+}
+
+.variablesApi-pathWrapper {
+  color: rgb(116, 129, 141);
+  display: flex;
+  font-size: 85%;
+  align-items: baseline;
+  font-family: "Source Code Pro", Menlo, monospace;
+  line-height: 1.7;
+  -webkit-box-align: baseline;
+  margin: 0px 0px 24px;
+  padding: 0px;
+  background-color: #f5f7f9;
+  flex-wrap: wrap;
+  word-break: break-all;
+  flex-direction: column;
+  .variablesApi-pathStart {
+    font-size: 1rem;
+    line-height: 1.625;
+    font-weight: 400;
+    font-family: Content-font, Roboto, sans-serif;
+    background-color: rgb(245, 247, 249);
+    padding: 8px 0px 8px 8px;
+    border-radius: 3px 0px 0px 3px;
+  }
+  .variablesApi-pathEnd {
+    color: rgb(36, 42, 49);
+    font-size: 1rem;
+    line-height: 1.625;
+    font-weight: bold;
+    font-family: Content-font, Roboto, sans-serif;
+    background-color: rgb(245, 247, 249);
+    flex: 1 1 0%;
+    padding: 8px 8px 8px 0px;
+    border-radius: 0px 3px 3px 0px;
+  }
+}
+
+.variablesApi {
+  margin: 0;
+  padding: 0;
+  .variablesApi-contentWrapper {
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    .variablesApi-ParametersList {
+      display: block;
+      margin: 0px 0px 20px;
+      padding: 0px;
+      .variablesApi-ParameterTitle {
+        color: rgb(116, 129, 141);
+        display: block;
+        position: relative;
+        font-size: 15px;
+        margin: 0px 0px 4px;
+        padding: 0px;
+      }
+      .variablesApi-ResponseTitle {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        padding: 0;
+        margin: 0 0 4px 0;
+        align-items: center;
+        -webkit-box-align: center;
+        font-size: 1rem;
+        font-weight: 500;
+        .responseCode {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          margin: 0 0 4px 0;
+          padding: 0;
+          font-size: 1rem;
+          font-weight: 500;
+          align-items: center;
+          -webkit-box-align: center;
+          .responseCode-colorIndicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 6px 0 0;
+            padding: 0;
+            font-size: 1rem;
+            line-height: 1.625;
+            font-weight: 400;
+            border-radius: 50%;
+            &.response-success {
+              background-color: #26CB7C;
+            }
+            &.response-fail {
+              background-color: #FF4642;
+            }
+            &.response-warning {
+              background-color: #e7951ed1;
+            }
+          }
+        }
+      }
+      .variablesApi-ResponseDescription {
+        position: relative;
+        margin: 0 0 4px 0;
+        padding: 0;
+        color: $text-gray;
+      }
+      .variablesApi-ParametersRowWrapper {
+        .variablesApi-ParametersRow {
+          margin: 0;
+          display: block;
+          padding: 16px;
+          position: relative;
+          border-top: 1px solid $border-color-main;
+          border-left: 1px solid $border-color-main;
+          border-right: 1px solid $border-color-main;
+          &:first-child {
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+          }
+          &:last-child {
+            border-bottom: 1px solid $border-color-main;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+          }
+          .ParameterCell-name {
+            display: block;
+            margin: 0;
+            width: 150px;
+            padding: 8px;
+            .ParameterValue-name {
+              margin: 0;
+              display: block;
+              padding: 0;
+              line-height: 1.2;
+              border-bottom: 2px solid transparent;
+            }
+            .ParameterValue-requirement {
+              margin: 0;
+              display: block;
+              padding: 0;
+              font-size: 10px;
+              line-height: 1.2;
+              text-transform: uppercase;
+              &.optional {
+                color: $text-gray;
+              }
+              &.required {
+                color: #FF4642;
+              }
+            }
+          }
+          .ParameterCell-type {
+            display: block;
+            margin: 0;
+            width: 130px;
+            padding: 8px;
+            .ParameterValue-type {
+              margin: 0;
+              display: inline-block;
+              padding: 2px 6px;
+              font-size: 85%;
+              font-family: "Source Code Pro", Menlo, monospace;
+              line-height: 1.7;
+              white-space: nowrap;
+              border-radius: 3px;
+              background-color: #F5F7F9;
+            }
+          }
+          .ParameterCell-description {
+            display: block;
+            margin: 0px;
+            padding: 8px;
+            flex: 1 1 0%;
+            .ParameterValue-description {
+              color: #74818D;
+              margin: 0;
+              display: block;
+              padding: 0;
+              position: relative;
+              font-size: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

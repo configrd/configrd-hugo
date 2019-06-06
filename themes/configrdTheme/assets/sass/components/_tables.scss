@@ -1,0 +1,40 @@
+/* Tables Styles
+----------------------------------------*/
+
+.table-responsive {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+.table {
+  margin: 0;
+  thead {
+    tr {
+      th {
+        color: #9DAAB6;
+        font-size: 1rem;
+        font-weight: 500;
+        border-bottom: 2px solid $border-color-main;
+        border-top: none;
+        span {
+          color: inherit;
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      border-color: $border-color-main;
+      border-bottom: 1px solid $border-color-main;
+      td, th {
+        padding: 0.5rem;
+        vertical-align: middle;
+        border: none;
+      }
+    }
+  }
+}

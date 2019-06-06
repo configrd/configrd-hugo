@@ -1,0 +1,544 @@
+/* Common Styles
+----------------------------------------*/
+
+$main-font-color: #3B454E;
+$bg-main: #F5F7F9;
+$header-main-color: #242A31;
+$text-gray: #74818d;
+$text-light-gray: #9daab6;
+$border-color-main: #e6ecf1;
+$link-main-color: #3884FF;
+
+.page {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  color: #242A31;
+  background: $bg-main;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  .pageFlexWrapper {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex: 1;
+    width: 100%;
+    color: #3B454E;
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+    position: relative;
+    .pageFlex {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      width: 100%;
+      margin: 0;
+      display: flex;
+      padding: 0;
+      position: relative;
+      min-height: 100%;
+      flex-direction: column;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      .contentBox {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: 1;
+        align-items: stretch;
+        position: relative;
+        -moz-transition: margin-bottom 250ms ease;
+        -webkit-box-align: stretch;
+        -webkit-transition: margin-bottom 250ms ease;
+        transition: margin-bottom 250ms ease;
+        .page-content {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          flex: 1 1 auto;
+          margin: 0;
+          display: flex;
+          padding: 0;
+          min-width: 0;
+          max-width: 100%;
+          background: #fff;
+          flex-direction: column;
+          padding-bottom: 64px;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          .contentAndRightSidebar {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            flex: 1 1 auto;
+            display: flex;
+            position: relative;
+            min-width: 0;
+            .page-wrapper {
+              flex: 1 1 auto;
+              margin: 0px 16px;
+              display: block;
+              padding: 0;
+              min-width: 0;
+              max-width: 750px;
+            }
+            .pageRightSidebar {
+              flex: 0 0 auto;
+              width: 224px;
+              margin: 0;
+              display: block;
+              padding: 0;
+              position: relative;
+              margin-right: auto;
+              .pageRightBox {
+                margin: 0;
+                display: block;
+                padding: 0;
+                .boxForPadding {
+                  padding-bottom: 0;
+                }
+                .anchorsNavigation {
+                  display: -webkit-box;
+                  display: -moz-box;
+                  display: -ms-flexbox;
+                  display: -webkit-flex;
+                  display: flex;
+                  padding-top: 40px;
+                  padding-bottom: 40px;
+                  flex-direction: column;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  overflow-y: auto;
+                  overflow-x: hidden;
+                  &.fixed {
+                    top: 0px;
+                    left: auto;
+                    position: fixed;
+                    z-index: 1;
+                    width: 224px;
+                  }
+                  .simplebar-scrollbar {
+                    top: 35px;
+                  }
+                  .anchorsNavigationWrapper {
+                    margin: 0;
+                    display: block;
+                    padding: 0;
+                    position: relative;
+                    &:before {
+                      top: 0;
+                      left: 0;
+                      height: 100%;
+                      content: " ";
+                      position: absolute;
+                      border-left: 1px solid #E6ECF1;
+                    }
+                    .anchorsNavigationListWrapper {
+                      display: -webkit-box;
+                      flex: 1;
+                      margin: 0;
+                      display: flex;
+                      padding: 0;
+                      overflow: hidden;
+                      position: relative;
+                      min-width: 224px;
+                      counter-reset: toc;
+                      flex-direction: column;
+                      -webkit-box-orient: vertical;
+                      -webkit-box-direction: normal;
+                      &:before {
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+                        content: " ";
+                        position: absolute;
+                        border-left: 1px solid #E6ECF1;
+                      }
+                      .anchorsNavigationList {
+                        overflow-y: auto;
+                        flex: 1;
+                        margin: 0;
+                        display: block;
+                        padding: 0;
+                        overflow-x: hidden;
+                        overflow-y: overlay;
+                        -webkit-overflow-scrolling: touch;
+                        .rightSidebarHeaderWrapper {
+                          display: -webkit-box;
+                          display: -moz-box;
+                          display: -ms-flexbox;
+                          display: -webkit-flex;
+                          color: #9DAAB6;
+                          margin: 0;
+                          display: flex;
+                          padding: 0;
+                          padding-left: 24px;
+                          margin-bottom: 8px;
+                          .rightSidebarHeaderIcon {
+                            margin: 0;
+                            display: block;
+                            padding: 0;
+                            margin-right: 8px;
+                            svg {
+                              width: 1em;
+                              height: 1em;
+                              vertical-align: middle;
+                            }
+                          }
+                          .rightSidebarHeaderTitle {
+                            margin: 0;
+                            display: block;
+                            padding: 0;
+                            .rightSidebarHeaderTitleText {
+                              font-size: 10px;
+                              line-height: 1;
+                              font-weight: 700;
+                              text-transform: uppercase;
+                              letter-spacing: 1.2px;
+                            }
+                          }
+                        }
+                        .rightSidebarItem {
+                          display: -webkit-box;
+                          color: #74818D;
+                          margin: 0;
+                          cursor: pointer;
+                          display: flex;
+                          padding: 4px 16px;
+                          align-items: center;
+                          padding-left: 24px;
+                          vertical-align: middle;
+                          text-decoration: none;
+                          -webkit-box-align: center;
+                          &:hover {
+                            color: rgb(56, 132, 255);
+                          }
+                          &.nav-link.active {
+                            color: rgb(56, 132, 255);
+                            &:before {
+                              left: 0px;
+                              height: 29px;
+                              content: " ";
+                              position: absolute;
+                              border-left: 2px solid;
+                            }
+                          }
+                          .rightSidebarItemWrapper {
+                            margin: 0;
+                            display: block;
+                            padding: 0;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            .itemTitleWrapper {
+                              font-size: 14px;
+                              line-height: 1.5;
+                              font-weight: 500;
+                              .itemTitle {
+                                font-size: 12px;
+                                line-height: 1.5;
+                                font-weight: 500;
+                                &.level-2 {
+                                  padding-left: 16px;
+                                }
+                                &.level-3 {
+                                  padding-left: 26px;
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .searchBarOverlay {
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        display: flex;
+        z-index: 30;
+        position: fixed;
+        align-items: center;
+        pointer-events: none;
+        animation-name: none;
+        justify-content: center;
+        background-color: rgba(24, 48, 85, 0);
+        -webkit-box-pack: center;
+        -webkit-box-align: center;
+        animation-duration: 0.2s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+        margin: 0px;
+        padding: 0px;
+        transition: background-color 250ms ease-out 0s;
+        &.active {
+          pointer-events: auto;
+          animation-name: c016;
+          background-color: rgba(24, 48, 85, 0.3);
+          transition: background-color 250ms ease-out 0s;
+        }
+        .searchBarWrapper {
+          top: 0px;
+          left: 100%;
+          width: 385px;
+          bottom: 0px;
+          display: flex;
+          position: absolute;
+          align-self: stretch;
+          align-items: stretch;
+          pointer-events: all;
+          flex-direction: column;
+          -webkit-box-align: stretch;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          margin: 0px;
+          padding: 0px;
+          background: rgb(255, 255, 255);
+          transition: transform 250ms ease 0s;
+          &.active {
+            transform: translateX(-100%);
+            transition: transform 250ms ease 0s;
+          }
+          .searchBarHeader {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            max-width: 385px;
+            align-items: center;
+            flex-direction: row;
+            -webkit-box-align: center;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            margin: 0px;
+            padding: 0px;
+            border-bottom: 1px solid rgb(230, 236, 241);
+            .searchInputWrapperInner {
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+              -webkit-box-align: center;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+              flex: 1 1 0%;
+              margin: 0px;
+              padding: 0px;
+              .searchBar {
+                display: block;
+                flex: 1 1 0%;
+                margin: 0px;
+                padding: 0px 0px 0px 24px;
+                .rowWrapper {
+                  width: 100%;
+                  display: flex;
+                  font-size: 16px;
+                  box-sizing: border-box;
+                  line-height: 1.625;
+                  font-weight: 400;
+                  margin: 0px;
+                  border-width: initial;
+                  border-style: none;
+                  border-color: initial;
+                  border-image: initial;
+                  padding: 0px;
+                  outline: none;
+                  background: rgb(255, 255, 255);
+                  border-radius: 3px;
+                  .inputBox {
+                    flex: 1;
+                    margin: 0;
+                    display: block;
+                    padding: 0;
+                    .searchBarInput {
+                      width: 100%;
+                      color: rgb(36, 42, 49);
+                      cursor: inherit;
+                      resize: none;
+                      height: 38px;
+                      text-align: left;
+                      box-sizing: border-box;
+                      font: inherit;
+                      border-width: initial;
+                      border-style: none;
+                      border-color: initial;
+                      border-image: initial;
+                      margin: 0px;
+                      outline: none;
+                      padding: 0px 8px;
+                      background: transparent;
+                      border-radius: 3px;
+                    }
+                  }
+                  .searchBarIcon {
+                    color: rgb(36, 42, 49);
+                    order: -1;
+                    display: flex;
+                    font-size: 18px;
+                    align-items: center;
+                    line-height: 1.2;
+                    white-space: nowrap;
+                    -webkit-box-align: center;
+                    flex: 0 0 auto;
+                    margin: 0px;
+                    padding: 0px 8px 0px 0px;
+                  }
+                }
+              }
+            }
+            .searchCloseButton {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              -webkit-box-align: center;
+              margin: 0px;
+              padding: 16px;
+              &:hover {
+                color: rgb(56, 132, 255);
+              }
+              svg {
+                width: 18px;
+                height: 18px;
+                vertical-align: middle;
+              }
+            }
+          }
+          .searchBarBodyWrapper {
+            width: 100%;
+            display: block;
+            max-width: 385px;
+            overflow-x: hidden;
+            overflow-y: overlay;
+            flex: 1 1 0%;
+            margin: 0px;
+            padding: 0px;
+            .initialResultWrapper {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              flex: 1 1 0%;
+              margin: 0px;
+              padding: 0px;
+              .initialResult {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                flex: 1 1 0%;
+                margin: 0px;
+                padding: 16px 16px 56px;
+                .imageWrapper {
+                  display: flex;
+                  align-items: center;
+                  flex-direction: column;
+                  justify-content: center;
+                  -webkit-box-pack: center;
+                  -webkit-box-align: center;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  flex: 1 1 0%;
+                  margin: 0px;
+                  padding: 16px 16px 56px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+}
+
+*, *:before, *:after {
+    outline: none;
+    box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+  color: $main-font-color;
+  background: $bg-main;
+  font-family: 'Roboto', sans-serif;
+  position:relative;
+
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  line-height: 1em;
+  font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: $link-main-color;
+  cursor: pointer;
+  word-break: break-all;
+  &:hover {
+    color: $link-main-color;
+    text-decoration: underline;
+  }
+}
+
+.block {
+  margin: 0;
+  display: block;
+  padding: 0;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 998;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+.simplebar-scrollbar:before {
+    background: #9f9f9f;
+    border-radius: 5px;
+}
+.simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    width: 4px;
+    min-height: 10px;
+}
