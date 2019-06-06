@@ -1,5 +1,5 @@
 {{- if .Site.IsServer -}} {{ "<!-- shortcodes/infobox.html -->" | safeHTML }} {{- end -}}
-{{- $_hugo_config := `{ "version": 1 }` -}}
+
 <div class="infoBox {{ .Get "type" }}" >
   <div class="infoBox-icon">
     {{- if eq (.Get "type") "info" -}}
@@ -16,7 +16,7 @@
   </div>
   <p class="regularParagraph">
     <span class="regularText">
-      {{- .Inner -}}
+      {{- .Inner | markdownify -}}
     </span>
   </p>
 </div>
