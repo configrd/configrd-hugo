@@ -1,14 +1,27 @@
 {{- if .Site.IsServer -}} {{ "<!-- shortcodes/code.html -->" | safeHTML }} {{- end -}}
-{{ $_hugo_config := `{ "version": 1 }` }}
+
+{{ $inline := ( .Get "inline" ) }}
+{{ $line_no := ( .Get "line-numbers" ) }}
+{{ $lang := ( .Get "lang" ) }}
+{{ $file := ( .Get "file" ) }}
+{{ $id := ( printf "lang_%s_file_%s_inline_%s_line_no_%s_rand_%d" $lang $file $inline $line_no ( index (seq 1000 | shuffle) 0 ) ) }}
+{{ $id = replace $id "." "_" }}
+{{ $id = replace $id " " "_" }}
+
 <div class="codeBlock">
+  {{ if $file }}
   <div class="codeHeader">
     <div class="codeHeaderTabs">
-      {{- with .Get "file" -}}
+      {{- with $file -}}
         <div role="button" tabindex="-1" class="codeHeaderButton">{{.}}</div>
 	    {{- end -}}
     </div>
+  {{ else }}
+  <div class="codeHeaderInline">
+  {{ end }}
+
     {{ if ne (.Get "copy") "false" }}
-      <div role="button" tabindex="-1" aria-label="Copy" class="copyButton" data-toggle="tooltip" data-placement="bottom" title="Copy">
+      <div role="button" tabindex="-1" aria-label="Copy" class="copyButton" data-toggle="tooltip" data-placement="bottom" title="Copy" data-clipboard-target="#{{ $id }}">
         <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor">
           <g>
             <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
@@ -19,9 +32,9 @@
       {{/* Functionality located within filesaver.js The copy here is located in the css with .copy class so it can be replaced with JS on success */}}
     {{end}}
   </div>
-  <pre class="language-{{ .Get "lang" }} line-numbers">
-    <code {{with .Get "download"}} id="{{.}}"{{end}}>
-    {{- .Inner -}}
+  <pre class="language-{{ $lang }} {{ if ne $line_no "false" }} line-numbers {{ end }}">
+    <code id="{{ $id }}">
+    {{- .Inner | string -}}
     </code>
   </pre>
 </div>
