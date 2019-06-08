@@ -28,10 +28,10 @@ Let's say we define a repository sourcing environment variables from plain-text 
 
 We defined two environment variables at path `/env/dev` in git
 
-{{< code file="default.properties" lang="yaml" >}}
+{{< code-old file="default.properties" lang="yaml" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-{{< /code >}}
+{{< /code-old >}}
 
 The child path `/env/dev/local` in git contains **only** the variable
 

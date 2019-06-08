@@ -25,7 +25,7 @@ A named config profile is simply a pointer to a path in your repository. Besides
 
 Let's say we start off with a flat repository structure without much inheritance between environments. Each environment has it's own set of configs in a dedicated folder hierarchy.
 
-{{< code lang="yaml" file="configrd.yaml">}}
+{{< code-old lang="yaml" file="configrd.yaml">}}
 ```
 repos:
   default:
@@ -35,19 +35,19 @@ repos:
         stage: env/stage/myapp
         prod: env/prod/myapp
 ```
-{{< /code >}}
+{{< /code-old >}}
 
 To obtain the `dev` config profile for `myapp`, you'd execute the following query
 
-{{< code lang="bash" >}}
+{{< code-old lang="bash" >}}
 curl -s -H "Accept: text/plain" https://demo.configrd.io/configrd/v1/?p=dev
-{{< /code >}}
+{{< /code-old >}}
 
 Now, we'd like to reuse more of our configurations between environments. For example, we'd like to reuse the dev environment's settings for local configuration but with some local overrides. We'd also like to ensure our prod and stage environment align as closely as possible by stage inheriting as many settings from prod as possible so that we can best replicate its behavior during test.
 
 You may change your inheritance hierarchy as follows
 
-{{< code lang="yaml" file="configrd.yaml" >}}
+{{< code-old lang="yaml" file="configrd.yaml" >}}
 ```
 repos:
   default:
@@ -58,10 +58,10 @@ repos:
         stage: env/myapp/prod/stage
         prod: env/myapp/prod
 ```
-{{< /code >}}
+{{< /code-old >}}
 
 But we'd still query the `dev` config profile for `myapp` as before, thus braking no exiting references
 
-{{< code lang="bash" >}}
+{{< code-old lang="bash" >}}
 curl -s -H "Accept: text/plain" https://demo.configrd.io/configrd/v1/?p=dev
-{{< /code >}}
+{{< /code-old >}}

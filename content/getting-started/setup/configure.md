@@ -101,7 +101,7 @@ This example employs the one repository per application pattern. Environments ha
 
 The below configrd.yaml file assumes the following directory structure in order to achieve the desired inheritance behavior.
 
-{{< code file="sample directory structure" lang="yaml" >}}
+{{< code-old file="sample directory structure" lang="yaml" >}}
 srv/
 └── configrd/
     └── apps/
@@ -120,9 +120,9 @@ srv/
                     ├── default.properties
                     └── stage/
                         └── default.properties
-{{< /code >}}
+{{< /code-old >}}
 
-{{< code file="configrd.yaml" lang="yaml" >}}
+{{< code-old file="configrd.yaml" lang="yaml" >}}
 service:
  repos:
     myapp:
@@ -136,7 +136,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code >}}
+{{< /code-old >}}
 
 The above file based repository named **myapp** has the following configuration:
 
@@ -233,7 +233,7 @@ Configrd is compatible with AWS KMS for on the fly encryption and decryption of 
 
 #### Example
 
-{{< code file="configrd.yaml" lang="yaml" >}}
+{{< code-old file="configrd.yaml" lang="yaml" >}}
 ...
 myrepo:
    uri: https://...
@@ -251,7 +251,7 @@ myrepo:
          exclude:
          - (?i)NOT_SECRET
 ```
-{{< /code >}}
+{{< /code-old >}}
 
 On the fly encryption works with any storage mechanism you may choose to store your configs.
 
