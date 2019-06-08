@@ -1,5 +1,5 @@
 {{- if .Site.IsServer -}} {{ "<!-- shortcodes/inline-code-blocks.html -->" | safeHTML }} {{- end -}}
- {{ $_hugo_config := `{ "version": 1 }` }}
+
 <div class="codeBlock">
   <div class="codeHeaderInline">
     {{ if ne (.Get "copy") "false" }}      
@@ -19,4 +19,6 @@
     {{- .Inner -}}
     </code>
   </pre>
-  {{- if .Site.IsServer -}} {{ "<!-- END shortcodes/inline-code-blocks.html -->" | safeHTML }} {{- end -}}
+</div>
+  
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/inline-code-blocks.html -->" | safeHTML }} {{- end -}}
