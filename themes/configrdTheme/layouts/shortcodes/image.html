@@ -1,0 +1,27 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/image.html -->" | safeHTML }} {{- end -}}
+{{ $image_src := or ( .Get "src" ) ( .Get "url" ) }}
+{{ $image_align := ( .Get "align" ) }}
+{{ $image_title := ( .Get "title" ) }}
+
+{{ $image_align_class := "center" }} 
+{{ if $image_align }}  
+  {{ $image_align_class = $image_align }}
+{{ end }}
+
+<div class="imageContainer">
+	<figure class="imageFigure">
+	  <div class="imageFigureAlign {{ $image_align_class }}">
+	    <div class="imageWrapper">
+	      <img src="{{ $image_src }}" alt="{{ $image_title }}" >
+	    </div>
+    </div>
+    {{ if $image_title }}
+	  <div class="imageFigureAlign {{ $image_align_class }}">
+	    <figcaption class="captionWrapper">
+	      <span class="caption">{{ $image_title }}</span>
+	    </figcaption>
+    </div>
+    {{ end }}
+	</figure>
+</div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/image.html -->" | safeHTML }} {{- end -}}

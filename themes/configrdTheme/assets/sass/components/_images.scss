@@ -20,15 +20,15 @@
   display: flex;
   margin: 0;
   padding: 0;
-  &.alignCenter {
+  &.center {
     justify-content: center;
     -webkit-box-pack: center;
   }
-  &.alignLeft {
+  &.left {
     justify-content: flex-start;
     -webkit-box-pack: start;
   }
-  &.alignRight {
+  &.right {
     justify-content: flex-end;
     -webkit-box-pack: end;
   }
@@ -39,12 +39,16 @@
   padding: 0;
   position: relative;
   max-width: 100%;
+
+  img {
+    width: auto;
+    display: block;
+    max-width: 100%;
+    max-height: 60vh;
+  }
 }
 .regularImage {
-  width: auto;
-  display: block;
-  max-width: 100%;
-  max-height: 60vh;
+  
 }
 .captionWrapper {
   color: #9DAAB6;

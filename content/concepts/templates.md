@@ -11,9 +11,7 @@ tags_weight: 22
 aliases: [/concepts/templates/]
 ---
 
-{{% img-block %}}
-![Massive amounts of code](/images/elements/code.jpg)
-{{% /img-block %}}
+{{< image src="/images/elements/code.jpg" title="Massive amounts of code" >}}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Erat imperdiet sed euismod nisi. Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Elit scelerisque mauris pellentesque pulvinar pellentesque habitant morbi. Imperdiet proin fermentum leo vel orci porta non pulvinar neque. In vitae turpis massa sed. Non diam phasellus vestibulum lorem sed risus. 
 
