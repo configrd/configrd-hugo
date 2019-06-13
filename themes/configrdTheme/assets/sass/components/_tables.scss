@@ -9,8 +9,14 @@
   margin-bottom: 32px;
 }
 
-.table {
+.table-responsive table {
   margin: 0;
+  padding: 0;
+	position: relative;
+	width: 100%;
+	color: #212529;
+  overflow-x: auto;
+  
   thead {
     tr {
       th {
@@ -19,6 +25,9 @@
         font-weight: 500;
         border-bottom: 2px solid $border-color-main;
         border-top: none;
+        padding: .75rem;
+        line-height: 1.625;
+        vertical-align: bottom;
         span {
           color: inherit;
           font-weight: inherit;
@@ -30,10 +39,14 @@
     tr {
       border-color: $border-color-main;
       border-bottom: 1px solid $border-color-main;
-      td, th {
+      td {
         padding: 0.5rem;
         vertical-align: middle;
         border: none;
+        font-size: 1rem;
+        color: #3B454E;
+        line-height: 1.625;
+        font-weight: 400;
       }
     }
   }
