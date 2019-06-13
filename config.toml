@@ -5,10 +5,6 @@ theme = "configrdTheme"
 relativeURLs = true
 Paginate = 1
 
-# Highlighting config (Pygments)
-# It is (currently) not in use, but you can do ```go in a content file if you want to.
-pygmentsCodeFences = true
-pygmentsCodefencesGuessSyntax = true
 
 
 [params]

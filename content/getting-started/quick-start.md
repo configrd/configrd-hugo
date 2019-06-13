@@ -17,14 +17,14 @@ toc: false
 
 Pull the docker image and start the service and map a volume to `/srv/configrd` on both container and host
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -v /srv/configrd:/srv/configrd configrd/configrd-service:latest
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 A default `configrd.yaml` file will be created at `/srv/configrd` on your local file system. The service will listen to requests on port 9191.
 
 
-{{< code-old file="configrd.yaml" lang="yaml" >}}
+{{< code file="configrd.yaml" lang="yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -32,6 +32,6 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-{{< /code-old >}}
+{{< /code >}}
 
 Now open your favorite browser and navigate to [http://localhost:9191/configrd/v1/](http://localhost:9191/configrd/v1/)

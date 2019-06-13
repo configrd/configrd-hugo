@@ -25,8 +25,7 @@ A named config profile is simply a pointer to a path in your repository. Besides
 
 Let's say we start off with a flat repository structure without much inheritance between environments. Each environment has it's own set of configs in a dedicated folder hierarchy.
 
-{{< code-old lang="yaml" file="configrd.yaml">}}
-```
+{{< code lang="yaml" file="configrd.yaml">}}
 repos:
   default:
       uri: https://config.appcrossings.net.s3.amazonaws.com/apps
@@ -34,21 +33,19 @@ repos:
         dev: env/dev/myapp
         stage: env/stage/myapp
         prod: env/prod/myapp
-```
-{{< /code-old >}}
+{{< /code >}}
 
 To obtain the `dev` config profile for `myapp`, you'd execute the following query
 
-{{< code-old lang="bash" >}}
+{{< code lang="bash" >}}
 curl -s -H "Accept: text/plain" https://demo.configrd.io/configrd/v1/?p=dev
-{{< /code-old >}}
+{{< /code >}}
 
 Now, we'd like to reuse more of our configurations between environments. For example, we'd like to reuse the dev environment's settings for local configuration but with some local overrides. We'd also like to ensure our prod and stage environment align as closely as possible by stage inheriting as many settings from prod as possible so that we can best replicate its behavior during test.
 
 You may change your inheritance hierarchy as follows
 
-{{< code-old lang="yaml" file="configrd.yaml" >}}
-```
+{{< code lang="yaml" file="configrd.yaml" >}}
 repos:
   default:
       uri: https://config.appcrossings.net.s3.amazonaws.com/apps
@@ -57,11 +54,10 @@ repos:
         dev: env/myapp/dev
         stage: env/myapp/prod/stage
         prod: env/myapp/prod
-```
-{{< /code-old >}}
+{{< /code >}}
 
 But we'd still query the `dev` config profile for `myapp` as before, thus braking no exiting references
 
-{{< code-old lang="bash" >}}
+{{< code lang="bash" >}}
 curl -s -H "Accept: text/plain" https://demo.configrd.io/configrd/v1/?p=dev
-{{< /code-old >}}
+{{< /code >}}

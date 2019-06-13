@@ -20,8 +20,7 @@ Running configrd requires a bootstrap configuration on start in the form of a ya
 ## Default configrd.yaml
 
 The default configuration loaded by configrd when no specific configrd.yaml file is provided on start looks as follows:
-
-```yaml
+{{< code lang="yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -29,7 +28,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-```
+{{< /code >}}
 
 The above configrd.yaml states:
 
@@ -101,7 +100,7 @@ This example employs the one repository per application pattern. Environments ha
 
 The below configrd.yaml file assumes the following directory structure in order to achieve the desired inheritance behavior.
 
-{{< code-old file="sample directory structure" lang="yaml" >}}
+{{< code file="sample directory structure" lang="yaml" >}}
 srv/
 └── configrd/
     └── apps/
@@ -120,9 +119,9 @@ srv/
                     ├── default.properties
                     └── stage/
                         └── default.properties
-{{< /code-old >}}
+{{< /code >}}
 
-{{< code-old file="configrd.yaml" lang="yaml" >}}
+{{< code file="configrd.yaml" lang="yaml" >}}
 service:
  repos:
     myapp:
@@ -136,7 +135,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code-old >}}
+{{< /code >}}
 
 The above file based repository named **myapp** has the following configuration:
 
@@ -175,7 +174,7 @@ This example is modeled using one environment per repository pattern. Accessing 
 
 The below configrd.yaml file assumes the following path structure in order to achieve the desired inheritance behavior.
 
-{{< code-plain lang="yaml" >}}
+{{< code >}}
 srv/
 └── configrd/
     └── apps/
@@ -194,9 +193,9 @@ srv/
                     ├── env.yaml
                     └── stage/
                         └── env.yaml
-{{< /code-plain >}}
+{{< /code >}}
 
-{{< code-plain lang="yaml" >}}
+{{< code lang="yaml" >}}
 service:
  repos:
     myapp:
@@ -210,7 +209,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code-plain >}}
+{{< /code >}}
 
 ## Secrets
 
@@ -233,7 +232,7 @@ Configrd is compatible with AWS KMS for on the fly encryption and decryption of 
 
 #### Example
 
-{{< code-old file="configrd.yaml" lang="yaml" >}}
+{{< code file="configrd.yaml" lang="yaml" >}}
 ...
 myrepo:
    uri: https://...
@@ -251,7 +250,7 @@ myrepo:
          exclude:
          - (?i)NOT_SECRET
 ```
-{{< /code-old >}}
+{{< /code >}}
 
 On the fly encryption works with any storage mechanism you may choose to store your configs.
 

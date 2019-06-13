@@ -28,30 +28,31 @@ Let's say we define a repository sourcing environment variables from plain-text 
 
 We defined two environment variables at path `/env/dev` in git
 
-{{< code-old file="default.properties" lang="yaml" >}}
+{{< code file="default.properties" lang="yaml" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-{{< /code-old >}}
+{{< /code >}}
 
 The child path `/env/dev/local` in git contains **only** the variable
 
-{{< code-yaml-no-num file="default.properties" >}}
+{{< code file="default.properties" line-numbers="false" >}}
 app.url = http://localhost:8080/
-{{< /code-yaml-no-num >}}
+{{< /code >}}
 
 If we request the "dev" config profile at `https://mycorp.com/configrd/v1/env/dev/`, configrd returns:
 
-{{< code-plain lang="yaml" >}}
+{{< code lang="yaml" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-{{< /code-plain >}}
+{{< /code >}}
 
 Now, if we request the "local" config profile which overrides and inherits from the "dev" profile at `https://mycorp.com/configrd/v1/env/dev/local/`, configrd returns:
 
-{{< code-plain lang="yaml" >}}
+{{< code lang="yaml" >}}
 app.url = http://localhost:8080 (overriden)
 support.email = support@myservice.com (inherited)
-{{< /code-plain >}}
+{{< /code >}}
+
 
 Any environment variable changes are immediately available on the next request.
 

@@ -54,21 +54,21 @@ Different repositories are queried by specifying the r query parameter. The spec
 
 Variables successfully fetched
 
-      {{% code-plain lang"yaml" %}}
+      {{% code lang"yaml" %}}
       varibale_name=value
       `...`
-      {{% /code-plain %}}
+      {{% /code %}}
 
       {{% api-method-headers-response name="fail" title="404: Not Found" %}}
       {{% /api-method-headers-response %}}
 
 Query returned no results. Could be result of no variable values being defined at the requested config profile or the repository may not exist.
 
-      {{% code-plain lang="yaml" %}}
+      {{% code lang="yaml" %}}
 
       
 
-      {{% /code-plain %}}
+      {{% /code %}}
 
     {{% /api-method %}}
   {{% /tab %}}
