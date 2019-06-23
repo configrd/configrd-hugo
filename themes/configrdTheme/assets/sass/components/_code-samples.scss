@@ -1,0 +1,118 @@
+/* Styles for Inline and Block Code
+----------------------------------------*/
+
+.codeBlock {
+  position: relative;
+  margin-bottom: 24px;
+  pre {
+    margin: 0;
+    padding: 11px 30px;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    font-size: 0.875rem;
+    overflow-x: auto;
+    line-height: 1.7;
+    counter-reset: line;
+    border-radius: 3px;
+    background-color: $bg-main;
+  }
+  code {
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    font-size: 0.875rem;
+  }
+  .codeHeaderInline {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 0;
+    z-index: 1;
+    font-size: 12px;
+    line-height: 1.2;
+    background: transparent;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    .copyButton {
+      color: $text-light-gray;
+      cursor: pointer;
+      display: block;
+      opacity: 0.5;
+      position: relative;
+      font-size: 13px;
+      line-height: 1em;
+      margin: 0px;
+      padding: 8px;
+      outline: none;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .codeHeader {
+    display: flex;
+    font-size: 12px;
+    line-height: 1.2;
+    background: #f0f3f6;
+    .codeHeaderTabs {
+      display: flex;
+      overflow-x: auto;
+      flex: 1 1 0;
+      .codeHeaderButton {
+        color: $link-main-color;
+        cursor: pointer;
+        display: flex;
+        font-size: 12px;
+        line-height: 1.2;
+        padding: 8px;
+        outline: 0px;
+        transition: color 250ms ease 0s;
+      }
+    }
+    .copyButton {
+      color: rgb(157, 170, 182);
+      cursor: pointer;
+      display: block;
+      opacity: 0.5;
+      position: relative;
+      font-size: 13px;
+      line-height: 1em;
+      margin: 0px;
+      padding: 8px;
+      outline: none;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .token.operator {
+    background: none;
+  }
+}
+
+.code-inline {
+  margin: 0 1px;
+  display: inline-block;
+  padding: 3px 6px;
+  font-size: 85%;
+  border-radius: 3px;
+  background-color: $bg-main;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  color: #3B454E;
+}
+
+.line-numbers .line-numbers-rows {
+  line-height: 1.7;
+  border-right: none;
+}

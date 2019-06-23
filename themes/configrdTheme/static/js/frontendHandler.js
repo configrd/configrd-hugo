@@ -203,5 +203,8 @@ $(document).ready(function() {
   clipboard.on('success', function(e) {
     e.clearSelection();
   });
+  
+  // Responsive Table
+  $("table").wrap("<div class='table-responsive'></div>")
 
 });

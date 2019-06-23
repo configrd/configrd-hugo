@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/mobile-right-sidebar.html -->" | safeHTML }} {{- end -}}
 <div id="mobileAnchorsNavigationPlacement">
   <div class="mobileAnchorsNavigation">
     <div class="popoverWrapper">
@@ -22,3 +23,4 @@
     </div>
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/mobile-right-sidebar.html -->" | safeHTML }} {{- end -}}

@@ -27,9 +27,9 @@ If you don't, get one. You'll use it for more things than just configrd.
 
 Each repository within configrd can be set up to use a different key if needed. Depending on your repository strategy, each service, module or environment could have it's own keys.git
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 AWS KMS is currently the only supported KMS with configrd. Please let us know which KMS you'd like to see integrated.
-{{% /infobox %}}
+{{< /infobox >}}
 
 ### Pattern based Matching
 

@@ -1,0 +1,217 @@
+/* Footer styles for navigation links and 'last updated' section
+----------------------------------------*/
+
+.pageFooter {
+  margin-top: 64px;
+  .navigationLinks {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    .linkNext,
+    .linkPrevious {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-grow: 1;
+      width: auto;
+      position: relative;
+      margin: 0;
+      padding: 0;
+      flex-direction: row;
+      align-self: stretch;
+      align-items: center;
+      justify-self: stretch;
+
+      color: #242A31;
+      background-color: #FFFFFF;
+      border: 1px solid $border-color-main;
+      border-radius: 3px;
+
+      box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+      transition: border 250ms ease;
+      -webkit-transition: border 250ms ease;
+      -moz-transition: border 250ms ease;
+      text-decoration: none;
+      &:hover {
+        color: $link-main-color;
+        border-color: $link-main-color;
+        .linkIcon {
+          color: $link-main-color;
+          border-color: $link-main-color;
+        }
+      }
+      .linkBody {
+        flex: 1;
+        padding: 16px;
+        .linkTitle {
+          font-size: 0.75rem;
+          line-height: 1.625;
+          font-weight: 400;
+          color: $text-light-gray;
+        }
+        .pageTitle {
+          font-size: 16px;
+          line-height: 1.5;
+          font-weight: 500;
+          transition: color 250ms ease;
+          -moz-transition: color 250ms ease;
+          -webkit-transition: color 250ms ease;
+        }
+      }
+      .linkIcon {
+        flex: 0 0 auto;
+        color: $text-light-gray;
+        margin: 0;
+        display: block;
+        padding: 16px;
+        font-size: 24px;
+        transition: color 250ms ease;
+        -moz-transition: color 250ms ease;
+        -webkit-transition: color 250ms ease;
+      }
+    }
+    .linkPrevious {
+      margin: 12px 0 0 0;
+      order: 1;
+    }
+    .linkNext {
+      margin: 0 0 12px 0;
+      order: 0;
+    }
+  }
+
+  .lastUpdated {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    margin-top: 24px;
+    border-top: 2px solid $border-color-main;
+    align-items: center;
+    padding-top: 24px;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    .last-updated-wrapper {
+      flex: 1;
+      margin: 0;
+      display: block;
+      padding: 0;
+      .last-updated {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex: auto;
+        margin: 0;
+        padding: 0;
+        align-items: center;
+        -webkit-box-align: center;
+        .editorsListWrapper {
+          flex: 0 0 auto;
+          margin: 0;
+          display: block;
+          padding: 0;
+          margin-right: 8px;
+          .editorsList {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            flex-direction: row-reverse;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: reverse;
+            .editor {
+              display: -webkit-box;
+              display: -moz-box;
+              display: -ms-flexbox;
+              display: -webkit-flex;
+              display: flex;
+              width: 30px;
+              height: 30px;
+              margin: 0;
+              padding: 0;
+              z-index: 0;
+              position: relative;
+              box-shadow: 0 0 0 2px white;
+              border-radius: 128px;
+              &:nth-last-child(n+2) {
+                margin-left: -8px;
+              }
+              .avatarFrame {
+                display: -webkit-box;
+                display: -moz-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                -webkit-mask-image: -webkit-radial-gradient(white, black);
+                -webkit-mask-image: -moz-radial-gradient(white, black);
+                mask-image: -webkit-radial-gradient(white, black);
+                mask-image: -moz-radial-gradient(white, black);
+                width: 30px;
+                margin: 0;
+                height: 30px;
+                display: flex;
+                padding: 0;
+                position: relative;
+                overflow: hidden;
+                mask-image: radial-gradient(white, black);
+                align-items: center;
+                border-radius: 128px;
+                justify-content: center;
+                -webkit-box-pack: center;
+                -webkit-box-align: center;
+                -webkit-mask-image: radial-gradient(white, black);
+                .avatar {
+                  width: 100%;
+                  height: 100%;
+                  max-width: 100%;
+                  background-size: cover;
+                  background-color: #FFFFFF;
+                  background-repeat: no-repeat;
+                }
+                .avatarShadow {
+                  top: 0;
+                  left: 0;
+                  right: 0;
+                  margin: 0;
+                  bottom: 0;
+                  display: block;
+                  padding: 0;
+                  position: absolute;
+                  box-shadow: inset 0 0 1px 1px rgba(24, 48, 85, 0.1);
+                  border-radius: 128px;
+                  pointer-events: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      .editedDate {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex: auto;
+        color: $text-light-gray;
+        margin: 0;
+        display: flex;
+        padding: 0;
+        .editedDate-text {
+          font-size: 12px;
+          line-height: 1.625;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}

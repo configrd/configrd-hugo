@@ -5,6 +5,9 @@ theme = "configrdTheme"
 relativeURLs = true
 Paginate = 1
 
+
+disableKinds = ["section"]
+
 [params]
   logo = "/images/configrd-logo.png"
 

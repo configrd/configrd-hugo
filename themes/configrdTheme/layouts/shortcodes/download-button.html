@@ -1,7 +1,13 @@
-{{ $_hugo_config := `{ "version": 1 }` }}
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/button-box.html -->" | safeHTML }} {{- end -}}
+{{ $file_url := ( .Get "url" ) }}
+{{ $file_name := ( .Get "name" ) }}
+{{ $button_title := ( .Get "title" ) }}
+
+
+
 <div class="buttonBox">
   <div class="block">
-    <a class="buttonDownload" download="browserstack-logo-200.png" href="https://firebasestorage.googleapis.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-Lbaag3JdLR6F7Sc-Pf5%2F-Ld4udirD-aH1s_4BWMY%2F-Ld4vzncivlZQEGVzD2m%2Fbrowserstack-logo-200.png?alt=media&amp;token=6b7e7c45-a280-4c12-9905-8d115072644d" target="_blank">
+    <a class="buttonDownload" download="{{ $file_name }}" href="{{ $file_url }}" target="_blank">
       <div class="buttonIcon">
         <svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></g></svg>
       </div>
@@ -12,9 +18,10 @@
       </div>
       <div class="buttonSubTitle">
         <div class="buttonSubTitleWrapper">
-          <span class="buttonSubTitleText">{{- .Inner -}}</span>
+          <span class="buttonSubTitleText">{{ $file_name }}</span>
         </div>
       </div>
     </a>
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/button-box.html -->" | safeHTML }} {{- end -}}

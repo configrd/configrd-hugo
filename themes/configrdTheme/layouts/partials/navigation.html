@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/navigation.html -->" | safeHTML }} {{- end -}}
 <section class="navigation">
   <div class="navigationWrapper">
     <div class="sidebarWrapper">
@@ -96,3 +97,4 @@
     </div>
   </div>
 </section>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/navigation.html -->" | safeHTML }} {{- end -}}

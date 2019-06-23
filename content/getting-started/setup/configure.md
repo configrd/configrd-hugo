@@ -20,8 +20,7 @@ Running configrd requires a bootstrap configuration on start in the form of a ya
 ## Default configrd.yaml
 
 The default configuration loaded by configrd when no specific configrd.yaml file is provided on start looks as follows:
-
-```yaml
+{{< code lang="yaml" >}}
 service:
   defaults:
     fileName: default.properties
@@ -29,7 +28,7 @@ service:
     default:
       uri: file:/srv/configrd
       sourceName: file
-```
+{{< /code >}}
 
 The above configrd.yaml states:
 
@@ -62,9 +61,10 @@ A repository is a location from where environment variables and application sett
 * Each repository must have a config source
 * More than one repository can point to the same uri storage location
 
-{{% infobox type1="info" %}}
+
+{{< infobox type="info" >}}
 Each config source below uses a different repository configuration example in order to illustrate additional features and capabilities of the service. Even if you don't intend to use configrd with the particular config source, it may still be helpful to read through the examples for additional understanding.
-{{% /infobox %}}
+{{< /infobox >}}
 
 ## Config Sources
 
@@ -83,9 +83,9 @@ Some config source support both read and write operations via API.
 
 Pull configuration files from the local file system or mounted volumes using the **file** config source. 
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 The `uri` absolute path should start with `file:/srv/configrd/` when running from within a docker container
-{{% /infobox %}}
+{{< /infobox >}}
 
 | Property | Type | Required | Default | Description |
 | :--- | :--- | :--- | :--- | :--- |
@@ -150,9 +150,9 @@ The above file based repository named **myapp** has the following configuration:
   * A **stage** profile which inherits from the prod settings
   * A **prod** config profile
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 A folder does not have to have a config file. It can just contain other folders or be empty.
-{{% /infobox %}}
+{{< /infobox >}}
 
 ## Http/s Config Source
 
@@ -174,7 +174,7 @@ This example is modeled using one environment per repository pattern. Accessing 
 
 The below configrd.yaml file assumes the following path structure in order to achieve the desired inheritance behavior.
 
-{{< code-plain lang="yaml" >}}
+{{< code >}}
 srv/
 └── configrd/
     └── apps/
@@ -193,9 +193,9 @@ srv/
                     ├── env.yaml
                     └── stage/
                         └── env.yaml
-{{< /code-plain >}}
+{{< /code >}}
 
-{{< code-plain lang="yaml" >}}
+{{< code lang="yaml" >}}
 service:
  repos:
     myapp:
@@ -209,7 +209,7 @@ service:
         qa: env/qa
         stage: env/prod/stage
         prod: env/prod
-{{< /code-plain >}}
+{{< /code >}}
 
 ## Secrets
 
@@ -254,7 +254,7 @@ myrepo:
 
 On the fly encryption works with any storage mechanism you may choose to store your configs.
 
-{{< infobox type1="info" >}}
+{{< infobox type="info" >}}
 Only AWS KMS is currently supported as a KMS. Please let us know what KMS you'd like to see integrated.
 {{< /infobox >}}
 

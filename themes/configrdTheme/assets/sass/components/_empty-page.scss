@@ -1,0 +1,16 @@
+/* Empty page Styles
+----------------------------------------*/
+
+.emptyPage {
+  position: relative;
+  text-align: center;
+  margin: 0px;
+  margin-bottom: -24px;
+  padding: 64px;
+  background: $bg-main;
+  color: $text-light-gray;
+  span {
+    font-size: 18px;
+    line-height: 1.625;
+  }
+}

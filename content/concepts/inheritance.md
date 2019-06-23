@@ -18,9 +18,9 @@ Environment variables can be sourced from a number of locations \(repositories\)
 
 Environment variables can be structured into hierarchies using folders. The folder hierarchy dictates the override order of variables where variable values specified in child folders override values in a parent folder. Each service or app could have one or more folder hierarchies for overrides. The request's URL will be mapped to the folder structure and the override hierarchy applied at request time.
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 Inheritance is only supported within a repository, not across repositories.
-{{% /infobox %}}
+{{< /infobox >}}
 
 ## Example
 
@@ -35,23 +35,24 @@ support.email = support@myservice.com
 
 The child path `/env/dev/local` in git contains **only** the variable
 
-{{< code-yaml-no-num file="default.properties" >}}
+{{< code file="default.properties" line-numbers="false" >}}
 app.url = http://localhost:8080/
-{{< /code-yaml-no-num >}}
+{{< /code >}}
 
 If we request the "dev" config profile at `https://mycorp.com/configrd/v1/env/dev/`, configrd returns:
 
-{{< code-plain lang="yaml" >}}
+{{< code lang="yaml" >}}
 app.url = https://dev.myservice.com/
 support.email = support@myservice.com
-{{< /code-plain >}}
+{{< /code >}}
 
 Now, if we request the "local" config profile which overrides and inherits from the "dev" profile at `https://mycorp.com/configrd/v1/env/dev/local/`, configrd returns:
 
-{{< code-plain lang="yaml" >}}
+{{< code lang="yaml" >}}
 app.url = http://localhost:8080 (overriden)
 support.email = support@myservice.com (inherited)
-{{< /code-plain >}}
+{{< /code >}}
+
 
 Any environment variable changes are immediately available on the next request.
 

@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/tags.html -->" | safeHTML }} {{- end -}}
 {{ $taxo := "tags" }} <!-- Use the plural form here -->
 <div id="{{ $taxo }}">
   <span class="title">Tags:</span>
@@ -8,3 +9,4 @@
     {{- end -}}
   {{- end -}}
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/tags.html -->" | safeHTML }} {{- end -}}

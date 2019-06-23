@@ -1,3 +1,4 @@
+{{- if .Site.IsServer -}} {{ "<!-- partials/right-sidebar.html -->" | safeHTML }} {{- end -}}
 <div id="pageRightSidebarPlacement">
   <div class="pageRightSidebar">
     <div class="pageRightBox">
@@ -24,3 +25,4 @@
     </div>
   </div>
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END partials/right-sidebar.html -->" | safeHTML }} {{- end -}}

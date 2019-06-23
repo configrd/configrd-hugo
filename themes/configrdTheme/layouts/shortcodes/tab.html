@@ -1,3 +1,5 @@
+{{- if .Site.IsServer -}} {{ "<!-- shortcodes/tab.html -->" | safeHTML }} {{- end -}}
 <div class="tab-pane" title="{{ .Get 0 }}">
-  {{ .Inner }}
+  {{ .Inner | markdownify }}
 </div>
+{{- if .Site.IsServer -}} {{ "<!-- END shortcodes/tab.html -->" | safeHTML }} {{- end -}}

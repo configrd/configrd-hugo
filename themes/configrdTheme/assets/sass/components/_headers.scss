@@ -1,0 +1,348 @@
+/* Headers and header anchors Styles
+----------------------------------------*/
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  &:hover {
+    .anchor {
+      color: $header-main-color;
+      transition: opacity 150ms ease 0s;
+      opacity: 1;
+    }
+  }
+  .anchor {
+    width: 20px;
+    padding-left: 4px;
+    line-height: 1;
+    color: $header-main-color;
+    opacity: 0;
+    transition: opacity 150ms ease;
+    -moz-transition: opacity 150ms ease;
+    -webkit-transition: opacity 150ms ease;
+    &:hover {
+      color: $link-main-color;
+    }
+    .svg-wrapper {
+      outline: none;
+      box-sizing: inherit;
+      font-size: 16px;
+      vertical-align: middle;
+      svg {
+        width: 1em;
+        height: 1em;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+.h1-wrapper {
+  padding: 40px 0px;
+  border-bottom: 2px solid $border-color-main;
+  margin-bottom: 32px;
+  .oneRow {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    align-items: stretch;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-box-align: stretch;
+    .wrapper {
+      flex: 1 1 auto;
+      margin: 0;
+      display: block;
+      padding: 0;
+      padding-right: 16px;
+    }
+    .mobileContentsBox {
+      display: none;
+      margin: 0;
+      padding: 0;
+      margin-top: 9px;
+      .mobileContentsBoxButton {
+        display: -webkit-inline-box;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: -webkit-inline-flex;
+        color: #9DAAB6;
+        width: 30px;
+        border: 1px solid;
+        cursor: pointer;
+        height: 30px;
+        display: inline-flex;
+        outline: none;
+        padding: 0;
+        transition: all 250ms ease-out;
+        line-height: 1em;
+        align-items: center;
+        white-space: nowrap;
+        border-color: transparent;
+        border-radius: 3px;
+        justify-content: center;
+        text-decoration: none;
+        -moz-transition: all 250ms ease-out;
+        -webkit-box-pack: center;
+        background-color: transparent;
+        -webkit-box-align: center;
+        -webkit-transition: all 250ms ease-out;
+        &:hover {
+          color: #3884FF;
+        }
+        &:active {
+          background: #e7f0fc;
+          border-radius: 4px;
+        }
+        .mobileContentsBoxIconWrapper {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          margin: 0;
+          display: flex;
+          font-size: 18px;
+          align-items: center;
+          justify-content: center;
+          -webkit-box-pack: center;
+          -webkit-box-align: center;
+          svg {
+            width: 1em;
+            height: 1em;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  .additional-text {
+    margin: 8px 0 0 0;
+  }
+}
+.mobileAnchorsNavigation {
+  display: none;
+  top: 100%;
+  left: 50%;
+  z-index: 160;
+  position: absolute;
+  transform: translateX(16px);
+  pointer-events: auto;
+  margin: 0px;
+  padding: 16px 0px 0px;
+  &.visible {
+    display: block;
+  }
+  .popoverWrapper {
+    display: block;
+    animation-name: c014;
+    animation-duration: 0.2s;
+    animation-timing-function: cubic-bezier(0.465, 0.183, 0.153, 0.946);
+    margin: 0px;
+    padding: 0px;
+    .mobileAnchorsBodyWrapper {
+      position: relative;
+      box-shadow: rgba(116, 129, 141, 0.1) 0px 3px 8px 0px;
+      border-width: 1px;
+      border-style: solid;
+      border-image: initial;
+      background: white;
+      border-color: rgb(211, 220, 228);
+      border-radius: 4px;
+      .arrowPointer {
+        top: -8px;
+        left: auto;
+        width: 0px;
+        right: 8px;
+        height: 0px;
+        display: block;
+        position: absolute;
+        margin: 0px;
+        padding: 0px;
+        border-color: transparent transparent rgb(211, 220, 228);
+        border-style: solid;
+        border-width: 0px 8px 8px;
+        &:after {
+          top: 2px;
+          left: -7px;
+          width: 0px;
+          height: 0px;
+          display: block;
+          content: "";
+          position: absolute;
+          border-color: transparent transparent white;
+          border-style: solid;
+          border-width: 0px 7px 7px;
+        }
+      }
+      .mobileNav {
+        display: flex;
+        min-width: 224px;
+        max-width: 260px;
+        max-height: 233px;
+        counter-reset: toc 0;
+        flex-direction: column;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        flex: 1 1 0%;
+        margin: 0px;
+        padding: 0px;
+        overflow: hidden;
+        .mobileNavScrollable {
+          display: block;
+          overflow-x: hidden;
+          overflow-y: overlay;
+          flex: 1 1 0%;
+          margin: 0px;
+          padding: 12px 0px;
+          .mobileRightSidebarHeaderWrapper {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            color: #9DAAB6;
+            margin: 0;
+            display: flex;
+            padding: 0;
+            padding-left: 24px;
+            margin-bottom: 8px;
+            .mobileRightSidebarHeaderIcon {
+              margin: 0;
+              display: block;
+              padding: 0;
+              margin-right: 8px;
+              svg {
+                width: 1em;
+                height: 1em;
+                vertical-align: middle;
+              }
+            }
+            .mobileRightSidebarHeaderTitle {
+              margin: 0;
+              display: block;
+              padding: 0;
+              .mobileRightSidebarHeaderTitleText {
+                font-size: 10px;
+                line-height: 1;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 1.2px;
+              }
+            }
+          }
+          .mobileRightSidebarItem {
+            display: -webkit-box;
+            color: #74818D;
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            padding: 4px 16px;
+            align-items: center;
+            padding-left: 24px;
+            vertical-align: middle;
+            text-decoration: none;
+            -webkit-box-align: center;
+            &:hover {
+              color: rgb(56, 132, 255);
+            }
+            &.nav-link.active {
+              color: rgb(56, 132, 255);
+              &:before {
+                left: 0px;
+                height: 29px;
+                content: " ";
+                position: absolute;
+                border-left: 2px solid;
+              }
+            }
+            .rightSidebarItemWrapper {
+              margin: 0;
+              display: block;
+              padding: 0;
+              overflow: hidden;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              .itemTitleWrapper {
+                font-size: 14px;
+                line-height: 1.5;
+                font-weight: 500;
+                .itemTitle {
+                  font-size: 12px;
+                  line-height: 1.5;
+                  font-weight: 500;
+                  &.level-2 {
+                    padding-left: 16px;
+                  }
+                  &.level-3 {
+                    padding-left: 26px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+h1 {
+  color: $header-main-color;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  display: block;
+  .heading-text {
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+}
+
+h2 {
+  color: $header-main-color;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  color: $header-main-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 24px 0;
+}
+
+h4 {
+  color: $header-main-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 24px 0;
+}
+
+h5 {
+  color: $header-main-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 24px 0;
+}
+
+h6 {
+  color: $header-main-color;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin: 24px 0;
+}

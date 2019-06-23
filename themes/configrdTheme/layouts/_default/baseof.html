@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+	{{- if .Site.IsServer -}} {{ "<!-- _default/baseof.html -->" | safeHTML }} {{- end -}}
   {{- partial "head.html" . -}}
   <body data-spy="scroll" data-target=".anchorsNavigationList" data-offset="10">
   	<section class="page">
@@ -10,4 +11,5 @@
 	    {{- partial "footer.html" . -}}
 	  </section>
   </body>
+	{{- if .Site.IsServer -}} {{ "<!-- END _default/baseof.html -->" | safeHTML }} {{- end -}}
 </html>

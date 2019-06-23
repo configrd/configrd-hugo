@@ -26,34 +26,34 @@ Running docker as a container requires the following steps:
 
 Pull the configrd-service image from docker hub with the latest features
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker pull configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 ## Start configrd-service
 
 The most basic way to start the service is by allowing configrd to read/write a default configrd.yaml configuration file to the local file system by binding the container's path `/srv/configrd` to a local volume mount. By default, the service listens on port 9191.
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -v /srv/configrd:/srv/configrd configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 You can map the local volume to any location on disk desirable but the path from within the container should remain beginning with `/srv/configrd`.
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -v /home/myuser/configrd:/srv/configrd configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 Checking the `docker logs` for the container you should see output similar to the below
 
-{{< code-plain lang="js" >}}
+{{< code lang="js" >}}
 00:04:38.462 [main] INFO  io... - Configrd starting on port 9191
 00:04:38.480 [main] INFO  io... - Starting configrd...
 00:04:38.709 [main] INFO  io... - Attempting to load configrd config file from file:/srv/configrd/configrd.yaml using source file
 00:04:38.738 [main] INFO  io... - Loaded configrd config file at file:/srv/configrd/configrd.yaml
 00:04:38.977 [main] INFO  io... - Application deployed
 00:04:38.977 [main] INFO  io... - Configrd started in 0s
-{{< /code-plain >}}
+{{< /code >}}
 
 ## Loading configrd.yaml
 
@@ -70,9 +70,9 @@ Loading the configrd.yaml file from a local or locally mounted file system is th
 
 To load the configrd service configuration from a file named different than configrd.yaml, simply specify the file name in the CONFIG\_URI ENV parameter.
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e SOURCENAME=file -e CONFIG_URI=file:/srv/configrd/myconfig.yaml -v /home/myuser/configrd:/srv/configrd configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 #### HTTP/S
 
@@ -86,9 +86,9 @@ The configrd.yaml file can be loaded over http/s including endpoints protected b
 | USER | No |  | Username used for the authorization header with Basic Auth |
 | SECRET | No |  | Password used for the authorization header with Basic Auth |
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e SOURCENAME=http -e CONFIG_URI=https://myservice.com/configrd/configrd.yaml configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 #### AWS S3
 
@@ -103,9 +103,9 @@ Configrd instances deployed to AWS services such as EC2, ECS, EKS, LightSail or 
 | AWS\_ACCESS\_KEY\_ID | No |  | Static AWS credentials to authenticate against s3 bucket. Not required when running from within AWS using roles or security groups |
 | AWS\_SECRET\_ACCESS\_KEY | No |  | Static AWS credentials to authenticate against s3 bucket. Not required when running from within AWS using roles or security groups |
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e SOURCENAME=s3 -e CONFIG_URI=https://s3.amazonaws.com/mybucket/configrd.yaml configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 #### Git, GitHub, AWS CodeCommit
 
@@ -115,9 +115,9 @@ The service supports the most populate authentication methods including static c
 
 The git repository will be cloned into `/srv/configrd/init` on the container at startup and the configrd.yaml loaded from the local file system. The git repository is only pulled at service start. If you do not bind the `/srv/configrd` container path to a volume mount the files will only live inside the container.
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 AWS roles are not yet supported as an authentication mechanism. AWS does not recommend using IAM credentials or the EC2 security context for CodeCommit authentication since credentials expire.
-{{% /infobox %}}
+{{< /infobox >}}
 
 | ENV | Required | Default | Description |
 | :--- | :--- | :--- | :--- |
@@ -132,35 +132,35 @@ AWS roles are not yet supported as an authentication mechanism. AWS does not rec
 
 Sample `docker run` with GitHub username and secret
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e AUTH_METHOD=GitHub -e SOURCENAME=git -e CONFIG_URI=git@github.com:myorg/myrepo.git -e USER=$GITHUB_USER -e SECRET=$GITHUB_SECRET configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 Sample `docker run` with GitHub SSH public key authentication
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e AUTH_METHOD=SshPubKey -e PK=~/.ssh/rsa_id -e SOURCENAME=git -e CONFIG_URI=git@github.com:myorg/myrepo.git configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 Sample `docker run` with GtiHub token authentication
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e AUTH_METHOD=GitHubToken -e TOKEN=$GITHUB_TOKEN -e SOURCENAME=git -e CONFIG_URI=git@github.com:myorg/myrepo.git configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 Sample `docker run` with AWS CodeCommit git credentials
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e AUTH_METHOD=CodeCommitGitCreds -e SOURCENAME=git -e CONFIG_URI=git@github.com:myorg/myrepo.git -e USER=$GIT_USER -e SECRET=$GIT_SECRET configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
 Sample `docker run` with AWS CodeCommit ssh public key authentication and ssh protocol. 
 
-{{% infobox type1="info" %}}
+{{< infobox type="info" >}}
 Note the AWS git ssh key id must be provided as the username of the ssh URI to the repository.
-{{% /infobox %}}
+{{< /infobox >}}
 
-{{< inline-code-blocks lang="docker" >}}
+{{< code lang="docker" line-numbers="false" >}}
 docker run -d -p 9191:9191 -e AUTH_METHOD=SshPubKey -e PK=~/.ssh/rsa_id -e SOURCENAME=git -e CONFIG_URI=ssh://my-aws-ssh-key-id@git-codecommit.us-west-2.amazonaws.com/v1/repos/myrepo configrd/configrd-service
-{{< /inline-code-blocks >}}
+{{< /code >}}
 
