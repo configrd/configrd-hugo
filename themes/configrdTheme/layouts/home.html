@@ -6,7 +6,7 @@
     {{ partial "navigation.html" . }}
     {{ range .Pages }}
       {{ if eq .Params.isHome true }}
-        {{ partial "page-content" . }}
+        {{ partial "page-content" . }}    
       {{ end }}
     {{ end }}
   </div>

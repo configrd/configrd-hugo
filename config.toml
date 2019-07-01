@@ -10,6 +10,8 @@ Paginate = 1
 
 [params]
   logo = "/images/configrd-logo.png"
+	author = "Krzysztof Karski"
+	author_img = "https://avatars2.githubusercontent.com/u/1750504"
 
 [outputs]
 	home = [ "HTML", "RSS" ]
@@ -63,3 +65,4 @@ Paginate = 1
 [taxonomies]
   tag = "tags"
 
+	
