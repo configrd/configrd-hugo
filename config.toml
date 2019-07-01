@@ -6,7 +6,7 @@ relativeURLs = true
 Paginate = 1
 
 
-disableKinds = ["section"]
+# disableKinds = ["section"]
 
 [params]
   logo = "/images/configrd-logo.png"

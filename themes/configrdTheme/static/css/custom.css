@@ -293,3 +293,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Open Sans';
   font-weight: 700;
 }
+a.article-url:hover h2 {
+	transition: all 250ms ease-out;
+	color: #3884FF;
+}
