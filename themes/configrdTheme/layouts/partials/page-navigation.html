@@ -1,40 +1,46 @@
 {{- if .Site.IsServer -}} {{ "<!-- partials/page-navigation.html -->" | safeHTML }} {{- end -}}
 <section class="pageFooter">
-  {{ if or .Prev .Next }}
+  {{ if and ( or .Prev .Next ) ( ne .Type "post" ) }}
     <div class="navigationLinks flex-column flex-md-row">
-      {{if .Prev}}
-      <a class="linkPrevious" href="{{.Prev.URL}}">
-        <div class="linkIcon">
-          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line class="st0" x1="19" y1="12" x2="5" y2="12"></line><polyline class="st0" points="12,19 5,12 12,5 "></polyline></g></svg>
-        </div>
-        <div class="linkBody text-right">
-          <div class="linkTitle">
-            <span class="linkTitle-text">Previous</span>
-          </div>
-          <div class="pageTitle">
-            <span class="pageTitle-text">{{.Prev.Title}}</span>
-          </div>
-        </div>      
-      </a>
-      {{end}}
-      {{if .Next}}
-      <a class="linkNext" href="{{.Next.URL}}">
-        <div class="linkBody">
-          <div class="linkTitle">
-            <span class="linkTitle-text">Next</span>
-          </div>
-          <div class="pageTitle">
-            <span class="pageTitle-text">{{.Next.Title}}</span>
-          </div>
-        </div>
-        <div class="linkIcon">
-          <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
-        </div>
-      </a>
-      {{end}}
+      {{ if .Prev }}
+        {{ if ne .Prev.Type "post" }}
+          <a class="linkPrevious" href="{{.Prev.URL}}">
+            <div class="linkIcon">
+              <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line class="st0" x1="19" y1="12" x2="5" y2="12"></line><polyline class="st0" points="12,19 5,12 12,5 "></polyline></g></svg>
+            </div>
+            <div class="linkBody text-right">
+              <div class="linkTitle">
+                <span class="linkTitle-text">Previous</span>
+              </div>
+              <div class="pageTitle">
+                <span class="pageTitle-text">{{.Prev.Title}}</span>
+              </div>
+            </div>      
+          </a>
+        {{ end }}
+      {{ end }}
+
+      {{ if .Next }}
+        {{ if ne .Next.Type "post" }}
+          <a class="linkNext" href="{{.Next.URL}}">
+            <div class="linkBody">
+              <div class="linkTitle">
+                <span class="linkTitle-text">Next</span>
+              </div>
+              <div class="pageTitle">
+                <span class="pageTitle-text">{{.Next.Title}}</span>
+              </div>
+            </div>
+            <div class="linkIcon">
+              <svg preserveAspectRatio="xMidYMid meet" height="1.5em" width="1.5em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"><g><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></g></svg>
+            </div>
+          </a>
+        {{ end }}
+      {{ end }}
     </div>
-  {{end}}  
-{{ partial "last-updated.html" . }}  
+  {{ end }}
+    
+  {{ partial "last-updated.html" . }}  
 </section>
 
 <script>

@@ -10,6 +10,7 @@ weight: 220
 toc: true
 tags: ["Tag1", "Tag2", "Tag3"]
 tags_weight: 22
+isHome: true
 ---
 
 ## Why Configrd

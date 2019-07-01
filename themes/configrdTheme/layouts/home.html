@@ -1,0 +1,18 @@
+{{ define "main"}}
+{{- if .Site.IsServer -}} {{ "<!-- home.html -->" | safeHTML }} {{- end -}}
+<div class="pageFlex">
+  <div class="contentBox">
+    <div class="overlayLayout" role="presentation"></div>
+    {{ partial "navigation.html" . }}
+    {{ range .Pages }}
+      {{ if eq .Params.isHome true }}
+        {{ partial "page-content" . }}
+      {{ end }}
+    {{ end }}
+  </div>
+  <div class="searchBarOverlay" role="presentation">
+    {{ partial "search-bar.html" . }}
+  </div>
+</div>
+{{- if .Site.IsServer -}} {{ "<!-- END home.html -->" | safeHTML }} {{- end -}}
+{{ end }}
