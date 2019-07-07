@@ -23,7 +23,6 @@
   {{ $options := (dict "targetPath" "style.css" "outputStyle" "expanded" "enableSourceMap" true) }}
   {{ $style := resources.Get "sass/style.scss" | resources.ToCSS $options | resources.Minify | resources.Fingerprint }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
-  <link rel="stylesheet" href="/css/custom.css">
 
 
 

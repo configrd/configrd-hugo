@@ -1,0 +1,42 @@
+{{ define "main"}}
+{{- if .Site.IsServer -}} {{ "<!-- _default/taxonomy.html -->" | safeHTML }} {{- end -}}
+<div class="pageFlex">
+  <div class="contentBox">
+    <div class="overlayLayout" role="presentation"></div>
+    {{ partial "navigation.html" . }}
+    <div class="page-content">
+      <div class="contentAndRightSidebar">
+        <div class="page-wrapper">
+          <h1 class="py-5">{{ .Title }}</h1>
+          <ul class="m-0 p-0">
+          
+          {{ range .Pages }}
+            <li class="d-block">
+              <div class="h1-wrapper pt-0">
+                <div class="oneRow">
+                  <div class="wrapper">
+                    <a href="{{.Permalink}}" class="article-url">
+                      <h2 class="d-inline-block mb-2"><span class="heading-text">{{ .Title }}</span></h2>
+                    </a>
+                  </div>            
+                </div>
+                <div class="additional-text mb-2">
+                  <span class="regularText color-gray">
+                    {{.Summary}}
+                  </span>
+                </div>
+                <a href="{{.Permalink}}" class="float-right">Read More</a>
+              </div>       
+            </li>
+          {{ end }}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="searchBarOverlay" role="presentation">
+    {{ partial "search-bar.html" . }}
+  </div>
+</div>
+{{- if .Site.IsServer -}} {{ "<!-- END _default/taxonomy.html -->" | safeHTML }} {{- end -}}
+{{ end }}

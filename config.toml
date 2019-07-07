@@ -6,10 +6,12 @@ relativeURLs = true
 Paginate = 1
 
 
-disableKinds = ["section"]
+# disableKinds = ["section"]
 
 [params]
   logo = "/images/configrd-logo.png"
+	author = "Krzysztof Karski"
+	author_img = "https://avatars2.githubusercontent.com/u/1750504"
 
 [outputs]
 	home = [ "HTML", "RSS" ]
@@ -63,3 +65,4 @@ disableKinds = ["section"]
 [taxonomies]
   tag = "tags"
 
+	

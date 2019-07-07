@@ -7,6 +7,8 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    border-bottom: 2px solid #e6ecf1;
+    padding-bottom: 24px;
     .linkNext,
     .linkPrevious {
       display: -webkit-box;
@@ -89,8 +91,8 @@
     display: -webkit-flex;
     display: flex;
 
-    margin-top: 24px;
-    border-top: 2px solid $border-color-main;
+    // margin-top: 24px;
+    // border-top: 2px solid $border-color-main;
     align-items: center;
     padding-top: 24px;
     flex-direction: row;
