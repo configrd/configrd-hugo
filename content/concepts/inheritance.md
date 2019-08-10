@@ -7,9 +7,6 @@ menu:
     parent: "concepts"
     weight: 08
 weight: 140
-tags: ["Tag1", "Tag2", "Tag3"]
-tags_weight: 22
-aliases: [/concepts/inheritance/]
 ---
 
 **Configrd** serves environment variable values over HTTP/S on demand as plaintext key=value pairs, json or yaml. Accessing environment variables anywhere is as simple as issuing a request to the service and obtaining key value pairs in the response body.

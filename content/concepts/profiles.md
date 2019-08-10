@@ -7,8 +7,6 @@ menu:
     parent: "concepts"
     weight: 10
 weight: 120
-tags: ["profiles"]
-tags_weight: 22
 ---
 
 # Profiles

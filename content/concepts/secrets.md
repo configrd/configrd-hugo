@@ -7,8 +7,6 @@ menu:
     parent: "concepts"
     weight: 09
 weight: 130
-tags: ["secrets"]
-tags_weight: 22
 ---
 
 # Secrets

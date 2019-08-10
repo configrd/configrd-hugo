@@ -8,8 +8,6 @@ menu:
     weight: 01
 weight: 220
 toc: true
-tags: ["Tag1", "Tag2", "Tag3"]
-tags_weight: 22
 isHome: true
 ---
 
@@ -71,5 +69,3 @@ Configrd deploys on-prem as a micro service alongside your apps and infrastructu
 * Collaborate with application engineers to keep environment settings up to date
 * Reduce or even eliminate duplicate/redundant configs within and across environments
 * Globally enforce encryption of secrets, manage keys through services such as AWS KMS, store values anywhere (i.e. git) and however (i.e. json) you like
-
-[![Site tested with BrowserStack](/images/browserstack-logo-200.png)](https://www.browserstack.com/)

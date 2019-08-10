@@ -5,11 +5,9 @@ lastmod: 2019-05-28
 menu:
   sidebar:
     parent: "getting-started"
-    weight: 02
-weight: 210
-tags: ["Tag1", "Tag2", "Tag3"]
-tags_weight: 22
-aliases: [/getting-started/quick-start/]
+    weight: 01
+weight: 100
+aliases: ["/quick-start"]
 toc: false
 ---
 

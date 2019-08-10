@@ -7,9 +7,6 @@ menu:
     parent: "api-reference"
     weight: 06
 weight: 160
-tags: ["Tag1", "Tag2", "Tag3"]
-tags_weight: 22
-aliases: [/api-reference/variables/]
 ---
 
 {{< badge >}}

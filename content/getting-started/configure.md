@@ -1,14 +1,13 @@
 ---
 title: Configure
+description: Configure config sources and secrets
 lastmod: 2019-05-26
 menu:
   sidebar:
-    parent: "setup"
-    weight: 04
-weight: 180
-tags: ["Tag1", "Tag2", "Tag3"]
-tags_weight: 22
-aliases: [/setup/configure/]
+    parent: "getting-started"
+    weight: 03
+weight: 120
+aliases: ["/configure"]
 toc: true
 ---
 
