@@ -38,16 +38,8 @@ Paginate = 1
 	identifier = "getting-started"
 	weight = 100
 	post = "break"
-	url = "/getting-started/"
-
-[[menu.sidebar]]
-	name = "Setup"
-	identifier = "setup"
-	parent = "getting-started"
-	url = "/getting-started/setup/"
-	weight = 04
-	post = "expanded"
 	hasChildren = true
+	url = "/getting-started/"
 
 [[menu.sidebar]]
 	name = "API Reference"

@@ -5,8 +5,8 @@ lastmod: 2019-05-26
 menu:
   sidebar:
     parent: "getting-started"
-    weight: 03
-weight: 120
+    weight: 04
+weight: 190
 aliases: ["/configure"]
 toc: true
 ---

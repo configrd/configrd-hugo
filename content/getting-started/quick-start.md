@@ -5,8 +5,8 @@ lastmod: 2019-05-28
 menu:
   sidebar:
     parent: "getting-started"
-    weight: 01
-weight: 100
+    weight: 02
+weight: 210
 aliases: ["/quick-start"]
 toc: false
 ---

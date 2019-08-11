@@ -5,9 +5,8 @@ lastmod: 2019-05-27
 menu:
   sidebar:
     parent: "getting-started"
-    weight: 02
-    identifier: "Install"
-weight: 110
+    weight: 03
+weight: 200
 aliases: ["/setup"]
 toc: true
 ---

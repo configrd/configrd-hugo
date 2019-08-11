@@ -5,8 +5,8 @@ lastmod: 2019-05-27
 menu:
   sidebar:
     parent: "getting-started"
-    weight: 04
-weight: 140
+    weight: 05
+weight: 180
 aliases: ["/query"]
 toc: true
 ---
